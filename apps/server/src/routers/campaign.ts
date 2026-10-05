@@ -22,6 +22,7 @@ import {
 } from '../db/schema.ts';
 import { generateInviteCode, redeemInvite } from '../services/invites.ts';
 import { latestDataSetId } from '../services/seed.ts';
+import { ensureSetup } from '../services/campaign-state.ts';
 import { availableClassKeys } from '../services/campaign-data.ts';
 import { authedProcedure, requireMembership, router } from '../trpc/trpc.ts';
 
@@ -66,6 +67,7 @@ export const campaignRouter = router({
       await tx
         .insert(campaignMembers)
         .values({ campaignId: c!.id, userId: ctx.user.id, role: 'host' });
+      await ensureSetup(tx, c!);
       await writeAudit(tx, ctx.user.id, [
         { campaignId: c!.id, entity: 'campaign', entityId: c!.id, action: 'create', after: c },
       ]);
@@ -76,7 +78,18 @@ export const campaignRouter = router({
   get: authedProcedure.input(campaignIdInput).query(async ({ ctx, input }) => {
     const { role } = await requireMembership(ctx, input.campaignId);
     const rows = await ctx.db.select().from(campaigns).where(eq(campaigns.id, input.campaignId));
-    const campaign = rows[0]!;
+    let campaign = rows[0]!;
+    if (!campaign.setupDone && campaign.gameDataSetId) {
+      // Campaigns created before game data existed get their starting content on first view.
+      campaign = await ctx.db.transaction(async (tx) => {
+        const [locked] = await tx
+          .select()
+          .from(campaigns)
+          .where(eq(campaigns.id, input.campaignId))
+          .for('update');
+        return ensureSetup(tx, locked!);
+      });
+    }
     const [dataSet] = campaign.gameDataSetId
       ? await ctx.db
           .select({ id: gameDataSets.id, name: gameDataSets.name, version: gameDataSets.version })
@@ -323,10 +336,12 @@ export const campaignRouter = router({
             });
           }
         }
-        await tx
+        const [updated] = await tx
           .update(campaigns)
-          .set({ gameDataSetId: input.dataSetId, version: c!.version + 1 })
-          .where(eq(campaigns.id, input.campaignId));
+          .set({ gameDataSetId: input.dataSetId, setupDone: false, version: c!.version + 1 })
+          .where(eq(campaigns.id, input.campaignId))
+          .returning();
+        await ensureSetup(tx, updated!);
         await writeAudit(tx, ctx.user.id, [
           {
             campaignId: input.campaignId,

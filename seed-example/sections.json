@@ -1,0 +1,169 @@
+[
+  {
+    "ref": "10.1",
+    "title": "Example Tutorial conclusion",
+    "scenario": 0,
+    "effects": []
+  },
+  {
+    "ref": "11.1",
+    "title": "Example Opening conclusion",
+    "scenario": 1,
+    "effects": [
+      {
+        "type": "setMorale",
+        "value": null
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 2
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 3
+      }
+    ]
+  },
+  {
+    "ref": "12.1",
+    "title": "Example Left Path conclusion",
+    "scenario": 2,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 4,
+        "link": "forced"
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 3
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Example Map"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "81.1",
+        "weeksAhead": 2
+      }
+    ]
+  },
+  {
+    "ref": "13.1",
+    "title": "Example Right Path conclusion",
+    "scenario": 3,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 4
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "14.1",
+    "title": "Example Island conclusion",
+    "scenario": 4,
+    "effects": [
+      {
+        "type": "unlockClass",
+        "classKey": "example-hidden"
+      }
+    ]
+  },
+  {
+    "ref": "15.1",
+    "title": "Example Riddle conclusion",
+    "scenario": 5,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Example manual step"
+      }
+    ]
+  },
+  {
+    "ref": "20.1",
+    "title": "Example Boat Built",
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Example Boat"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "80.1",
+    "title": "Example calendar event",
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "80.2",
+    "title": "Example season change",
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": ["EX-1", "EX-2"]
+      }
+    ]
+  },
+  {
+    "ref": "81.1",
+    "title": "Example follow-up",
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "20.1"
+      }
+    ]
+  },
+  {
+    "ref": "90.1",
+    "title": "Example low morale",
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "ref": "90.2",
+    "title": "Example high morale",
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  }
+]

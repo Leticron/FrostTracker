@@ -3,7 +3,22 @@ import { TRPCError } from '@trpc/server';
 import { asc, eq, getTableColumns, isNull, and } from 'drizzle-orm';
 import type { AnyPgColumn, PgTable } from 'drizzle-orm/pg-core';
 import type { Tx } from './db/client.ts';
-import { auditEntries, campaigns, characterItems, characters } from './db/schema.ts';
+import {
+  auditEntries,
+  calendarEntries,
+  campaignBuildings,
+  campaignClassUnlocks,
+  campaigns,
+  campaignScenarios,
+  campaignStickers,
+  characterItems,
+  characters,
+  eventDeckChanges,
+  eventLog,
+  playSessions,
+  sectionApplications,
+  treasuresLooted,
+} from './db/schema.ts';
 
 export interface AuditInput {
   campaignId?: string | null;
@@ -71,7 +86,114 @@ const revertable: Record<string, { table: PgTable; id: AnyPgColumn }> = {
   character: { table: characters, id: characters.id },
   character_item: { table: characterItems, id: characterItems.id },
   campaign: { table: campaigns, id: campaigns.id },
+  campaign_scenario: { table: campaignScenarios, id: campaignScenarios.id },
+  campaign_sticker: { table: campaignStickers, id: campaignStickers.id },
+  campaign_building: { table: campaignBuildings, id: campaignBuildings.id },
+  calendar_entry: { table: calendarEntries, id: calendarEntries.id },
+  treasure: { table: treasuresLooted, id: treasuresLooted.id },
+  class_unlock: { table: campaignClassUnlocks, id: campaignClassUnlocks.id },
+  event_log: { table: eventLog, id: eventLog.id },
+  event_deck_change: { table: eventDeckChanges, id: eventDeckChanges.id },
+  play_session: { table: playSessions, id: playSessions.id },
+  section_application: { table: sectionApplications, id: sectionApplications.id },
 };
+
+/**
+ * Collects audit entries for one user action while rows are written through it, so every
+ * change can be reverted generically. Call `flush` once at the end (inside the transaction).
+ */
+export class AuditRecorder {
+  readonly entries: AuditInput[] = [];
+  private readonly tx: Tx;
+  private readonly campaignId: string;
+  private readonly characterId: string | null;
+
+  constructor(tx: Tx, campaignId: string, characterId: string | null = null) {
+    this.tx = tx;
+    this.campaignId = campaignId;
+    this.characterId = characterId;
+  }
+
+  private meta(entity: string, entityId: string, action: string, characterId?: string | null) {
+    return {
+      campaignId: this.campaignId,
+      characterId: characterId === undefined ? this.characterId : characterId,
+      entity,
+      entityId,
+      action,
+    };
+  }
+
+  async insert<T extends PgTable & { id: AnyPgColumn }>(
+    entity: string,
+    table: T,
+    values: T['$inferInsert'],
+    action: string,
+    characterId?: string | null,
+  ): Promise<T['$inferSelect']> {
+    const [row] = (await this.tx
+      .insert(table)
+      .values(values as never)
+      .returning()) as T['$inferSelect'][];
+    const r = row as Record<string, unknown>;
+    this.entries.push({
+      ...this.meta(entity, String(r.id), action, characterId),
+      before: null,
+      after: row,
+    });
+    return row!;
+  }
+
+  async update<T extends PgTable & { id: AnyPgColumn }>(
+    entity: string,
+    table: T,
+    before: T['$inferSelect'],
+    changes: Partial<T['$inferInsert']>,
+    action: string,
+    characterId?: string | null,
+  ): Promise<T['$inferSelect']> {
+    const b = before as Record<string, unknown>;
+    const [row] = (await this.tx
+      .update(table)
+      .set(changes as never)
+      .where(eq(table.id, b.id))
+      .returning()) as T['$inferSelect'][];
+    const keys = Object.keys(changes).filter((k) => k !== 'version' && k !== 'updatedAt');
+    const d = diff(b, row as Record<string, unknown>, keys);
+    if (d)
+      this.entries.push({
+        ...this.meta(entity, String(b.id), action, characterId),
+        before: d.before,
+        after: d.after,
+      });
+    return row!;
+  }
+
+  async delete<T extends PgTable & { id: AnyPgColumn }>(
+    entity: string,
+    table: T,
+    before: T['$inferSelect'],
+    action: string,
+    characterId?: string | null,
+  ) {
+    const b = before as Record<string, unknown>;
+    await this.tx.delete(table).where(eq(table.id, b.id));
+    this.entries.push({
+      ...this.meta(entity, String(b.id), action, characterId),
+      before,
+      after: null,
+    });
+  }
+
+  /** Informational entry (e.g. what a section asked the host to do by hand); skipped on revert. */
+  note(action: string, after: unknown) {
+    this.entries.push({ ...this.meta('note', this.campaignId, action), before: null, after });
+  }
+
+  flush(actorUserId: string): Promise<string> {
+    return writeAudit(this.tx, actorUserId, this.entries);
+  }
+}
 
 export class RevertConflict extends Error {}
 
@@ -93,6 +215,7 @@ export async function revertGroup(tx: Tx, groupId: string, actorUserId: string) 
   }
   const undo: AuditInput[] = [];
   for (const e of [...entries].reverse()) {
+    if (e.entity === 'note') continue;
     const reg = revertable[e.entity];
     if (!reg) {
       throw new TRPCError({
