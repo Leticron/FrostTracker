@@ -1,0 +1,31 @@
+[
+  {
+    "key": "example-guardian",
+    "name": "Example Guardian",
+    "starting": true,
+    "perks": [
+      { "text": "Example perk one", "boxes": 2, "linked": false },
+      { "text": "Example perk two (linked)", "boxes": 2, "linked": true },
+      { "text": "Example perk three", "boxes": 1, "linked": false }
+    ],
+    "masteries": ["Example mastery A", "Example mastery B"],
+    "maxHpByLevel": [8, 9, 10, 11, 12],
+    "handSize": 9
+  },
+  {
+    "key": "example-scout",
+    "name": "Example Scout",
+    "starting": true,
+    "perks": [{ "text": "Example scout perk", "boxes": 3, "linked": false }],
+    "masteries": ["Example scout mastery"],
+    "maxHpByLevel": null,
+    "handSize": null
+  },
+  {
+    "key": "example-hidden",
+    "name": "Example Locked Class",
+    "starting": false,
+    "perks": [],
+    "masteries": []
+  }
+]

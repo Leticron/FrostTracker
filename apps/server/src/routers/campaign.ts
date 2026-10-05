@@ -11,8 +11,18 @@ import {
 import { writeAudit } from '../audit.ts';
 import { sha256Hex } from '../auth/session.ts';
 import type { Tx } from '../db/client.ts';
-import { campaignMembers, campaigns, invites, users } from '../db/schema.ts';
+import {
+  campaignClassUnlocks,
+  campaignMembers,
+  campaigns,
+  characters,
+  gameDataSets,
+  invites,
+  users,
+} from '../db/schema.ts';
 import { generateInviteCode, redeemInvite } from '../services/invites.ts';
+import { latestDataSetId } from '../services/seed.ts';
+import { availableClassKeys } from '../services/campaign-data.ts';
 import { authedProcedure, requireMembership, router } from '../trpc/trpc.ts';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -45,7 +55,13 @@ export const campaignRouter = router({
     ctx.db.transaction(async (tx) => {
       const [c] = await tx
         .insert(campaigns)
-        .values({ name: input.name, partyName: input.partyName || null, createdBy: ctx.user.id })
+        .values({
+          name: input.name,
+          partyName: input.partyName || null,
+          createdBy: ctx.user.id,
+          // New campaigns pin the newest game data set; re-imports don't change running campaigns.
+          gameDataSetId: await latestDataSetId(tx),
+        })
         .returning();
       await tx
         .insert(campaignMembers)
@@ -60,7 +76,14 @@ export const campaignRouter = router({
   get: authedProcedure.input(campaignIdInput).query(async ({ ctx, input }) => {
     const { role } = await requireMembership(ctx, input.campaignId);
     const rows = await ctx.db.select().from(campaigns).where(eq(campaigns.id, input.campaignId));
-    return { campaign: rows[0]!, role };
+    const campaign = rows[0]!;
+    const [dataSet] = campaign.gameDataSetId
+      ? await ctx.db
+          .select({ id: gameDataSets.id, name: gameDataSets.name, version: gameDataSets.version })
+          .from(gameDataSets)
+          .where(eq(gameDataSets.id, campaign.gameDataSetId))
+      : [];
+    return { campaign, role, dataSet: dataSet ?? null };
   }),
 
   update: authedProcedure
@@ -266,6 +289,98 @@ export const campaignRouter = router({
             entity: 'invite',
             entityId: input.inviteId,
             action: 'revoke',
+          },
+        ]);
+        return { ok: true };
+      });
+    }),
+
+  /** Pin a game data set (only while no characters exist, so references stay consistent). */
+  setDataSet: authedProcedure
+    .input(campaignIdInput.extend({ dataSetId: z.uuid() }))
+    .mutation(async ({ ctx, input }) => {
+      await requireMembership(ctx, input.campaignId, 'host');
+      return ctx.db.transaction(async (tx) => {
+        const [c] = await tx
+          .select()
+          .from(campaigns)
+          .where(eq(campaigns.id, input.campaignId))
+          .for('update');
+        const [set] = await tx
+          .select({ id: gameDataSets.id })
+          .from(gameDataSets)
+          .where(eq(gameDataSets.id, input.dataSetId));
+        if (!set) throw new TRPCError({ code: 'NOT_FOUND', message: 'Data set not found' });
+        if (c!.gameDataSetId && c!.gameDataSetId !== input.dataSetId) {
+          const [{ n } = { n: 0 }] = await tx
+            .select({ n: count() })
+            .from(characters)
+            .where(eq(characters.campaignId, input.campaignId));
+          if (n > 0) {
+            throw new TRPCError({
+              code: 'BAD_REQUEST',
+              message: 'Switching game data with existing characters is not supported yet',
+            });
+          }
+        }
+        await tx
+          .update(campaigns)
+          .set({ gameDataSetId: input.dataSetId, version: c!.version + 1 })
+          .where(eq(campaigns.id, input.campaignId));
+        await writeAudit(tx, ctx.user.id, [
+          {
+            campaignId: input.campaignId,
+            entity: 'campaign',
+            entityId: input.campaignId,
+            action: 'set_data_set',
+            before: { gameDataSetId: c!.gameDataSetId },
+            after: { gameDataSetId: input.dataSetId },
+          },
+        ]);
+        return { ok: true };
+      });
+    }),
+
+  /** Class unlocks (new classes become available for character creation). RULE: R-CHAR-22 */
+  classUnlocks: authedProcedure.input(campaignIdInput).query(async ({ ctx, input }) => {
+    await requireMembership(ctx, input.campaignId);
+    const [c] = await ctx.db.select().from(campaigns).where(eq(campaigns.id, input.campaignId));
+    if (!c?.gameDataSetId) return [];
+    const classes = await availableClassKeys(ctx.db, input.campaignId, c.gameDataSetId);
+    return classes.map((k) => ({
+      key: k.key,
+      name: k.name,
+      starting: k.starting,
+      unlocked: k.unlocked,
+    }));
+  }),
+
+  setClassUnlocked: authedProcedure
+    .input(campaignIdInput.extend({ classKey: z.string().min(1), unlocked: z.boolean() }))
+    .mutation(async ({ ctx, input }) => {
+      await requireMembership(ctx, input.campaignId, 'host');
+      return ctx.db.transaction(async (tx) => {
+        if (input.unlocked) {
+          await tx
+            .insert(campaignClassUnlocks)
+            .values({ campaignId: input.campaignId, classKey: input.classKey })
+            .onConflictDoNothing();
+        } else {
+          await tx
+            .delete(campaignClassUnlocks)
+            .where(
+              and(
+                eq(campaignClassUnlocks.campaignId, input.campaignId),
+                eq(campaignClassUnlocks.classKey, input.classKey),
+              ),
+            );
+        }
+        await writeAudit(tx, ctx.user.id, [
+          {
+            campaignId: input.campaignId,
+            entity: 'class_unlock',
+            entityId: input.classKey,
+            action: input.unlocked ? 'unlock_class' : 'lock_class',
           },
         ]);
         return { ok: true };

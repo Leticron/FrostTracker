@@ -1,4 +1,4 @@
-import { bootstrapAdmin } from './bootstrap.ts';
+import { autoImportSeed, bootstrapAdmin } from './bootstrap.ts';
 import { buildApp } from './app.ts';
 import { AttemptLimiter } from './auth/rate-limit.ts';
 import { purgeExpiredSessions } from './auth/session.ts';
@@ -20,6 +20,7 @@ const app = await buildApp({
 
 app.log.info('Database migrations applied');
 await bootstrapAdmin(db, config, app.log);
+await autoImportSeed(db, config.SEED_DIR, app.log);
 
 const purge = setInterval(
   () => {

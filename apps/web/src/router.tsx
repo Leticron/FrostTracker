@@ -16,7 +16,10 @@ import {
   CampaignListPage,
   NewCampaignPage,
 } from './routes/campaigns.tsx';
+import { CharacterHistoryPage, CharacterPage } from './routes/character.tsx';
 import { MembersPage } from './routes/members.tsx';
+import { NewCharacterPage, PartyPage } from './routes/party.tsx';
+import { AdminPage, ClassEditorPage, SettingsPage } from './routes/settings.tsx';
 import { ProfilePage } from './routes/profile.tsx';
 import { queryClient, trpc } from './trpc.ts';
 
@@ -96,11 +99,7 @@ const adminRoute = createRoute({
   beforeLoad: ({ context }) => {
     if (!context.user.isSiteAdmin) throw redirect({ to: '/' });
   },
-  component: () => (
-    <main className="mx-auto max-w-3xl px-4 py-6">
-      <Placeholder title={i18n.t('nav.admin')} />
-    </main>
-  ),
+  component: AdminPage,
 });
 
 const campaignRoute = createRoute({
@@ -130,7 +129,51 @@ const membersRoute = createRoute({
   },
 });
 
-const placeholderTabs = ['scenarios', 'map', 'sessions', 'party', 'outpost', 'history'] as const;
+function campaignPage<const P extends string>(
+  path: P,
+  render: (campaignId: string) => React.ReactNode,
+) {
+  return createRoute({
+    getParentRoute: () => campaignRoute,
+    path,
+    component: function CampaignPage() {
+      const { campaignId } = campaignRoute.useParams();
+      return render(campaignId);
+    },
+  });
+}
+
+const partyRoute = campaignPage('/party', (id) => <PartyPage campaignId={id} />);
+const newCharacterRoute = campaignPage('/characters/new', (id) => (
+  <NewCharacterPage campaignId={id} />
+));
+const characterRoute = createRoute({
+  getParentRoute: () => campaignRoute,
+  path: '/characters/$characterId',
+  component: function Character() {
+    const { campaignId, characterId } = characterRoute.useParams();
+    return <CharacterPage key={characterId} campaignId={campaignId} characterId={characterId} />;
+  },
+});
+const characterHistoryRoute = createRoute({
+  getParentRoute: () => campaignRoute,
+  path: '/characters/$characterId/history',
+  component: function CharacterHistory() {
+    const { characterId } = characterHistoryRoute.useParams();
+    return <CharacterHistoryPage characterId={characterId} />;
+  },
+});
+const settingsRoute = campaignPage('/settings', (id) => <SettingsPage campaignId={id} />);
+const classEditorRoute = createRoute({
+  getParentRoute: () => campaignRoute,
+  path: '/settings/classes/$classKey',
+  component: function ClassEditor() {
+    const { campaignId, classKey } = classEditorRoute.useParams();
+    return <ClassEditorPage campaignId={campaignId} classKey={classKey} />;
+  },
+});
+
+const placeholderTabs = ['scenarios', 'map', 'sessions', 'outpost', 'history'] as const;
 const tabKey = { history: 'audit' } as Record<string, string>;
 const placeholderRoutes = placeholderTabs.map((tab) =>
   createRoute({
@@ -151,7 +194,17 @@ const routeTree = rootRoute.addChildren([
     newCampaignRoute,
     profileRoute,
     adminRoute,
-    campaignRoute.addChildren([campaignIndexRoute, membersRoute, ...placeholderRoutes]),
+    campaignRoute.addChildren([
+      campaignIndexRoute,
+      membersRoute,
+      partyRoute,
+      newCharacterRoute,
+      characterRoute,
+      characterHistoryRoute,
+      settingsRoute,
+      classEditorRoute,
+      ...placeholderRoutes,
+    ]),
   ]),
 ]);
 
