@@ -95,6 +95,7 @@ const tabs = [
   { to: '/c/$campaignId/party', key: 'party' },
   { to: '/c/$campaignId/outpost', key: 'outpost' },
   { to: '/c/$campaignId/members', key: 'members' },
+  { to: '/c/$campaignId/settings', key: 'settings' },
   { to: '/c/$campaignId/history', key: 'audit' },
 ] as const;
 

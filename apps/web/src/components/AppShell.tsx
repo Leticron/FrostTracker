@@ -26,6 +26,25 @@ export function AppShell() {
     setThemeChoice(next);
   };
 
+  const themeLabel = t(`nav.theme${theme[0]!.toUpperCase()}${theme.slice(1)}` as 'nav.themeSystem');
+  const linkClass =
+    'flex min-h-12 items-center rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800';
+  const accountLinks = (
+    <>
+      {me?.isSiteAdmin && (
+        <Link to="/admin" className={linkClass}>
+          {t('nav.admin')}
+        </Link>
+      )}
+      <Link to="/profile" className={linkClass}>
+        {me?.displayName ?? t('nav.profile')}
+      </Link>
+      <button type="button" onClick={() => logout.mutate()} className={`${linkClass} text-left`}>
+        {t('nav.logout')}
+      </button>
+    </>
+  );
+
   return (
     <div className="min-h-dvh">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
@@ -37,31 +56,23 @@ export function AppShell() {
             type="button"
             onClick={cycleTheme}
             className="min-h-12 rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800"
-            aria-label={t('nav.theme')}
+            aria-label={`${t('nav.theme')}: ${themeLabel}`}
+            title={`${t('nav.theme')}: ${themeLabel}`}
           >
-            {t(`nav.theme${theme[0]!.toUpperCase()}${theme.slice(1)}` as 'nav.themeSystem')}
+            <span aria-hidden className="text-lg">
+              {theme === 'dark' ? '☾' : theme === 'light' ? '☀' : '◐'}
+            </span>
           </button>
-          {me?.isSiteAdmin && (
-            <Link
-              to="/admin"
-              className="min-h-12 content-center rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800"
-            >
-              {t('nav.admin')}
-            </Link>
-          )}
-          <Link
-            to="/profile"
-            className="min-h-12 content-center rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800"
-          >
-            {me?.displayName ?? t('nav.profile')}
-          </Link>
-          <button
-            type="button"
-            onClick={() => logout.mutate()}
-            className="min-h-12 rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800"
-          >
-            {t('nav.logout')}
-          </button>
+          {/* Phones: account links in a menu; wider screens: inline. */}
+          <details className="relative sm:hidden">
+            <summary className="flex min-h-12 cursor-pointer list-none items-center rounded-lg px-3 text-sm hover:bg-slate-200 dark:hover:bg-slate-800">
+              ☰ <span className="sr-only">{t('nav.menu')}</span>
+            </summary>
+            <div className="absolute right-0 z-30 mt-1 flex w-48 flex-col rounded-xl border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-800 dark:bg-slate-900">
+              {accountLinks}
+            </div>
+          </details>
+          <div className="hidden items-center sm:flex">{accountLinks}</div>
         </div>
       </header>
       <Outlet />

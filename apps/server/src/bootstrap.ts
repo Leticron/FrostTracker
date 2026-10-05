@@ -5,6 +5,7 @@ import type { Config } from './config.ts';
 import type { Db } from './db/client.ts';
 import { users } from './db/schema.ts';
 import { writeAudit } from './audit.ts';
+import { importSeed, latestDataSetId, readSeedDir, SeedError } from './services/seed.ts';
 
 /**
  * Creates the first site admin from ADMIN_USERNAME / ADMIN_PASSWORD(_FILE) when no site admin
@@ -50,4 +51,18 @@ export async function bootstrapAdmin(db: Db, config: Config, log: FastifyBaseLog
     await writeAudit(tx, null, [{ entity: 'user', entityId: u!.id, action: 'bootstrap_admin' }]);
     log.info({ username }, 'Created site admin');
   });
+}
+
+/** On a fresh install, imports the mounted seed once so campaigns have game data right away. */
+export async function autoImportSeed(db: Db, seedDir: string, log: FastifyBaseLogger) {
+  if (await latestDataSetId(db)) return;
+  try {
+    const data = await readSeedDir(seedDir);
+    const set = await db.transaction((tx) => importSeed(tx, data, null));
+    log.info({ name: set.name, version: set.version }, 'Imported game data seed');
+  } catch (err) {
+    if (err instanceof SeedError)
+      log.warn({ dir: seedDir, reason: err.message }, 'No game data imported');
+    else throw err;
+  }
 }

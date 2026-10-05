@@ -1,3 +1,14 @@
 {
-  "calendar": { "weeksPerSeason": 3, "seasons": ["summer", "winter"] }
+  "calendar": { "weeksPerSeason": 3, "seasons": ["summer", "winter"] },
+  "resources": [
+    { "key": "wood", "name": "Wood", "kind": "material" },
+    { "key": "stone", "name": "Stone", "kind": "material" },
+    { "key": "moss", "name": "Moss", "kind": "herb" },
+    { "key": "berry", "name": "Berry", "kind": "herb" }
+  ],
+  "levels": { "xpThresholds": [0, 10, 25, 50, 80] },
+  "checkmarks": { "perPerkMark": 2, "max": 8 },
+  "startingGold": { "perProsperityLevel": 5, "base": 7 },
+  "prosperity": { "thresholds": [3, 7, 12, null] },
+  "retirement": { "prosperityGain": 1 }
 }

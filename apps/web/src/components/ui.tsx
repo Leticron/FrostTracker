@@ -42,12 +42,12 @@ export function Field({ label, children }: { label: string; children: ReactNode 
 const inputClass =
   'min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/30 dark:border-slate-700 dark:bg-slate-900';
 
-export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
-  return <input className={inputClass} {...props} />;
+export function Input({ className = '', ...props }: InputHTMLAttributes<HTMLInputElement>) {
+  return <input className={`${inputClass} ${className}`} {...props} />;
 }
 
-export function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
-  return <select className={inputClass} {...props} />;
+export function Select({ className = '', ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
+  return <select className={`${inputClass} ${className}`} {...props} />;
 }
 
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {

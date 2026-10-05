@@ -1,0 +1,18 @@
+[
+  {
+    "number": 1,
+    "name": "Example Boots",
+    "type": "feet",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 2,
+    "name": "Example Charm",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  }
+]

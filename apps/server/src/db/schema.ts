@@ -1,4 +1,5 @@
 import { sql } from 'drizzle-orm';
+import type { PerkDef, ResourceBag, RuleTables } from '@fht/shared';
 import {
   boolean,
   index,
@@ -73,6 +74,65 @@ export const oidcIdentities = pgTable(
   (t) => [primaryKey({ columns: [t.issuer, t.subject] })],
 );
 
+// ---------------------------------------------------------------- game data (from seeds)
+
+export const gameDataSets = pgTable('game_data_sets', {
+  id: uuid().primaryKey().defaultRandom(),
+  name: text().notNull(),
+  version: text().notNull(),
+  locale: text().notNull(),
+  ruleTables: jsonb().$type<RuleTables>().notNull(),
+  importedBy: uuid().references(() => users.id, { onDelete: 'set null' }),
+  importedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+});
+
+export const classDefs = pgTable(
+  'class_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    key: text().notNull(),
+    name: text().notNull(),
+    starting: boolean().notNull().default(false),
+    perks: jsonb().$type<PerkDef[]>().notNull().default([]),
+    masteries: jsonb().$type<string[]>().notNull().default([]),
+    maxHpByLevel: jsonb().$type<number[] | null>(),
+    handSize: integer(),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.key] })],
+);
+
+export const itemDefs = pgTable(
+  'item_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    name: text().notNull(),
+    type: text(),
+    goldCost: integer(),
+    craftCostCount: integer(),
+    quantity: integer(),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.number] })],
+);
+
+export const personalQuestDefs = pgTable(
+  'personal_quest_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    name: text().notNull(),
+    envelope: text(),
+    altEnvelope: text(),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.number] })],
+);
+
 // ---------------------------------------------------------------- campaigns
 
 export const campaignRole = pgEnum('campaign_role', ['host', 'player']);
@@ -82,6 +142,11 @@ export const campaigns = pgTable('campaigns', {
   name: text().notNull(),
   partyName: text(),
   createdBy: uuid().references(() => users.id, { onDelete: 'set null' }),
+  gameDataSetId: uuid().references(() => gameDataSets.id, { onDelete: 'restrict' }),
+  /** Marked prosperity boxes (level is derived from the rule tables). */
+  prosperityChecks: integer().notNull().default(0),
+  /** Frosthaven supply: resource key -> amount. */
+  supply: jsonb().$type<ResourceBag>().notNull().default({}),
   version: integer().notNull().default(1),
   ...timestamps,
 });
@@ -122,6 +187,88 @@ export const invites = pgTable(
     createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index('invites_campaign_idx').on(t.campaignId)],
+);
+
+export const campaignClassUnlocks = pgTable(
+  'campaign_class_unlocks',
+  {
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    classKey: text().notNull(),
+    unlockedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.campaignId, t.classKey] })],
+);
+
+// ---------------------------------------------------------------- characters
+
+export const characterStatus = pgEnum('character_status', [
+  'active',
+  'set_aside',
+  'abandoned',
+  'retired',
+  'dead',
+]);
+
+export const characters = pgTable(
+  'characters',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    ownerUserId: uuid()
+      .notNull()
+      .references(() => users.id, { onDelete: 'restrict' }),
+    classKey: text().notNull(),
+    name: text().notNull(),
+    status: characterStatus().notNull().default('active'),
+    level: integer().notNull().default(1),
+    xp: integer().notNull().default(0),
+    gold: integer().notNull().default(0),
+    resources: jsonb().$type<ResourceBag>().notNull().default({}),
+    checkmarks: integer().notNull().default(0),
+    /** Marked boxes per perk, in class perk order. */
+    perkMarks: jsonb().$type<number[]>().notNull().default([]),
+    masteries: jsonb().$type<boolean[]>().notNull().default([]),
+    /** Perk marks granted at creation for the player's earlier retirements. */
+    bonusPerkMarks: integer().notNull().default(0),
+    personalQuestNumber: integer(),
+    personalQuestText: text(),
+    personalQuestProgress: text().notNull().default(''),
+    notes: text().notNull().default(''),
+    retiredAt: timestamp({ withTimezone: true }),
+    version: integer().notNull().default(1),
+    ...timestamps,
+  },
+  (t) => [
+    index('characters_campaign_idx').on(t.campaignId),
+    // RULE: R-CHAR-02 - one character per class at a time (set-aside characters still count).
+    uniqueIndex('characters_one_per_class_idx')
+      .on(t.campaignId, t.classKey)
+      .where(sql`${t.status} in ('active', 'set_aside')`),
+  ],
+);
+
+export const characterItems = pgTable(
+  'character_items',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    characterId: uuid()
+      .notNull()
+      .references(() => characters.id, { onDelete: 'cascade' }),
+    itemNumber: integer(),
+    name: text().notNull(),
+    createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index('character_items_character_idx').on(t.characterId),
+    // RULE: R-CHAR-15 - at most one copy of an item per character.
+    uniqueIndex('character_items_unique_idx')
+      .on(t.characterId, t.itemNumber)
+      .where(sql`${t.itemNumber} is not null`),
+  ],
 );
 
 // ---------------------------------------------------------------- audit log

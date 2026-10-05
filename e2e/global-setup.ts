@@ -29,6 +29,7 @@ export default async function globalSetup() {
       ADMIN_USERNAME: ADMIN.username,
       ADMIN_PASSWORD: ADMIN.password,
       ASSETS_DIR: '/nonexistent',
+      SEED_DIR: 'seed-example', // fictional data, auto-imported on first start
       LOG_LEVEL: 'warn',
     },
     stdio: 'inherit',
