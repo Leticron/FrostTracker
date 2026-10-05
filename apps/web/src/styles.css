@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+/* Dark mode follows the `dark` class on <html> (set from the OS preference or the user's choice). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+}
