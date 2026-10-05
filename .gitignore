@@ -1,3 +1,16 @@
 # docs/ contains copyrighted Cephalofair Games material (rule PDFs and
 # notes/extracts derived from them). No license - never commit anything here.
 docs/
+
+# Private game seed data is mounted at runtime, never committed
+seed/
+
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.env
+*.log
+.DS_Store
+dev-data/

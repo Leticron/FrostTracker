@@ -1,6 +1,6 @@
 # Frosthaven Campaign Tracker: Architecture & Data Model (Phase 2)
 
-Status: **proposal for review**. Nothing is implemented yet.
+Status: **approved 2026-10-05** with the default answers in §10. Phase 3 (skeleton) implements accounts, sessions, campaigns, roles and invites.
 
 > **Copyright note.** This repository contains **no** game content from Cephalofair Games: no rule text, scenario/section names, numbers taken from the books, or images.
 > The rule PDFs and everything derived from them (rules reference, scenario/section data) live outside the repository (the local `docs/` folder is gitignored, and seed data is mounted at runtime).
@@ -10,27 +10,27 @@ Status: **proposal for review**. Nothing is implemented yet.
 
 ## 1. Stack (versions checked on 2026-10-05 against npm / Docker Hub / nodejs.org)
 
-| Concern | Choice | Pinned version | Why |
-|---|---|---|---|
-| Runtime | Node.js **24 LTS** ("Krypton") | `node:24.21.0-alpine` | Current LTS line. Node 26 is not LTS yet |
-| Package manager / repo | pnpm workspaces (monorepo) | pnpm 12.9.1 (via corepack) | One repo for server, web and shared code. Strict dependency isolation |
-| Language | TypeScript, strict | **6.0.3** | TS 7.0 is out, but `typescript-eslint` 8.71 supports TS `<6.1` only, so we pin 6.0.x |
-| HTTP server | Fastify | 5.12.5 | Mainstream, fast, first-class TS, good plugin ecosystem (cookie, rate-limit, static, helmet) |
-| API | tRPC (Fastify adapter) + zod | @trpc/server 11.19.0, zod 4.6.5 | End-to-end types without codegen. zod validates every input. A few plain REST routes for health, assets, OIDC callback, seed export |
-| DB | PostgreSQL | `postgres:18.6-alpine` | Required by brief. Note: PG 18 image mounts data at `/var/lib/postgresql` (changed from `/data`) |
-| ORM / migrations | Drizzle ORM + drizzle-kit | 0.45.3 / 0.31.11 (+ `pg` 8.23.1) | Typed SQL, plain SQL migration files in git, simple programmatic migrator for startup. (Drizzle 1.0 is still RC → not used) |
-| Password hashing | Argon2id via `@node-rs/argon2` | 2.2.1 | Prebuilt native binaries (incl. musl/alpine), no node-gyp |
-| OIDC (feature flag) | `openid-client` | 6.8.8 | Certified client. Auth code + PKCE. Works with Authelia/Authentik |
-| Frontend | React SPA + Vite | react 19.3.0, vite 8.3.2, @vitejs/plugin-react 6.1.2 | SPA is enough (no SEO). Served by Fastify from the same container |
-| Routing / data | TanStack Router + TanStack Query (tRPC integration) | 1.170.41 / 5.104.1, @trpc/tanstack-react-query 11.19.0 | Type-safe routes, caching, optimistic +/- updates |
-| Styling | Tailwind CSS v4 + small own component set (Radix primitives where needed) | 4.3.3 | Fast mobile-first UI, dark mode via `prefers-color-scheme` + toggle |
-| PWA | vite-plugin-pwa (Workbox) | 2.0.0 | Installable, offline app shell. Data stays online-only (no offline writes in v1) |
-| Map | Leaflet with `CRS.Simple` + react-leaflet | 1.9.4 / 5.0.0 | Zoom/pan/touch on a plain image, markers in image coordinates |
-| i18n | i18next + react-i18next | 26.4.2 / 17.0.15 | English now. Keys structured so `de` can be added. The DE game glossary is ready locally |
-| Logging | pino (Fastify default) | 10.4.0 | JSON logs to stdout |
-| Tests | Vitest (unit + API), Testcontainers PostgreSQL (integration), Playwright (E2E incl. mobile viewport) | 5.0.3 / 12.2.0 / 1.63.0 | Real Postgres in integration tests. Docker is available on the dev box and in CI |
-| Lint / format | ESLint 10 + typescript-eslint 8.71, Prettier 3.9 | as listed | |
-| Reverse proxy | Traefik (existing) | latest stable v3.7.x | Labels per Traefik v3 docs (verified again in Phase 3) |
+| Concern                | Choice                                                                                               | Pinned version                                         | Why                                                                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Runtime                | Node.js **24 LTS** ("Krypton")                                                                       | `node:24.21.0-alpine`                                  | Current LTS line. Node 26 is not LTS yet                                                                                            |
+| Package manager / repo | pnpm workspaces (monorepo)                                                                           | pnpm 12.9.1 (via corepack)                             | One repo for server, web and shared code. Strict dependency isolation                                                               |
+| Language               | TypeScript, strict                                                                                   | **6.0.3**                                              | TS 7.0 is out, but `typescript-eslint` 8.71 supports TS `<6.1` only, so we pin 6.0.x                                                |
+| HTTP server            | Fastify                                                                                              | 5.12.5                                                 | Mainstream, fast, first-class TS, good plugin ecosystem (cookie, rate-limit, static, helmet)                                        |
+| API                    | tRPC (Fastify adapter) + zod                                                                         | @trpc/server 11.19.0, zod 4.6.5                        | End-to-end types without codegen. zod validates every input. A few plain REST routes for health, assets, OIDC callback, seed export |
+| DB                     | PostgreSQL                                                                                           | `postgres:18.6-alpine`                                 | Required by brief. Note: PG 18 image mounts data at `/var/lib/postgresql` (changed from `/data`)                                    |
+| ORM / migrations       | Drizzle ORM + drizzle-kit                                                                            | 0.45.3 / 0.31.11 (+ `pg` 8.23.1)                       | Typed SQL, plain SQL migration files in git, simple programmatic migrator for startup. (Drizzle 1.0 is still RC → not used)         |
+| Password hashing       | Argon2id via `@node-rs/argon2`                                                                       | 2.2.1                                                  | Prebuilt native binaries (incl. musl/alpine), no node-gyp                                                                           |
+| OIDC (feature flag)    | `openid-client`                                                                                      | 6.8.8                                                  | Certified client. Auth code + PKCE. Works with Authelia/Authentik                                                                   |
+| Frontend               | React SPA + Vite                                                                                     | react 19.3.0, vite 8.3.2, @vitejs/plugin-react 6.1.2   | SPA is enough (no SEO). Served by Fastify from the same container                                                                   |
+| Routing / data         | TanStack Router + TanStack Query (tRPC integration)                                                  | 1.170.41 / 5.104.1, @trpc/tanstack-react-query 11.19.0 | Type-safe routes, caching, optimistic +/- updates                                                                                   |
+| Styling                | Tailwind CSS v4 + small own component set (Radix primitives where needed)                            | 4.3.3                                                  | Fast mobile-first UI, dark mode via `prefers-color-scheme` + toggle                                                                 |
+| PWA                    | vite-plugin-pwa (Workbox)                                                                            | 2.0.0                                                  | Installable, offline app shell. Data stays online-only (no offline writes in v1)                                                    |
+| Map                    | Leaflet with `CRS.Simple` + react-leaflet                                                            | 1.9.4 / 5.0.0                                          | Zoom/pan/touch on a plain image, markers in image coordinates                                                                       |
+| i18n                   | i18next + react-i18next                                                                              | 26.4.2 / 17.0.15                                       | English now. Keys structured so `de` can be added. The DE game glossary is ready locally                                            |
+| Logging                | pino (Fastify default)                                                                               | 10.4.0                                                 | JSON logs to stdout                                                                                                                 |
+| Tests                  | Vitest (unit + API), Testcontainers PostgreSQL (integration), Playwright (E2E incl. mobile viewport) | 5.0.3 / 12.2.0 / 1.63.0                                | Real Postgres in integration tests. Docker is available on the dev box and in CI                                                    |
+| Lint / format          | ESLint 10 + typescript-eslint 8.71, Prettier 3.9                                                     | as listed                                              |                                                                                                                                     |
+| Reverse proxy          | Traefik (existing)                                                                                   | latest stable v3.7.x                                   | Labels per Traefik v3 docs (verified again in Phase 3)                                                                              |
 
 **Alternatives considered:** Next.js (SSR not needed, heavier container); Prisma (bigger runtime and engine binary, less control over SQL); REST + OpenAPI (more boilerplate for a TS-only client). We can switch to REST later if a non-TS client is ever needed, because tRPC procedures map 1:1 to commands.
 
@@ -54,11 +54,11 @@ docker/          Dockerfile, compose files, backup script
 
 ## 2. Game data vs. code (copyright-driven split)
 
-| Lives in code (repo) | Lives in seed data (outside repo, mounted) |
-|---|---|
+| Lives in code (repo)                                                                                                                                                            | Lives in seed data (outside repo, mounted)                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Algorithms: availability computation, level-up rules, checkmark→perk math, prosperity level from checks, outpost step order, session application, etc. Each one cites a rule ID | All values that come from the books: XP thresholds, prosperity thresholds, scenario-level table, morale→defense table, preprinted calendar sections, scenarios, sections + effects, classes, buildings, items, personal quests, campaign sticker names |
-| Data model and generic effect types (`unlockScenario`, `lockOutScenario`, `gainCampaignSticker`, `adjust{prosperity,morale,…}`, `addCalendarSection`, …) | The concrete effects attached to each section |
-| Placeholder `seed-example/` with invented values (e.g. "Example Scenario A") | Real seed directory, imported by an admin |
+| Data model and generic effect types (`unlockScenario`, `lockOutScenario`, `gainCampaignSticker`, `adjust{prosperity,morale,…}`, `addCalendarSection`, …)                        | The concrete effects attached to each section                                                                                                                                                                                                          |
+| Placeholder `seed-example/` with invented values (e.g. "Example Scenario A")                                                                                                    | Real seed directory, imported by an admin                                                                                                                                                                                                              |
 
 Unit tests run against **fixture tables** in the test files (deliberately not the real values), so CI never needs the copyrighted data.
 **→ Question P2-1 below**: are the purely numeric tables OK to commit as code? (Default: no, keep them in seed.)
@@ -120,6 +120,7 @@ erDiagram
 ### Key tables (abridged; all have `id uuid`, `created_at`, `updated_at`, and a `version int` for optimistic locking where edited)
 
 **Accounts**
+
 - `user`: `username` (unique, citext), `email` (unique, nullable), `password_hash` (nullable when OIDC-only), `display_name`, `is_site_admin`, `locale`, `theme`, `disabled_at`.
 - `session`: `token_hash` (SHA-256 of a random 32-byte token, PK), `user_id`, `expires_at`, `last_seen_at`, `user_agent`, `ip`.
 - `oidc_identity`: `issuer`, `subject` (unique pair), `user_id`.
@@ -127,6 +128,7 @@ erDiagram
 - `invite`: `campaign_id`, `code_hash`, `role`, `expires_at`, `max_uses`, `uses`, `revoked_at`.
 
 **Reference data** (one `game_data_set` per imported seed. Campaigns pin one set, so a re-import doesn't silently change a running campaign. Migrating a campaign to a new set is an explicit action)
+
 - `rule_tables`: one JSON document validated by zod (XP thresholds, prosperity thresholds, scenario-level table, morale→defense table, preprinted calendar, starting gold formula params, …) – R-CHAR-03, R-CAMP-04/05/08, R-SCN-13.
 - `scenario_def`: `number`, `name`, `map_coord`, `region`, `complexity?`, `requirements jsonb` (`[{campaignSticker, minCount?}] | [{freeText}]`), `conclusion_sections text[]`, `initially_unlocked`, **`marker_x`, `marker_y`** (0–1 relative to the map image, set in marker mode), `marker_layer` (`world` | `town`).
 - `section_def`: `ref` (e.g. "12.3"), `title`, `scenario_number?`, `effects jsonb` (typed effect list, §5), `text_excerpt?` (optional, from the private seed only).
@@ -135,6 +137,7 @@ erDiagram
 - `item_def`: number, name, type, gold cost?, craft cost?, quantity. `personal_quest_def`: number, name, envelope, alt envelope.
 
 **Campaign state**
+
 - `campaign`: `name`, `party_name`, `game_data_set_id`, `current_week` (0..), `prosperity_checks`, `morale`, `defense`, `soldiers`, `inspiration`, supply columns (`lumber`, `metal`, `hide`, `arrowvine`, `axenut`, `corpsecap`, `flamefruit`, `rockroot`, `snowthistle`), `morale_min_section`, `morale_max_section`, `variants jsonb` (casual/solo/permadeath/respec flags), `notes`.
   Derived (not stored): season, year, prosperity level, morale defense modifier, effective defense.
 - `campaign_scenario`: `scenario_number`, `status` ∈ {`unlocked`, `completed`, `locked_out`} (no row = locked), `times_completed`, `rewards_claimed`, `unlocked_by` (section ref / manual / treasure), `requirement_overrides jsonb` (host "treat as met").
@@ -144,11 +147,13 @@ erDiagram
 - `treasure_looted`, `item_supply` (available counts), `alchemy_reveal`, `event_deck_change` (deck, event id, add/remove).
 
 **Characters**
+
 - `character`: `campaign_id`, `owner_user_id`, `class_key`, `name`, `status` ∈ {`active`, `set_aside`, `abandoned`, `retired`, `dead`}, `level`, `xp`, `gold`, 9 resource columns, `checkmarks` (0–18), `perk_marks jsonb` (marks per perk box), `masteries_achieved bool[]`, `bonus_perk_marks` (from previous retirements), `personal_quest_number?`, `personal_quest_progress text`, `notes`, `retired_at`.
   Partial unique index: one character per (`campaign_id`, `class_key`) where status ∈ {active, set_aside} – R-CHAR-02.
 - `character_item`: `item_number?` or `free_text`, unique (`character_id`, `item_number`) – R-CHAR-15.
 
 **Play & history**
+
 - `play_session`: `date`, `scenario_number?`, `scenario_level`, `outcome` ∈ {`completed`, `lost`}, `lost_choice` ∈ {`return`, `replay`}, `casual`, `road_event_note`, `notes`, `status` ∈ {`draft`, `applied`, `reverted`}.
 - `session_participant`: `character_id`, `coins`, `xp_from_dial`, `checkmarks`, `new_masteries int[]`, `looted_resources jsonb`, `applied_delta jsonb` (exactly what was added, so a session can be reverted).
 - `outpost_phase`: `week`, `current_step` (1–5), per-step notes/flags (event drawn, attack result, …).
@@ -156,6 +161,7 @@ erDiagram
 - `audit_entry`: `campaign_id`, `character_id?`, `actor_user_id`, `at`, `entity`, `entity_id`, `action`, `before jsonb`, `after jsonb`, `group_id` (one user action that touches several rows), `reverted_by?`.
 
 ### Audit & revert design
+
 All writes go through **command handlers** (one per tRPC mutation). Each handler runs in a transaction, loads the affected rows, applies the change, and writes `audit_entry` rows with before/after snapshots of the changed fields, grouped by `group_id`.
 **Revert** = apply the `before` values of a group, but only if the current values still equal its `after` values (otherwise a conflict is shown and the user resolves it manually). A revert is itself audited.
 Players can revert their own character's entries. Hosts can revert anything in their campaign.
@@ -191,6 +197,7 @@ personal-quests.json   [{ number, name, envelope?, altEnvelope? }]
 `unlockScenario {scenario, link?: "linked"|"forced", condition?}` · `lockOutScenario {scenario}` · `chooseOne {options: Effect[]}` · `gainCampaignSticker {name}` · `loseCampaignSticker {name}` · `adjust {target: "morale"|"prosperity"|"inspiration"|"soldiers"|"defense", amount}` · `setMorale {formula?}` · `addCalendarSection {section, weeksAhead}` · `eventDeck {deck, events[], op}` · `unlockClass {}` (host picks) · `openEnvelope {id}` · `readSection {ref}` · `manual {note}` (anything not machine-applicable).
 
 Where seed data lives:
+
 - **Repo:** `seed-example/` (fictional data, for dev, tests and the E2E test).
 - **Server:** mounted volume `/data/seed` (Unraid: `/mnt/user/appdata/frosthaven-tracker/seed`). On first start with an empty DB the app imports it automatically if present. Later imports and exports happen from the admin UI. The draft seed I generated in Phase 1 (local `docs/data/`) will be converted to this format; it never enters git.
 - Map/marker positions edited in the UI are exported back into `scenarios.json` (so they survive a re-import).
@@ -199,21 +206,21 @@ Where seed data lives:
 
 ## 6. API outline (tRPC routers; all inputs zod-validated, all procedures authenticated unless noted)
 
-| Router | Procedures (q = query, m = mutation) | Authorization |
-|---|---|---|
-| `auth` | `register` m (public, can be disabled by env), `login` m (public, rate-limited), `logout` m, `me` q, `changePassword` m, `sessions` q / `revokeSession` m | — |
-| REST `/auth/oidc/*` | `start`, `callback` (feature flag `OIDC_ENABLED`) | public |
-| `campaign` | `list` q, `create` m, `get` q, `update` m, `members` q, `setRole` m, `removeMember` m, `createInvite` m, `revokeInvite` m, `acceptInvite` m | member / host |
-| `campaignState` | `get` q (incl. derived values), `adjust` m (`{field, delta}` for +/- counters, server clamps), `setValue` m, `stickers.add/remove` m, `calendar.advance` m, `calendar.addSection` m, `calendar.resolve` m, `treasure.mark` m | read: member, write: host |
-| `scenario` | `list` q (with computed availability), `get` q, `unlock` m, `lockOut` m, `setStatus` m (manual fix), `overrideRequirement` m | read: member, write: host |
-| `section` | `get` q (`"X.Y"` → effects preview), `apply` m (host may edit effects first), `history` q | host |
-| `session` | `list` q, `get` q, `createDraft` m, `update` m, `apply` m, `revert` m | read: member, write: host |
-| `outpost` | `current` q, `start` m, `completeStep` m, `building.build/upgrade/rebuild/damage/wreck/repair` m | host |
-| `character` | `list` q, `get` q, `create` m, `update` m, `adjust` m (+/- xp, gold, resources, checkmarks), `levelUp` m, `markPerk` m, `setMastery` m, `items.add/remove/sell` m, `transferResourcesToSupply` m, `setAside`/`abandon`/`retire` m, `history` q | read: member, edit: owner (+ host) |
-| `audit` | `list` q (campaign or character scope), `revert` m | owner for own character, host for campaign |
-| `catalog` | `get` q, `upsert*` m, `markers.set` m | read: member; write: site admin or host (see P2-3) |
-| `admin` | `users` q, `setAdmin`/`disable` m, `seed.import` m, `seed.export` (REST download) | site admin |
-| REST | `GET /healthz` (public), `GET /assets/*` (members only, from `/data/assets`), `GET /api/assets/manifest` | |
+| Router              | Procedures (q = query, m = mutation)                                                                                                                                                                                                           | Authorization                                      |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| `auth`              | `register` m (public, can be disabled by env), `login` m (public, rate-limited), `logout` m, `me` q, `changePassword` m, `sessions` q / `revokeSession` m                                                                                      | —                                                  |
+| REST `/auth/oidc/*` | `start`, `callback` (feature flag `OIDC_ENABLED`)                                                                                                                                                                                              | public                                             |
+| `campaign`          | `list` q, `create` m, `get` q, `update` m, `members` q, `setRole` m, `removeMember` m, `createInvite` m, `revokeInvite` m, `acceptInvite` m                                                                                                    | member / host                                      |
+| `campaignState`     | `get` q (incl. derived values), `adjust` m (`{field, delta}` for +/- counters, server clamps), `setValue` m, `stickers.add/remove` m, `calendar.advance` m, `calendar.addSection` m, `calendar.resolve` m, `treasure.mark` m                   | read: member, write: host                          |
+| `scenario`          | `list` q (with computed availability), `get` q, `unlock` m, `lockOut` m, `setStatus` m (manual fix), `overrideRequirement` m                                                                                                                   | read: member, write: host                          |
+| `section`           | `get` q (`"X.Y"` → effects preview), `apply` m (host may edit effects first), `history` q                                                                                                                                                      | host                                               |
+| `session`           | `list` q, `get` q, `createDraft` m, `update` m, `apply` m, `revert` m                                                                                                                                                                          | read: member, write: host                          |
+| `outpost`           | `current` q, `start` m, `completeStep` m, `building.build/upgrade/rebuild/damage/wreck/repair` m                                                                                                                                               | host                                               |
+| `character`         | `list` q, `get` q, `create` m, `update` m, `adjust` m (+/- xp, gold, resources, checkmarks), `levelUp` m, `markPerk` m, `setMastery` m, `items.add/remove/sell` m, `transferResourcesToSupply` m, `setAside`/`abandon`/`retire` m, `history` q | read: member, edit: owner (+ host)                 |
+| `audit`             | `list` q (campaign or character scope), `revert` m                                                                                                                                                                                             | owner for own character, host for campaign         |
+| `catalog`           | `get` q, `upsert*` m, `markers.set` m                                                                                                                                                                                                          | read: member; write: site admin or host (see P2-3) |
+| `admin`             | `users` q, `setAdmin`/`disable` m, `seed.import` m, `seed.export` (REST download)                                                                                                                                                              | site admin                                         |
+| REST                | `GET /healthz` (public), `GET /assets/*` (members only, from `/data/assets`), `GET /api/assets/manifest`                                                                                                                                       |                                                    |
 
 Every procedure resolves `ctx.user` and the campaign membership/role in middleware. Authorization helpers (`requireMember`, `requireHost`, `requireCharacterOwnerOrHost`) are used on **every** campaign/character procedure, and integration tests cover the denial cases.
 
@@ -241,8 +248,9 @@ Every procedure resolves `ctx.user` and the campaign membership/role in middlewa
 **User:** Campaign list (my campaigns, role badge, create campaign) · Profile (password, sessions, language, theme)
 
 **Campaign (players read-only, hosts edit):**
+
 1. **Dashboard**: week/season/year, prosperity (level + checks to next), morale + defense modifier, total defense, soldiers, inspiration, Frosthaven supply, campaign stickers, pending calendar sections, quick "+/-" tiles (host).
-2. **Scenarios**: tabs *Available · Completed · Blocked · Locked out*. Search by number/name. Detail shows requirements and their status, conclusion sections, what unlocked it, and link hints.
+2. **Scenarios**: tabs _Available · Completed · Blocked · Locked out_. Search by number/name. Detail shows requirements and their status, conclusion sections, what unlocked it, and link hints.
 3. **Map**: Leaflet map from `/data/assets` (world + town layers), markers coloured by status, tap → scenario detail. Without assets it shows a placeholder grid map using the scenario coordinates. **Host "place markers" mode**: pick a scenario, tap the map, save.
 4. **Sessions**: list, plus a **"Log a session" wizard**: scenario + level (recommended level suggested), participants, per-character results (coins, XP dial, checkmarks, masteries, looted resources), outcome (completed / lost → return or replay), then preview of all resulting changes → apply. After applying: "read conclusion section" shortcut and linked-scenario suggestion.
 5. **Read section**: enter "X.Y" → pre-filled effects (editable) → apply. Used for conclusions, events, calendar entries.
@@ -268,13 +276,21 @@ Large touch targets (≥ 48 px), +/- buttons with long-press repeat, optimistic 
 
 ---
 
-## 10. Questions for this checkpoint
+## 10. Decisions (Phase 2 checkpoint)
 
-| ID | Question | Default |
-|---|---|---|
-| P2-1 | Numeric rule tables (XP thresholds, scenario-level table, prosperity thresholds, morale→defense): may they be committed as code constants, or must they stay in the private seed like all other game data? | Keep them in the private seed (`rule-tables.json`). Code and tests use fixtures |
-| P2-2 | Self-registration: open registration, or invite-only (accounts only created via invite link or by admin)? | Invite-only + admin. `ALLOW_REGISTRATION=false` |
-| P2-3 | Who may edit reference data (catalogs, markers)? | Site admins **and** campaign hosts (single-group home server). Each change audited |
-| P2-4 | Character ability-card pool tracking (from Phase 1 Q-18) | Not in v1 |
-| P2-5 | Offline use at the table: PWA app shell only (needs network for data), or offline edits with sync later? | App shell only in v1 |
-| P2-6 | Several parallel campaigns on one instance (each with its own data set)? | Yes, supported by the model |
+All questions were answered with the defaults below (user, 2026-10-05).
+
+| ID   | Question                                                                                                                                                                                                   | Default                                                                            |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| P2-1 | Numeric rule tables (XP thresholds, scenario-level table, prosperity thresholds, morale→defense): may they be committed as code constants, or must they stay in the private seed like all other game data? | Keep them in the private seed (`rule-tables.json`). Code and tests use fixtures    |
+| P2-2 | Self-registration: open registration, or invite-only (accounts only created via invite link or by admin)?                                                                                                  | Invite-only + admin. `ALLOW_REGISTRATION=false`                                    |
+| P2-3 | Who may edit reference data (catalogs, markers)?                                                                                                                                                           | Site admins **and** campaign hosts (single-group home server). Each change audited |
+| P2-4 | Character ability-card pool tracking (from Phase 1 Q-18)                                                                                                                                                   | Not in v1                                                                          |
+| P2-5 | Offline use at the table: PWA app shell only (needs network for data), or offline edits with sync later?                                                                                                   | App shell only in v1                                                               |
+| P2-6 | Several parallel campaigns on one instance (each with its own data set)?                                                                                                                                   | Yes, supported by the model                                                        |
+
+Additional implementation notes from Phase 3:
+
+- The server and the internal packages run as TypeScript directly on Node 24 (built-in type stripping), so `tsc` only type-checks. Code uses erasable syntax only (no enums or parameter properties).
+- The deployment guide goes in `DEPLOYMENT.md` at the repo root, because `docs/` is private and gitignored.
+- pnpm 12 blocks dependency build scripts by default. The ones we don't need are explicitly denied in `pnpm-workspace.yaml` (`allowBuilds`).
