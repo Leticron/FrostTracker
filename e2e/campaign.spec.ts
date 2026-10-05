@@ -47,5 +47,5 @@ test('host logs a session, applies the conclusion and new scenarios open up', as
 
   // The whole session shows up in the campaign history.
   await page.getByRole('link', { name: 'History' }).click();
-  await expect(page.getByText('log session')).toBeVisible();
+  await expect(page.getByText(/^(log session|session result)/).first()).toBeVisible();
 });

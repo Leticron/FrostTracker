@@ -164,6 +164,9 @@ export const en = {
     unlock: 'Unlock',
     lock: 'Lock again',
     editClass: 'Edit class data',
+    moraleSections: 'Morale track sections',
+    moraleMin: 'At lowest morale',
+    moraleMax: 'At highest morale',
   },
   classEditor: {
     title: 'Class data',
