@@ -1,0 +1,61 @@
+# Production stack for Unraid (or any Docker host) behind an existing Traefik v3.
+# All settings come from .env (see .env.example). No ports are published to the host;
+# Traefik reaches the app over the external Traefik network.
+name: frosthaven-tracker
+
+services:
+  app:
+    build: .
+    image: frosthaven-tracker:${APP_VERSION:-local}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-frosthaven}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-frosthaven}
+      PUBLIC_URL: https://${APP_HOST:?set APP_HOST}
+      # The app port is reachable only through Docker networks, so trusting the private
+      # ranges means "trust Traefik". Narrow this to your Traefik network's subnet if you like.
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-10.0.0.0/8,172.16.0.0/12,192.168.0.0/16}
+      ALLOW_REGISTRATION: ${ALLOW_REGISTRATION:-false}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-30}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      - ${ASSETS_PATH:-/mnt/user/appdata/frosthaven-tracker/assets}:/data/assets:ro
+      - ${SEED_PATH:-/mnt/user/appdata/frosthaven-tracker/seed}:/data/seed:ro
+    networks:
+      - internal
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik}
+      - traefik.http.routers.frosthaven-tracker.rule=Host(`${APP_HOST}`)
+      - traefik.http.routers.frosthaven-tracker.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.frosthaven-tracker.tls.certresolver=${TRAEFIK_CERTRESOLVER:?set TRAEFIK_CERTRESOLVER}
+      - traefik.http.services.frosthaven-tracker.loadbalancer.server.port=3000
+
+  db:
+    image: postgres:18.6-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-frosthaven}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-frosthaven}
+    volumes:
+      # PostgreSQL 18+ images keep data under /var/lib/postgresql/<major>/docker.
+      - ${DB_PATH:-/mnt/user/appdata/frosthaven-tracker/db}:/var/lib/postgresql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - internal
+
+networks:
+  internal: {}
+  traefik:
+    external: true
+    name: ${TRAEFIK_NETWORK:-traefik}

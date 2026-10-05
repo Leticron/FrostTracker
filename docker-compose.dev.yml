@@ -1,0 +1,65 @@
+# Local development: PostgreSQL + the app in watch mode (API on :3000, Vite on :5173).
+#   docker compose -f docker-compose.dev.yml up
+# Then open http://localhost:5173 and sign in as dev-admin / dev-password-123.
+name: frosthaven-tracker-dev
+
+services:
+  db:
+    image: postgres:18.6-alpine
+    environment:
+      POSTGRES_USER: frosthaven
+      POSTGRES_PASSWORD: frosthaven
+      POSTGRES_DB: frosthaven
+    # No host port by default (5432 is often taken). To inspect the DB from the host, add:
+    # ports: ['127.0.0.1:55432:5432']
+    volumes:
+      - dev-db:/var/lib/postgresql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U frosthaven -d frosthaven']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    image: node:24.21.0-bookworm
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+      DATABASE_URL: postgres://frosthaven:frosthaven@db:5432/frosthaven
+      PUBLIC_URL: http://localhost:5173
+      ALLOW_REGISTRATION: 'true'
+      ADMIN_USERNAME: dev-admin
+      ADMIN_PASSWORD: dev-password-123
+      ASSETS_DIR: /app/dev-data/assets
+      SEED_DIR: /app/seed-example
+      LOG_LEVEL: debug
+      API_URL: http://localhost:3000
+      VITE_HOST: 0.0.0.0
+      npm_config_store_dir: /pnpm-store
+      CI: 'true'
+    command: sh -c "corepack enable && pnpm install --frozen-lockfile && pnpm dev"
+    ports:
+      - '127.0.0.1:5173:5173'
+      - '127.0.0.1:3000:3000'
+    volumes:
+      - .:/app
+      # Container-only dependencies: never mixed with node_modules installed on the host.
+      - dev-nm-root:/app/node_modules
+      - dev-nm-server:/app/apps/server/node_modules
+      - dev-nm-web:/app/apps/web/node_modules
+      - dev-nm-shared:/app/packages/shared/node_modules
+      - dev-nm-rules:/app/packages/rules/node_modules
+      - dev-pnpm-store:/pnpm-store
+
+volumes:
+  dev-db: {}
+  dev-nm-root: {}
+  dev-nm-server: {}
+  dev-nm-web: {}
+  dev-nm-shared: {}
+  dev-nm-rules: {}
+  dev-pnpm-store: {}
