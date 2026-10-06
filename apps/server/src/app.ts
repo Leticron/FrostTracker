@@ -79,7 +79,8 @@ export async function buildApp(opts: BuildAppOptions) {
     return { user: s.user, token };
   }
 
-  app.get('/healthz', async (_req, reply) => {
+  // Polled every 30 s by the Docker healthcheck; only failures are worth a log line.
+  app.get('/healthz', { logLevel: 'warn' }, async (_req, reply) => {
     try {
       await db.execute(sql`select 1`);
       return { status: 'ok' };
@@ -104,11 +105,15 @@ export async function buildApp(opts: BuildAppOptions) {
   } satisfies FastifyTRPCPluginOptions<AppRouter>);
 
   // Game graphics the owner mounted at ASSETS_DIR (never bundled). Signed-in users only.
+  const mediaFile = /\.(png|jpe?g|webp|avif|gif)$/i;
   if (existsSync(config.ASSETS_DIR)) {
     await app.register(async (scope) => {
       scope.addHook('onRequest', async (req, reply) => {
         const { user } = await resolveSession(req, reply);
         if (!user) return reply.code(401).send({ error: 'Unauthorized' });
+        // Images only: other files (HTML, SVG, ...) must not run on the app's origin.
+        if (!mediaFile.test(req.url.split('?')[0]!))
+          return reply.code(404).send({ error: 'Not found' });
       });
       await scope.register(fastifyStatic, {
         root: config.ASSETS_DIR,

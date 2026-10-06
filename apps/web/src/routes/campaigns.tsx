@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Link, Outlet, useNavigate } from '@tanstack/react-router';
+import { Link, Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router';
 import { useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Badge, Button, Card, ErrorText, Field, Input, PageTitle } from '../components/ui.tsx';
@@ -87,21 +87,30 @@ export function NewCampaignPage() {
   );
 }
 
+/** `phone`: shown in the bottom bar on phones; the rest sit behind "More". */
 const tabs = [
-  { to: '/c/$campaignId', key: 'dashboard', exact: true },
-  { to: '/c/$campaignId/scenarios', key: 'scenarios' },
+  { to: '/c/$campaignId', key: 'dashboard', exact: true, phone: true },
+  { to: '/c/$campaignId/scenarios', key: 'scenarios', phone: true },
   { to: '/c/$campaignId/map', key: 'map' },
-  { to: '/c/$campaignId/sessions', key: 'sessions' },
-  { to: '/c/$campaignId/party', key: 'party' },
+  { to: '/c/$campaignId/sessions', key: 'sessions', phone: true },
+  { to: '/c/$campaignId/party', key: 'party', phone: true },
   { to: '/c/$campaignId/outpost', key: 'outpost' },
   { to: '/c/$campaignId/members', key: 'members' },
   { to: '/c/$campaignId/settings', key: 'settings' },
   { to: '/c/$campaignId/history', key: 'audit' },
 ] as const;
 
+const tabClass =
+  'flex min-h-14 min-w-0 flex-1 items-center justify-center px-2 text-sm whitespace-nowrap text-slate-600 md:min-h-12 md:flex-none md:justify-start md:rounded-lg md:px-3 dark:text-slate-300';
+const activeTab = {
+  className: 'font-semibold text-sky-600 dark:text-sky-400 md:bg-sky-50 md:dark:bg-slate-900',
+};
+
 export function CampaignLayout({ campaignId }: { campaignId: string }) {
   const { t } = useTranslation();
   const q = useQuery(trpc.campaign.get.queryOptions({ campaignId }));
+  const [more, setMore] = useState(false);
+  const matchRoute = useMatchRoute();
   if (q.error) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-6">
@@ -109,11 +118,15 @@ export function CampaignLayout({ campaignId }: { campaignId: string }) {
       </main>
     );
   }
+  const secondary = tabs.filter((tab) => !('phone' in tab));
+  const moreActive = secondary.some((tab) =>
+    matchRoute({ to: tab.to, params: { campaignId }, fuzzy: true }),
+  );
   return (
     <div className="mx-auto flex max-w-5xl flex-col md:flex-row">
       <nav
         aria-label={q.data?.campaign.name}
-        className="fixed inset-x-0 bottom-0 z-20 flex overflow-x-auto border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom)] dark:border-slate-800 dark:bg-slate-950 md:static md:w-52 md:shrink-0 md:flex-col md:border-0 md:bg-transparent md:p-4 md:dark:bg-transparent"
+        className="fixed inset-x-0 bottom-0 z-20 flex border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom)] dark:border-slate-800 dark:bg-slate-950 md:static md:w-52 md:shrink-0 md:flex-col md:border-0 md:bg-transparent md:p-4 md:dark:bg-transparent"
       >
         <div className="hidden px-3 pb-3 md:block">
           <div className="font-semibold">{q.data?.campaign.name}</div>
@@ -125,15 +138,40 @@ export function CampaignLayout({ campaignId }: { campaignId: string }) {
             to={tab.to}
             params={{ campaignId }}
             activeOptions={{ exact: 'exact' in tab }}
-            className="flex min-h-14 min-w-20 flex-1 items-center justify-center px-3 text-sm whitespace-nowrap text-slate-600 md:min-h-12 md:flex-none md:justify-start md:rounded-lg dark:text-slate-300"
-            activeProps={{
-              className:
-                'font-semibold text-sky-600 dark:text-sky-400 md:bg-sky-50 md:dark:bg-slate-900',
-            }}
+            className={`${tabClass} ${'phone' in tab ? '' : 'hidden md:flex'}`}
+            activeProps={activeTab}
           >
             {t(`campaign.${tab.key}`)}
           </Link>
         ))}
+        <button
+          type="button"
+          aria-expanded={more}
+          aria-controls="more-tabs"
+          onClick={() => setMore(!more)}
+          className={`${tabClass} md:hidden ${moreActive ? activeTab.className : ''}`}
+        >
+          {t('campaign.more')}
+        </button>
+        {more && (
+          <div
+            id="more-tabs"
+            className="absolute right-2 bottom-full mb-2 flex w-56 flex-col rounded-2xl border border-slate-200 bg-white p-1 shadow-lg md:hidden dark:border-slate-800 dark:bg-slate-900"
+          >
+            {secondary.map((tab) => (
+              <Link
+                key={tab.key}
+                to={tab.to}
+                params={{ campaignId }}
+                onClick={() => setMore(false)}
+                className="flex min-h-12 items-center rounded-xl px-4 text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                activeProps={{ className: 'font-semibold text-sky-600 dark:text-sky-400' }}
+              >
+                {t(`campaign.${tab.key}`)}
+              </Link>
+            ))}
+          </div>
+        )}
       </nav>
       <main className="min-w-0 flex-1 px-4 pt-6 pb-24 md:pb-6">
         <Outlet />

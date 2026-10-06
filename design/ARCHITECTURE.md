@@ -301,3 +301,19 @@ Phase 6 notes (map):
 - Markers are stored on `scenario_def` (per data set). A seed import keeps the newest earlier data set's markers for scenarios the seed has none for.
 - Grid suggestions (`@fht/rules` `fitGrid`): least-squares fit per axis from placed markers. The rules don't say whether letters run along x or y, so both are tried and the closer fit wins. The placeholder grid draws letters as columns.
 - Leaflet is loaded lazily with the map route. Markers shrink to dots while the image is shown narrower than 600 px.
+
+Phase 7 notes (hardening):
+
+- **Images**: CI publishes `ghcr.io/leticron/frosttracker` (`latest` + `sha-…` on `main`, semver tags on `v*`) after all checks pass. `docker-compose.yml` pulls it; `docker-compose.build.yml` builds from source. npm/corepack are removed from the runtime image.
+- **Backups**: a `backup` service (same `postgres` image as the database, so `pg_dump` matches) with the script inline in the compose file (`configs.content`), so a Compose Manager stack needs no other repo files. Daily dump at `BACKUP_TIME`, retention `BACKUP_KEEP_DAYS`, catch-up dump at start, `restore` keeps a `-before-restore` dump. Tested end to end: backup → change → restore → recreate containers.
+- **Maintenance CLI** (`apps/server/src/cli.ts`): `reset-password`, `make-admin`, both audited.
+- **OIDC**: not implemented (user decision, Phase 7). The `oidc_identities` table (issuer + subject) is already in the schema; Traefik forward-auth can protect the site meanwhile.
+- **Security review** (2026-10-06):
+  - Every tRPC procedure except `auth.me/register/login/logout` rejects anonymous calls (generic test over the router). Each campaign/character procedure checks membership and role (reviewed procedure by procedure).
+  - Fixed: `scenario.sources` was readable by players (spoilers) → host only.
+  - Fixed: the common-password check from §7 was missing → `passwordProblem` in `@fht/shared` (common list, repeats, sequences), also for `ADMIN_PASSWORD`.
+  - Fixed: internal error messages (e.g. database errors) were sent to clients → masked in production.
+  - Fixed: `/media` served any file type → images only (no HTML/SVG on the app origin).
+  - Checked on the running container: CSP, HSTS, `nosniff`, frame and referrer headers; `__Host-` session cookie with HttpOnly/Secure/SameSite=Lax; cross-origin POST → 403.
+  - `pnpm audit --prod`: no known vulnerabilities. One moderate advisory in a dev-only tool (old esbuild inside `drizzle-kit`, only used to generate migrations, not in the image) is accepted.
+  - Accepted: `TRUSTED_PROXIES` defaults to private ranges (documented; narrow it if untrusted containers share the Traefik network).

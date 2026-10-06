@@ -73,11 +73,14 @@ export const scenarioRouter = router({
     return { role, scenarios: role === 'host' ? list : list.filter((s) => s.status !== 'locked') };
   }),
 
-  /** Which sections unlock/lock a scenario and with which link type (from section data). */
+  /**
+   * Which sections unlock/lock a scenario and with which link type (from section data).
+   * Host only: for players this would reveal where locked scenarios come from.
+   */
   sources: authedProcedure
     .input(campaignIdInput.extend({ scenario: z.number().int().min(0) }))
     .query(async ({ ctx, input }) => {
-      await requireMembership(ctx, input.campaignId);
+      await requireMembership(ctx, input.campaignId, 'host');
       const { dataSetId } = await campaignData(ctx.db, input.campaignId);
       const sections = await ctx.db
         .select()

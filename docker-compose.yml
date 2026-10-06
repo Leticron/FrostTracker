@@ -1,12 +1,13 @@
 # Production stack for Unraid (or any Docker host) behind an existing Traefik v3.
 # All settings come from .env (see .env.example). No ports are published to the host;
-# Traefik reaches the app over the external Traefik network.
+# Traefik reaches the app over the external Traefik network. This file and .env are all a
+# server needs; see DEPLOYMENT.md. To build the image from source instead of pulling it:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml up -d --build
 name: frosthaven-tracker
 
 services:
   app:
-    build: .
-    image: frosthaven-tracker:${APP_VERSION:-local}
+    image: ${APP_IMAGE:-ghcr.io/leticron/frosttracker}:${APP_VERSION:-latest}
     restart: unless-stopped
     depends_on:
       db:
@@ -53,6 +54,110 @@ services:
       retries: 10
     networks:
       - internal
+
+  # Daily pg_dump into the backups folder, with retention. Same image as the database, so
+  # pg_dump always matches the server version. Commands: `docker compose exec backup
+  # fht-backup now | list | restore FILE` (see DEPLOYMENT.md).
+  backup:
+    image: postgres:18.6-alpine
+    restart: unless-stopped
+    depends_on:
+      # After the app is healthy, so the startup backup includes the latest migrations.
+      app:
+        condition: service_healthy
+    entrypoint: ['fht-backup']
+    command: ['schedule']
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-frosthaven}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-frosthaven}
+      BACKUP_TIME: ${BACKUP_TIME:-03:30}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-14}
+      TZ: ${TZ:-UTC}
+    configs:
+      - source: fht-backup
+        target: /usr/local/bin/fht-backup
+        mode: 0555
+    volumes:
+      - ${BACKUP_PATH:-/mnt/user/appdata/frosthaven-tracker/backups}:/backups
+    networks:
+      - internal
+
+configs:
+  # Inline, so the stack needs no files besides this one and .env.
+  fht-backup:
+    content: |
+      #!/bin/sh
+      # FrostTracker database backups (runs in the `backup` service).
+      #   fht-backup schedule        daily pg_dump at BACKUP_TIME, keep BACKUP_KEEP_DAYS days
+      #   fht-backup now             one backup right away
+      #   fht-backup list            show the backups
+      #   fht-backup restore FILE    replace the database with a backup (stop the app first)
+      set -eu
+      export PGHOST=db PGUSER="$$POSTGRES_USER" PGPASSWORD="$$POSTGRES_PASSWORD" PGDATABASE="$$POSTGRES_DB"
+      dir=/backups
+      keep=$${BACKUP_KEEP_DAYS:-14}
+      at=$${BACKUP_TIME:-03:30}
+
+      backup() {
+        name="$$dir/frosthaven-$$(date -u +%Y%m%d-%H%M%SZ)$${1:-}.dump"
+        pg_dump --format=custom --file "$$name.partial"
+        mv "$$name.partial" "$$name"
+        echo "Backup written: $$name"
+      }
+
+      prune() {
+        find "$$dir" -maxdepth 1 -name 'frosthaven-*.dump' -mtime "+$$keep" -print -delete |
+          sed 's/^/Deleted old backup: /'
+      }
+
+      wait_for_db() {
+        until pg_isready -q; do sleep 2; done
+      }
+
+      case "$${1:-schedule}" in
+        schedule)
+          wait_for_db
+          # Catch up after downtime: back up now if the newest backup is older than a day.
+          if [ -z "$$(find "$$dir" -maxdepth 1 -name 'frosthaven-*.dump' -mmin -1440)" ]; then
+            backup || echo "Backup failed" >&2
+          fi
+          while :; do
+            now=$$(date +%s)
+            next=$$(date -d "$$(date +%Y-%m-%d) $$at" +%s)
+            [ "$$next" -gt "$$now" ] || next=$$((next + 86400))
+            echo "Next backup at $$(date -d "@$$next" '+%Y-%m-%d %H:%M %Z')"
+            sleep $$((next - now))
+            if backup; then prune; else echo "Backup failed" >&2; fi
+          done
+          ;;
+        now)
+          wait_for_db
+          backup
+          ;;
+        list)
+          ls -lh "$$dir" | grep 'frosthaven-' || echo "No backups in $$dir"
+          ;;
+        restore)
+          file=$${2:?usage: fht-backup restore FILE}
+          [ -f "$$file" ] || file="$$dir/$$file"
+          [ -f "$$file" ] || { echo "Not found: $$file" >&2; exit 1; }
+          pg_restore --list "$$file" >/dev/null # refuse broken files before touching anything
+          wait_for_db
+          echo "Safety backup of the current database first..."
+          backup -before-restore
+          echo "Restoring $$file into database $$PGDATABASE..."
+          psql -d postgres -v ON_ERROR_STOP=1 -q \
+            -c "DROP DATABASE IF EXISTS \"$$PGDATABASE\" WITH (FORCE)" \
+            -c "CREATE DATABASE \"$$PGDATABASE\""
+          pg_restore --no-owner --exit-on-error -d "$$PGDATABASE" "$$file"
+          echo "Restore finished. Start the app again: docker compose start app"
+          ;;
+        *)
+          echo "usage: fht-backup schedule|now|list|restore FILE" >&2
+          exit 2
+          ;;
+      esac
 
 networks:
   internal: {}

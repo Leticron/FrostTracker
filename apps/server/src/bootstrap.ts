@@ -1,5 +1,6 @@
 import { eq, sql } from 'drizzle-orm';
 import type { FastifyBaseLogger } from 'fastify';
+import { passwordSchema } from '@fht/shared';
 import { hashPassword } from './auth/password.ts';
 import type { Config } from './config.ts';
 import type { Db } from './db/client.ts';
@@ -25,8 +26,11 @@ export async function bootstrapAdmin(db: Db, config: Config, log: FastifyBaseLog
     log.warn('No site admin exists. Set ADMIN_USERNAME and ADMIN_PASSWORD to create one.');
     return;
   }
-  if (config.adminPassword.length < 10) {
-    throw new Error('ADMIN_PASSWORD must be at least 10 characters');
+  const weak = passwordSchema.safeParse(config.adminPassword);
+  if (!weak.success) {
+    throw new Error(
+      `ADMIN_PASSWORD is not accepted: ${weak.error.issues.map((i) => i.message).join('; ')}`,
+    );
   }
   const username = config.ADMIN_USERNAME;
   const passwordHash = await hashPassword(config.adminPassword);

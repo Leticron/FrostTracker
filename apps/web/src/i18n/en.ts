@@ -23,6 +23,7 @@ export const en = {
     themeSystem: 'System',
     themeLight: 'Light',
     themeDark: 'Dark',
+    offline: 'You are offline. Changes can’t be saved until the connection is back.',
   },
   auth: {
     login: 'Sign in',
@@ -59,6 +60,7 @@ export const en = {
     members: 'Members',
     settings: 'Settings',
     audit: 'History',
+    more: 'More',
   },
   members: {
     title: 'Members',

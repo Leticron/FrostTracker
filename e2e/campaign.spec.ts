@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ADMIN } from './global-setup.ts';
+import { openTab } from './nav.ts';
 
 test('host logs a session, applies the conclusion and new scenarios open up', async ({
   page,
@@ -46,6 +47,6 @@ test('host logs a session, applies the conclusion and new scenarios open up', as
   await expect(page.getByText('Example Opening')).toBeVisible();
 
   // The whole session shows up in the campaign history.
-  await page.getByRole('link', { name: 'History' }).click();
+  await openTab(page, 'History');
   await expect(page.getByText(/^(log session|session result)/).first()).toBeVisible();
 });
