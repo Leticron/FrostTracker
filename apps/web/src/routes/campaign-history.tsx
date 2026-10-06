@@ -29,7 +29,9 @@ export function CampaignHistoryPage({ campaignId }: { campaignId: string }) {
             !reverted &&
             !first.action.startsWith('revert_') &&
             !(first.entity === 'campaign' && first.action === 'create') &&
-            entries.some((e) => e.entity !== 'note');
+            entries.some((e) => e.entity !== 'note') &&
+            // Marker edits belong to shared game data; place the marker again instead.
+            entries.every((e) => e.entity !== 'scenario_marker');
           return (
             <li key={groupId}>
               <Card

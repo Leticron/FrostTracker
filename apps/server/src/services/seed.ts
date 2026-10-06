@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { seedData, seedFiles, type SeedData } from '@fht/shared';
-import { desc } from 'drizzle-orm';
+import { and, desc, eq, isNotNull, ne } from 'drizzle-orm';
 import type { Db, Tx } from '../db/client.ts';
 import {
   buildingDefs,
@@ -95,6 +95,23 @@ export async function importSeed(tx: Tx, data: SeedData, actorUserId: string | n
       .insert(personalQuestDefs)
       .values(data.personalQuests.map((p) => ({ ...p, dataSetId: id })));
   }
+  // Markers placed in the UI live in the DB; keep them when a newer seed has none for a scenario.
+  const [prev] = await tx
+    .select({ id: gameDataSets.id })
+    .from(gameDataSets)
+    .where(ne(gameDataSets.id, id))
+    .orderBy(desc(gameDataSets.importedAt))
+    .limit(1);
+  const oldMarkers = new Map(
+    prev
+      ? (
+          await tx
+            .select()
+            .from(scenarioDefs)
+            .where(and(eq(scenarioDefs.dataSetId, prev.id), isNotNull(scenarioDefs.markerX)))
+        ).map((d) => [d.number, d])
+      : [],
+  );
   const chunks = <T>(xs: T[]) =>
     Array.from({ length: Math.ceil(xs.length / 500) }, (_, i) => xs.slice(i * 500, i * 500 + 500));
   for (const c of chunks(data.scenarios)) {
@@ -109,9 +126,9 @@ export async function importSeed(tx: Tx, data: SeedData, actorUserId: string | n
         requirements: sc.requirements,
         conclusionSections: sc.conclusionSections,
         initiallyUnlocked: sc.initiallyUnlocked,
-        markerX: sc.marker?.x ?? null,
-        markerY: sc.marker?.y ?? null,
-        markerLayer: sc.marker?.layer ?? null,
+        markerX: sc.marker?.x ?? oldMarkers.get(sc.number)?.markerX ?? null,
+        markerY: sc.marker?.y ?? oldMarkers.get(sc.number)?.markerY ?? null,
+        markerLayer: sc.marker?.layer ?? oldMarkers.get(sc.number)?.markerLayer ?? null,
       })),
     );
   }

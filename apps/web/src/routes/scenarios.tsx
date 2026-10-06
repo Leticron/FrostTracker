@@ -10,13 +10,20 @@ import { ReadNext } from './dashboard.tsx';
 
 type Tab = 'available' | 'completed' | 'blocked' | 'locked' | 'locked_out';
 
-export function ScenariosPage({ campaignId }: { campaignId: string }) {
+export function ScenariosPage({
+  campaignId,
+  open: initial,
+}: {
+  campaignId: string;
+  open?: number;
+}) {
   const { t } = useTranslation();
   const qc = useQueryClient();
   const q = useQuery(trpc.scenario.list.queryOptions({ campaignId }));
   const [tab, setTab] = useState<Tab>('available');
-  const [search, setSearch] = useState('');
-  const [open, setOpen] = useState<number | null>(null);
+  // Opened from the map: show just that scenario, expanded.
+  const [search, setSearch] = useState(initial === undefined ? '' : String(initial));
+  const [open, setOpen] = useState<number | null>(initial ?? null);
   const refresh = () => qc.invalidateQueries({ queryKey: trpc.scenario.pathKey() });
   const setStatus = useMutation(trpc.scenario.setStatus.mutationOptions({ onSettled: refresh }));
   const override = useMutation(

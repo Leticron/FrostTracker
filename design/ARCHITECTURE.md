@@ -218,7 +218,7 @@ Where seed data lives:
 | `outpost`           | `current` q, `start` m, `completeStep` m, `building.build/upgrade/rebuild/damage/wreck/repair` m                                                                                                                                               | host                                               |
 | `character`         | `list` q, `get` q, `create` m, `update` m, `adjust` m (+/- xp, gold, resources, checkmarks), `levelUp` m, `markPerk` m, `setMastery` m, `items.add/remove/sell` m, `transferResourcesToSupply` m, `setAside`/`abandon`/`retire` m, `history` q | read: member, edit: owner (+ host)                 |
 | `audit`             | `list` q (campaign or character scope), `revert` m                                                                                                                                                                                             | owner for own character, host for campaign         |
-| `catalog`           | `get` q, `upsert*` m, `markers.set` m                                                                                                                                                                                                          | read: member; write: site admin or host (see P2-3) |
+| `catalog`           | `get` q, `upsert*` m                                                                                                                                                                                                                           | read: member; write: site admin or host (see P2-3) |
 | `admin`             | `users` q, `setAdmin`/`disable` m, `seed.import` m, `seed.export` (REST download)                                                                                                                                                              | site admin                                         |
 | REST                | `GET /healthz` (public), `GET /assets/*` (members only, from `/data/assets`), `GET /api/assets/manifest`                                                                                                                                       |                                                    |
 
@@ -294,3 +294,10 @@ Additional implementation notes from Phase 3:
 - The server and the internal packages run as TypeScript directly on Node 24 (built-in type stripping), so `tsc` only type-checks. Code uses erasable syntax only (no enums or parameter properties).
 - The deployment guide goes in `DEPLOYMENT.md` at the repo root, because `docs/` is private and gitignored.
 - pnpm 12 blocks dependency build scripts by default. The ones we don't need are explicitly denied in `pnpm-workspace.yaml` (`allowBuilds`).
+
+Phase 6 notes (map):
+
+- API: `map.images` q (member; which of `map/world.*`, `map/town.*` exist in `ASSETS_DIR`, with an mtime cache-buster), `map.setMarker` m (host; audited as `scenario_marker`, not revertable from the history because it edits shared game data), `map.exportScenarios` q (host; `scenarios.json` incl. markers). Files are served at `/media/*` to signed-in users.
+- Markers are stored on `scenario_def` (per data set). A seed import keeps the newest earlier data set's markers for scenarios the seed has none for.
+- Grid suggestions (`@fht/rules` `fitGrid`): least-squares fit per axis from placed markers. The rules don't say whether letters run along x or y, so both are tried and the closer fit wins. The placeholder grid draws letters as columns.
+- Leaflet is loaded lazily with the map route. Markers shrink to dots while the image is shown narrower than 600 px.
