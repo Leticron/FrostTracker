@@ -67,6 +67,17 @@ design          architecture and data model
 | `SEED_DIR`                                                 | `/data/seed`              | Your private game data seed                                                                         |
 | `PORT`, `HOST`, `LOG_LEVEL`                                | `3000`, `0.0.0.0`, `info` |                                                                                                     |
 
+## Campaign map
+
+The map uses images you own; the app never ships or downloads game graphics. Put them into the assets folder (`ASSETS_DIR`, on Unraid `/mnt/user/appdata/frosthaven-tracker/assets`):
+
+```
+map/world.jpg   the campaign map (also .webp, .avif, .jpeg or .png)
+map/town.jpg    optional second layer, e.g. a close-up of Frosthaven
+```
+
+Without an image the map page draws a grid from the scenario coordinates. Marker positions are stored per scenario relative to the image (0–1). Hosts set them in **Map → Place markers**: pick a scenario, tap its spot. After two markers in different rows and columns, the app suggests positions for the other grid coordinates. Markers belong to the game data set and are kept when a newer seed without markers is imported. **Download scenarios.json** exports them for your seed.
+
 ## Deployment
 
 `docker-compose.yml` runs the app and PostgreSQL behind an existing Traefik v3 (labels for host, `websecure` entrypoint and cert resolver come from `.env`, and no ports are published). Copy `.env.example` to `.env`, fill it in, then `docker compose up -d --build`. Migrations run automatically at start. Full Unraid instructions, backups and restore follow in `DEPLOYMENT.md` (Phase 7). It lives in the repo root because `docs/` is reserved for private, uncommitted material.

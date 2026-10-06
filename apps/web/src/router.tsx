@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import {
   createRootRouteWithContext,
   createRoute,
@@ -7,8 +8,6 @@ import {
 } from '@tanstack/react-router';
 import type { QueryClient } from '@tanstack/react-query';
 import { AppShell } from './components/AppShell.tsx';
-import { Placeholder } from './components/Placeholder.tsx';
-import i18n from './i18n/index.ts';
 import { JoinPage, LoginPage, RegisterPage } from './routes/auth.tsx';
 import { CampaignHistoryPage } from './routes/campaign-history.tsx';
 import { CampaignDashboardPage } from './routes/dashboard.tsx';
@@ -173,7 +172,26 @@ const classEditorRoute = createRoute({
   },
 });
 
-const scenariosRoute = campaignPage('/scenarios', (id) => <ScenariosPage campaignId={id} />);
+const scenariosRoute = createRoute({
+  getParentRoute: () => campaignRoute,
+  path: '/scenarios',
+  validateSearch: (s: Record<string, unknown>): { open?: number } => {
+    const n = Number(s.open);
+    return s.open !== undefined && Number.isInteger(n) && n >= 0 ? { open: n } : {};
+  },
+  component: function Scenarios() {
+    const { campaignId } = campaignRoute.useParams();
+    const { open } = scenariosRoute.useSearch();
+    return <ScenariosPage key={open} campaignId={campaignId} open={open} />;
+  },
+});
+// Leaflet is only loaded when the map is opened.
+const MapPage = lazy(() => import('./routes/map.tsx').then((m) => ({ default: m.MapPage })));
+const mapRoute = campaignPage('/map', (id) => (
+  <Suspense>
+    <MapPage campaignId={id} />
+  </Suspense>
+));
 const sessionsRoute = campaignPage('/sessions', (id) => <SessionsPage campaignId={id} />);
 const newSessionRoute = campaignPage('/sessions/new', (id) => <LogSessionPage campaignId={id} />);
 const outpostRoute = campaignPage('/outpost', (id) => <OutpostPage campaignId={id} />);
@@ -186,18 +204,6 @@ const readRoute = createRoute({
     return <ReadSectionPage key={ref} campaignId={campaignId} sectionRef={ref} />;
   },
 });
-
-const placeholderTabs = ['map'] as const;
-const tabKey = { history: 'audit' } as Record<string, string>;
-const placeholderRoutes = placeholderTabs.map((tab) =>
-  createRoute({
-    getParentRoute: () => campaignRoute,
-    path: `/${tab}`,
-    component: () => (
-      <Placeholder title={i18n.t(`campaign.${tabKey[tab] ?? tab}` as 'campaign.map')} />
-    ),
-  }),
-);
 
 const routeTree = rootRoute.addChildren([
   loginRoute,
@@ -223,7 +229,7 @@ const routeTree = rootRoute.addChildren([
       outpostRoute,
       historyRoute,
       readRoute,
-      ...placeholderRoutes,
+      mapRoute,
     ]),
   ]),
 ]);

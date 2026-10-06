@@ -76,6 +76,11 @@ export class Client {
     return parse<T>(res.statusCode, res.body);
   }
 
+  /** Plain GET with this client's cookies (e.g. for mounted assets). */
+  get(url: string) {
+    return this.app.inject({ method: 'GET', url, headers: { cookie: this.cookieHeader() } });
+  }
+
   async mutate<T = unknown>(
     path: string,
     input?: unknown,

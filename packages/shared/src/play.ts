@@ -122,3 +122,15 @@ export const buildingInput = z.object({
   /** Construction steps beyond the first in an outpost phase cost morale. */
   extraBuild: z.boolean().default(false),
 });
+
+export const mapLayer = z.enum(['world', 'town']);
+export type MapLayer = z.infer<typeof mapLayer>;
+
+/** Host "place markers" mode: position relative to the map image, or null to remove it. */
+export const setMarkerInput = z.object({
+  campaignId,
+  scenario: z.number().int().min(0),
+  marker: z
+    .object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), layer: mapLayer })
+    .nullable(),
+});
