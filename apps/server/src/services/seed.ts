@@ -4,7 +4,15 @@ import { join } from 'node:path';
 import { seedData, seedFiles, type SeedData } from '@fht/shared';
 import { desc } from 'drizzle-orm';
 import type { Db, Tx } from '../db/client.ts';
-import { classDefs, gameDataSets, itemDefs, personalQuestDefs } from '../db/schema.ts';
+import {
+  buildingDefs,
+  classDefs,
+  gameDataSets,
+  itemDefs,
+  personalQuestDefs,
+  scenarioDefs,
+  sectionDefs,
+} from '../db/schema.ts';
 import { writeAudit } from '../audit.ts';
 
 export class SeedError extends Error {}
@@ -87,6 +95,41 @@ export async function importSeed(tx: Tx, data: SeedData, actorUserId: string | n
       .insert(personalQuestDefs)
       .values(data.personalQuests.map((p) => ({ ...p, dataSetId: id })));
   }
+  const chunks = <T>(xs: T[]) =>
+    Array.from({ length: Math.ceil(xs.length / 500) }, (_, i) => xs.slice(i * 500, i * 500 + 500));
+  for (const c of chunks(data.scenarios)) {
+    await tx.insert(scenarioDefs).values(
+      c.map((sc) => ({
+        dataSetId: id,
+        number: sc.number,
+        name: sc.name,
+        coord: sc.coord,
+        region: sc.region,
+        complexity: sc.complexity,
+        requirements: sc.requirements,
+        conclusionSections: sc.conclusionSections,
+        initiallyUnlocked: sc.initiallyUnlocked,
+        markerX: sc.marker?.x ?? null,
+        markerY: sc.marker?.y ?? null,
+        markerLayer: sc.marker?.layer ?? null,
+      })),
+    );
+  }
+  for (const c of chunks(data.sections)) {
+    await tx.insert(sectionDefs).values(
+      c.map((se) => ({
+        dataSetId: id,
+        ref: se.ref,
+        title: se.title,
+        scenarioNumber: se.scenario,
+        effects: se.effects,
+        rewardsText: se.rewardsText,
+      })),
+    );
+  }
+  if (data.buildings.length) {
+    await tx.insert(buildingDefs).values(data.buildings.map((b) => ({ ...b, dataSetId: id })));
+  }
   await writeAudit(tx, actorUserId, [
     {
       entity: 'game_data_set',
@@ -98,6 +141,9 @@ export async function importSeed(tx: Tx, data: SeedData, actorUserId: string | n
         classes: data.classes.length,
         items: data.items.length,
         personalQuests: data.personalQuests.length,
+        scenarios: data.scenarios.length,
+        sections: data.sections.length,
+        buildings: data.buildings.length,
       },
     },
   ]);

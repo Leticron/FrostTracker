@@ -50,6 +50,8 @@ async function setup() {
     name: 'Hero',
   });
   expect(created.error).toBeUndefined();
+  // R-CHAR-07: levelling up and retiring need an open outpost phase.
+  expect((await host.client.mutate('outpost.start', { campaignId })).error).toBeUndefined();
   return { host, player, campaignId, characterId: created.data!.id };
 }
 
@@ -155,6 +157,14 @@ describe('counters, levels and perks', () => {
     await player.client.mutate('character.adjust', { characterId, field: 'checkmarks', delta: 5 });
     await player.client.mutate('character.adjust', { characterId, field: 'checkmarks', delta: -3 });
     expect((await sheet(player.client, characterId)).character.checkmarks).toBe(4);
+  });
+
+  it('R-CHAR-07: level-up needs an open outpost phase', async () => {
+    const { host, player, campaignId, characterId } = await setup();
+    await host.client.mutate('outpost.close', { campaignId });
+    await player.client.mutate('character.adjust', { characterId, field: 'xp', delta: 12 });
+    const r = await player.client.mutate('character.levelUp', { characterId, mode: 'xp' });
+    expect(r.error?.message).toMatch(/outpost phase/);
   });
 
   it('R-CHAR-04/12/13: XP level-up adds a perk mark that can be spent once', async () => {

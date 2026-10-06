@@ -496,6 +496,16 @@ function QuestAndNotes(props: {
 }
 
 const FIELD_LABELS: Record<string, string> = {
+  morale: 'Morale',
+  inspiration: 'Inspiration',
+  soldiers: 'Soldiers',
+  defense: 'Defense',
+  currentWeek: 'Week',
+  count: 'Count',
+  timesCompleted: 'Completed',
+  requirementOverride: 'Requirement override',
+  resolvedAt: 'Resolved',
+  state: 'State',
   xp: 'XP',
   gold: 'Gold',
   checkmarks: 'Checkmarks',
@@ -514,10 +524,18 @@ const FIELD_LABELS: Record<string, string> = {
   retiredAt: 'Retired',
 };
 
-function describe(entity: string, before: unknown, after: unknown): string {
-  if (entity === 'character_item') {
-    const item = (after ?? before) as { name?: string } | null;
-    return `${after ? '+' : '−'} ${item?.name ?? ''}`;
+export function describe(entity: string, before: unknown, after: unknown): string {
+  if (!before || !after) {
+    const row = (after ?? before) as Record<string, unknown> | null;
+    const label =
+      row?.name ??
+      row?.sectionRef ??
+      row?.eventRef ??
+      row?.scenarioNumber ??
+      row?.number ??
+      row?.note ??
+      '';
+    return `${after ? '+' : '−'} ${entity.replaceAll('_', ' ')} ${String(label)}`.trim();
   }
   if (!before || !after) return '';
   const b = before as Record<string, unknown>;

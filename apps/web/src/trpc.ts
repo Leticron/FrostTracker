@@ -2,6 +2,7 @@ import type { AppRouter } from '@fht/server/router';
 import { QueryClient } from '@tanstack/react-query';
 import { createTRPCClient, httpBatchLink, TRPCClientError } from '@trpc/client';
 import { createTRPCOptionsProxy } from '@trpc/tanstack-react-query';
+import type { inferRouterOutputs } from '@trpc/server';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,3 +26,5 @@ export const trpc = createTRPCOptionsProxy<AppRouter>({ client: trpcClient, quer
 export function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
 }
+
+export type RouterOutputs = inferRouterOutputs<AppRouter>;

@@ -27,6 +27,13 @@ test('a player keeps a character sheet and can undo a change', async ({ page }, 
   await page.getByRole('button', { name: 'Gold +1' }).click();
   await expect(gold).toContainText('14');
 
+  // R-CHAR-07: level-ups happen in an outpost phase - the host starts one from the overview.
+  await page.getByRole('link', { name: 'Overview' }).click();
+  await page.getByRole('button', { name: 'Start outpost phase' }).click();
+  await expect(page.getByText(/Outpost phase in progress/)).toBeVisible();
+  await page.getByRole('link', { name: 'Party' }).click();
+  await page.getByRole('link', { name: /Brave/ }).click();
+
   // Earn enough XP, level up, spend the perk mark.
   for (let i = 0; i < 10; i++) await page.getByRole('button', { name: 'Experience +1' }).click();
   await page.getByRole('button', { name: 'Level up', exact: true }).click();

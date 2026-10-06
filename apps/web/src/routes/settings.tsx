@@ -49,6 +49,7 @@ export function SettingsPage({ campaignId }: { campaignId: string }) {
               ))}
         </Card>
       </section>
+      {isHost && <MoraleSections campaignId={campaignId} />}
       {!!classes.data?.length && (
         <section>
           <h2 className="mb-2 font-medium">{t('settings.classes')}</h2>
@@ -84,6 +85,63 @@ export function SettingsPage({ campaignId }: { campaignId: string }) {
         </section>
       )}
     </>
+  );
+}
+
+function MoraleSections({ campaignId }: { campaignId: string }) {
+  const { t } = useTranslation();
+  const qc = useQueryClient();
+  const q = useQuery(trpc.state.get.queryOptions({ campaignId }));
+  if (!q.data) return null;
+  return (
+    <MoraleSectionsForm
+      key={`${q.data.campaign.moraleMinSection}|${q.data.campaign.moraleMaxSection}`}
+      campaignId={campaignId}
+      min={q.data.derived.moraleSections.min ?? ''}
+      max={q.data.derived.moraleSections.max ?? ''}
+      t={t}
+      onSaved={() => qc.invalidateQueries({ queryKey: trpc.state.pathKey() })}
+    />
+  );
+}
+
+function MoraleSectionsForm(props: {
+  campaignId: string;
+  min: string;
+  max: string;
+  t: ReturnType<typeof useTranslation>['t'];
+  onSaved: () => void;
+}) {
+  const { t } = props;
+  const [min, setMin] = useState(props.min);
+  const [max, setMax] = useState(props.max);
+  const save = useMutation(
+    trpc.state.setMoraleSections.mutationOptions({ onSettled: props.onSaved }),
+  );
+  return (
+    <section className="mb-6">
+      <h2 className="mb-2 font-medium">{t('settings.moraleSections')}</h2>
+      <Card>
+        <form
+          className="flex flex-wrap items-end gap-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            save.mutate({ campaignId: props.campaignId, min: min || null, max: max || null });
+          }}
+        >
+          <Field label={t('settings.moraleMin')}>
+            <Input className="w-28" value={min} onChange={(e) => setMin(e.target.value)} />
+          </Field>
+          <Field label={t('settings.moraleMax')}>
+            <Input className="w-28" value={max} onChange={(e) => setMax(e.target.value)} />
+          </Field>
+          <Button type="submit" variant="secondary" disabled={save.isPending}>
+            {t('common.save')}
+          </Button>
+        </form>
+        <ErrorText error={save.error} />
+      </Card>
+    </section>
   );
 }
 

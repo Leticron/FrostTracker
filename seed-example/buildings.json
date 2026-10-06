@@ -1,0 +1,58 @@
+[
+  {
+    "number": 10,
+    "name": "Example Barracks",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "maxSoldiers": 4,
+        "repairCost": 2
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "wood": 2,
+            "stone": 1
+          }
+        },
+        "maxSoldiers": 6,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "name": "Example Workshop",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "name": "Example Dock",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "wood": 3
+          }
+        },
+        "prosperityGain": 1,
+        "rebuildCost": {
+          "resources": {
+            "wood": 1
+          }
+        }
+      }
+    ]
+  }
+]

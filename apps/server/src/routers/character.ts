@@ -45,6 +45,7 @@ import {
   users,
 } from '../db/schema.ts';
 import { availableClassKeys, campaignData, classDef } from '../services/campaign-data.ts';
+import { openOutpostPhase } from './outpost.ts';
 import type { Context } from '../trpc/context.ts';
 import { authedProcedure, requireMembership, router } from '../trpc/trpc.ts';
 
@@ -198,6 +199,16 @@ async function deleteItems(tx: Tx, character: Character): Promise<AuditInput[]> 
   }));
 }
 
+/** RULE: R-CHAR-07 - levelling up and retiring only happen during an outpost phase. */
+async function requireOutpostPhase(tx: Tx, campaignId: string) {
+  if (!(await openOutpostPhase(tx, campaignId))) {
+    throw new TRPCError({
+      code: 'BAD_REQUEST',
+      message: 'This is only possible during an outpost phase',
+    });
+  }
+}
+
 export const characterRouter = router({
   list: authedProcedure.input(campaignIdInput).query(async ({ ctx, input }) => {
     await requireMembership(ctx, input.campaignId);
@@ -278,7 +289,9 @@ export const characterRouter = router({
       : undefined;
     const p = progress(character);
     const prosperity = prosperityLevel(campaign.prosperityChecks, rules.prosperity);
+    const outpostOpen = !!(await openOutpostPhase(ctx.db, character.campaignId));
     return {
+      outpostOpen,
       character,
       ownerName: owner?.displayName ?? '',
       canEdit: canEdit && ['active', 'set_aside'].includes(character.status),
@@ -422,6 +435,7 @@ export const characterRouter = router({
   levelUp: authedProcedure.input(levelUpInput).mutation(({ ctx, input }) =>
     ctx.db.transaction(async (tx) => {
       const { character } = await access(ctx, tx, input.characterId, true, true);
+      await requireOutpostPhase(tx, character.campaignId);
       const { rules, campaign } = await campaignData(tx, character.campaignId);
       let changes: Partial<Character>;
       if (input.mode === 'xp') {
@@ -653,6 +667,7 @@ export const characterRouter = router({
       if (!allowed[input.action].includes(character.status)) {
         throw new TRPCError({ code: 'BAD_REQUEST', message: 'Not possible in the current state' });
       }
+      if (input.action === 'retire') await requireOutpostPhase(tx, character.campaignId);
       if (input.action === 'set_aside' || input.action === 'reactivate') {
         const after = await saveCharacter(
           tx,

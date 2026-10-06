@@ -141,20 +141,3 @@ export function CampaignLayout({ campaignId }: { campaignId: string }) {
     </div>
   );
 }
-
-export function CampaignDashboard({ campaignId }: { campaignId: string }) {
-  const { t } = useTranslation();
-  const q = useQuery(trpc.campaign.get.queryOptions({ campaignId }));
-  if (!q.data) return null;
-  return (
-    <>
-      <PageTitle>{q.data.campaign.name}</PageTitle>
-      {q.data.campaign.partyName && (
-        <p className="mb-4 text-slate-500">{q.data.campaign.partyName}</p>
-      )}
-      <Card>
-        <p className="text-slate-600 dark:text-slate-400">{t('common.comingSoon')}</p>
-      </Card>
-    </>
-  );
-}

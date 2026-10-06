@@ -10,12 +10,12 @@ import { AppShell } from './components/AppShell.tsx';
 import { Placeholder } from './components/Placeholder.tsx';
 import i18n from './i18n/index.ts';
 import { JoinPage, LoginPage, RegisterPage } from './routes/auth.tsx';
-import {
-  CampaignDashboard,
-  CampaignLayout,
-  CampaignListPage,
-  NewCampaignPage,
-} from './routes/campaigns.tsx';
+import { CampaignHistoryPage } from './routes/campaign-history.tsx';
+import { CampaignDashboardPage } from './routes/dashboard.tsx';
+import { OutpostPage } from './routes/outpost.tsx';
+import { ReadSectionPage, ScenariosPage } from './routes/scenarios.tsx';
+import { LogSessionPage, SessionsPage } from './routes/sessions.tsx';
+import { CampaignLayout, CampaignListPage, NewCampaignPage } from './routes/campaigns.tsx';
 import { CharacterHistoryPage, CharacterPage } from './routes/character.tsx';
 import { MembersPage } from './routes/members.tsx';
 import { NewCharacterPage, PartyPage } from './routes/party.tsx';
@@ -116,7 +116,7 @@ const campaignIndexRoute = createRoute({
   path: '/',
   component: function Dashboard() {
     const { campaignId } = campaignRoute.useParams();
-    return <CampaignDashboard campaignId={campaignId} />;
+    return <CampaignDashboardPage campaignId={campaignId} />;
   },
 });
 
@@ -173,7 +173,21 @@ const classEditorRoute = createRoute({
   },
 });
 
-const placeholderTabs = ['scenarios', 'map', 'sessions', 'outpost', 'history'] as const;
+const scenariosRoute = campaignPage('/scenarios', (id) => <ScenariosPage campaignId={id} />);
+const sessionsRoute = campaignPage('/sessions', (id) => <SessionsPage campaignId={id} />);
+const newSessionRoute = campaignPage('/sessions/new', (id) => <LogSessionPage campaignId={id} />);
+const outpostRoute = campaignPage('/outpost', (id) => <OutpostPage campaignId={id} />);
+const historyRoute = campaignPage('/history', (id) => <CampaignHistoryPage campaignId={id} />);
+const readRoute = createRoute({
+  getParentRoute: () => campaignRoute,
+  path: '/read/$ref',
+  component: function Read() {
+    const { campaignId, ref } = readRoute.useParams();
+    return <ReadSectionPage key={ref} campaignId={campaignId} sectionRef={ref} />;
+  },
+});
+
+const placeholderTabs = ['map'] as const;
 const tabKey = { history: 'audit' } as Record<string, string>;
 const placeholderRoutes = placeholderTabs.map((tab) =>
   createRoute({
@@ -203,6 +217,12 @@ const routeTree = rootRoute.addChildren([
       characterHistoryRoute,
       settingsRoute,
       classEditorRoute,
+      scenariosRoute,
+      sessionsRoute,
+      newSessionRoute,
+      outpostRoute,
+      historyRoute,
+      readRoute,
       ...placeholderRoutes,
     ]),
   ]),

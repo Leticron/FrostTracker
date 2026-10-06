@@ -1,14 +1,90 @@
 {
-  "calendar": { "weeksPerSeason": 3, "seasons": ["summer", "winter"] },
+  "calendar": {
+    "weeksPerSeason": 3,
+    "seasons": ["summer", "winter"]
+  },
   "resources": [
-    { "key": "wood", "name": "Wood", "kind": "material" },
-    { "key": "stone", "name": "Stone", "kind": "material" },
-    { "key": "moss", "name": "Moss", "kind": "herb" },
-    { "key": "berry", "name": "Berry", "kind": "herb" }
+    {
+      "key": "wood",
+      "name": "Wood",
+      "kind": "material"
+    },
+    {
+      "key": "stone",
+      "name": "Stone",
+      "kind": "material"
+    },
+    {
+      "key": "moss",
+      "name": "Moss",
+      "kind": "herb"
+    },
+    {
+      "key": "berry",
+      "name": "Berry",
+      "kind": "herb"
+    }
   ],
-  "levels": { "xpThresholds": [0, 10, 25, 50, 80] },
-  "checkmarks": { "perPerkMark": 2, "max": 8 },
-  "startingGold": { "perProsperityLevel": 5, "base": 7 },
-  "prosperity": { "thresholds": [3, 7, 12, null] },
-  "retirement": { "prosperityGain": 1 }
+  "levels": {
+    "xpThresholds": [0, 10, 25, 50, 80]
+  },
+  "checkmarks": {
+    "perPerkMark": 2,
+    "max": 8
+  },
+  "startingGold": {
+    "perProsperityLevel": 5,
+    "base": 7
+  },
+  "prosperity": {
+    "thresholds": [3, 7, 12, null]
+  },
+  "retirement": {
+    "prosperityGain": 1
+  },
+  "scenarioLevel": {
+    "goldConversion": [1, 2, 2, 3],
+    "bonusXp": [3, 5, 7, 9]
+  },
+  "inspiration": {
+    "base": 4
+  },
+  "morale": {
+    "min": 0,
+    "max": 12,
+    "defenseModifiers": [
+      {
+        "from": 1,
+        "to": 3,
+        "modifier": -5
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "modifier": 0
+      },
+      {
+        "from": 9,
+        "to": 12,
+        "modifier": 5
+      }
+    ],
+    "minSection": "90.1",
+    "maxSection": "90.2"
+  },
+  "calendarPreprinted": [
+    {
+      "week": 2,
+      "sections": ["80.1"]
+    },
+    {
+      "week": 6,
+      "sections": ["80.2"]
+    }
+  ],
+  "calendarSheetWeeks": 24,
+  "outpost": {
+    "secondBuildMoraleCost": 2,
+    "repairMoraleCost": 1
+  }
 }

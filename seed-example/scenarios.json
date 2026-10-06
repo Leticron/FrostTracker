@@ -1,0 +1,52 @@
+[
+  {
+    "number": 0,
+    "name": "Example Tutorial",
+    "coord": "A1",
+    "region": "Example Woods",
+    "initiallyUnlocked": true,
+    "conclusionSections": ["10.1"]
+  },
+  {
+    "number": 1,
+    "name": "Example Opening",
+    "coord": "B2",
+    "region": "Example Woods",
+    "initiallyUnlocked": true,
+    "conclusionSections": ["11.1"]
+  },
+  {
+    "number": 2,
+    "name": "Example Left Path",
+    "coord": "C3",
+    "conclusionSections": ["12.1"]
+  },
+  {
+    "number": 3,
+    "name": "Example Right Path",
+    "coord": "D4",
+    "conclusionSections": ["13.1"]
+  },
+  {
+    "number": 4,
+    "name": "Example Island",
+    "coord": "E5",
+    "requirements": [
+      {
+        "campaignSticker": "Example Boat"
+      }
+    ],
+    "conclusionSections": ["14.1"]
+  },
+  {
+    "number": 5,
+    "name": "Example Riddle",
+    "coord": "F6",
+    "requirements": [
+      {
+        "freeText": "Example special condition"
+      }
+    ],
+    "conclusionSections": ["15.1"]
+  }
+]

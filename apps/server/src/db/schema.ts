@@ -1,7 +1,15 @@
 import { sql } from 'drizzle-orm';
-import type { PerkDef, ResourceBag, RuleTables } from '@fht/shared';
+import type {
+  BuildingDef,
+  Effect,
+  PerkDef,
+  Requirement,
+  ResourceBag,
+  RuleTables,
+} from '@fht/shared';
 import {
   boolean,
+  doublePrecision,
   index,
   integer,
   jsonb,
@@ -133,6 +141,57 @@ export const personalQuestDefs = pgTable(
   (t) => [primaryKey({ columns: [t.dataSetId, t.number] })],
 );
 
+export const scenarioDefs = pgTable(
+  'scenario_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    name: text().notNull(),
+    coord: text(),
+    region: text(),
+    complexity: integer(),
+    requirements: jsonb().$type<Requirement[]>().notNull().default([]),
+    conclusionSections: jsonb().$type<string[]>().notNull().default([]),
+    initiallyUnlocked: boolean().notNull().default(false),
+    /** Marker position relative to the map image (0..1), set in marker mode. */
+    markerX: doublePrecision(),
+    markerY: doublePrecision(),
+    markerLayer: text(),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.number] })],
+);
+
+export const sectionDefs = pgTable(
+  'section_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    ref: text().notNull(),
+    title: text().notNull().default(''),
+    scenarioNumber: integer(),
+    effects: jsonb().$type<Effect[]>().notNull().default([]),
+    rewardsText: text(),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.ref] })],
+);
+
+export const buildingDefs = pgTable(
+  'building_defs',
+  {
+    dataSetId: uuid()
+      .notNull()
+      .references(() => gameDataSets.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    name: text().notNull(),
+    starting: boolean().notNull().default(false),
+    levels: jsonb().$type<BuildingDef['levels']>().notNull().default([]),
+  },
+  (t) => [primaryKey({ columns: [t.dataSetId, t.number] })],
+);
+
 // ---------------------------------------------------------------- campaigns
 
 export const campaignRole = pgEnum('campaign_role', ['host', 'player']);
@@ -147,6 +206,18 @@ export const campaigns = pgTable('campaigns', {
   prosperityChecks: integer().notNull().default(0),
   /** Frosthaven supply: resource key -> amount. */
   supply: jsonb().$type<ResourceBag>().notNull().default({}),
+  /** Number of marked calendar weeks (0 = none). */
+  currentWeek: integer().notNull().default(0),
+  /** null until the starting morale is set (end of the first scenario). */
+  morale: integer(),
+  defense: integer().notNull().default(0),
+  soldiers: integer().notNull().default(0),
+  inspiration: integer().notNull().default(0),
+  /** Morale track sections can be replaced during play; null = use the rule tables. */
+  moraleMinSection: text(),
+  moraleMaxSection: text(),
+  /** Starting scenarios and buildings of the data set were created. */
+  setupDone: boolean().notNull().default(false),
   version: integer().notNull().default(1),
   ...timestamps,
 });
@@ -192,6 +263,7 @@ export const invites = pgTable(
 export const campaignClassUnlocks = pgTable(
   'campaign_class_unlocks',
   {
+    id: uuid().notNull().unique().defaultRandom(),
     campaignId: uuid()
       .notNull()
       .references(() => campaigns.id, { onDelete: 'cascade' }),
@@ -199,6 +271,213 @@ export const campaignClassUnlocks = pgTable(
     unlockedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [primaryKey({ columns: [t.campaignId, t.classKey] })],
+);
+
+export const scenarioStatus = pgEnum('scenario_status', ['unlocked', 'completed', 'locked_out']);
+
+export const campaignScenarios = pgTable(
+  'campaign_scenarios',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    scenarioNumber: integer().notNull(),
+    status: scenarioStatus().notNull(),
+    timesCompleted: integer().notNull().default(0),
+    /** Host decided the (free-text) requirements are met. */
+    requirementOverride: boolean().notNull().default(false),
+    unlockedBy: text(),
+    updatedAt: timestamp({ withTimezone: true })
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (t) => [uniqueIndex('campaign_scenarios_unique_idx').on(t.campaignId, t.scenarioNumber)],
+);
+
+export const campaignStickers = pgTable(
+  'campaign_stickers',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    name: text().notNull(),
+    count: integer().notNull().default(1),
+  },
+  (t) => [uniqueIndex('campaign_stickers_unique_idx').on(t.campaignId, t.name)],
+);
+
+export const calendarSource = pgEnum('calendar_source', ['preprinted', 'added']);
+
+export const calendarEntries = pgTable(
+  'calendar_entries',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    /** Absolute week number (1 = first box). */
+    week: integer().notNull(),
+    sectionRef: text().notNull(),
+    source: calendarSource().notNull(),
+    resolvedAt: timestamp({ withTimezone: true }),
+    createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('calendar_campaign_idx').on(t.campaignId, t.week)],
+);
+
+export const treasuresLooted = pgTable(
+  'treasures_looted',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    lootedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex('treasures_unique_idx').on(t.campaignId, t.number)],
+);
+
+export const buildingState = pgEnum('building_state', ['unlocked', 'built', 'wrecked']);
+
+export const campaignBuildings = pgTable(
+  'campaign_buildings',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    number: integer().notNull(),
+    name: text().notNull(),
+    level: integer().notNull().default(0),
+    state: buildingState().notNull().default('unlocked'),
+  },
+  (t) => [uniqueIndex('campaign_buildings_unique_idx').on(t.campaignId, t.number)],
+);
+
+export const eventKind = pgEnum('event_kind', ['road', 'outpost']);
+
+export const eventLog = pgTable(
+  'event_log',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    kind: eventKind().notNull(),
+    eventRef: text().notNull(),
+    option: text().notNull().default(''),
+    note: text().notNull().default(''),
+    week: integer().notNull(),
+    at: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('event_log_campaign_idx').on(t.campaignId, t.at)],
+);
+
+export const eventDeckChanges = pgTable(
+  'event_deck_changes',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    deck: text().notNull(),
+    eventRef: text().notNull(),
+    op: text().notNull(),
+    sectionRef: text(),
+    at: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('event_deck_campaign_idx').on(t.campaignId, t.at)],
+);
+
+export const sessionOutcome = pgEnum('session_outcome', ['completed', 'lost']);
+export const sessionStatus = pgEnum('session_status', ['applied', 'reverted']);
+
+export const playSessions = pgTable(
+  'play_sessions',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    date: text().notNull(),
+    scenarioNumber: integer(),
+    scenarioLevel: integer().notNull(),
+    outcome: sessionOutcome().notNull(),
+    lostChoice: text(),
+    casual: boolean().notNull().default(false),
+    notes: text().notNull().default(''),
+    status: sessionStatus().notNull().default('applied'),
+    /** Audit group of the applied changes (used to revert the session). */
+    auditGroupId: uuid(),
+    firstCompletion: boolean().notNull().default(false),
+    createdBy: uuid().references(() => users.id, { onDelete: 'set null' }),
+    createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('sessions_campaign_idx').on(t.campaignId, t.createdAt)],
+);
+
+export const sessionParticipants = pgTable(
+  'session_participants',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    sessionId: uuid()
+      .notNull()
+      .references(() => playSessions.id, { onDelete: 'cascade' }),
+    characterId: uuid()
+      .notNull()
+      .references(() => characters.id, { onDelete: 'cascade' }),
+    coins: integer().notNull().default(0),
+    xp: integer().notNull().default(0),
+    checkmarks: integer().notNull().default(0),
+    masteries: jsonb().$type<number[]>().notNull().default([]),
+    resources: jsonb().$type<ResourceBag>().notNull().default({}),
+    /** What was actually applied to the character. */
+    applied: jsonb().$type<Record<string, unknown>>().notNull().default({}),
+  },
+  (t) => [index('participants_session_idx').on(t.sessionId)],
+);
+
+export const outpostPhases = pgTable(
+  'outpost_phases',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    week: integer().notNull(),
+    /** 1 passage of time, 2 event, 3 building operations, 4 downtime, 5 construction. */
+    step: integer().notNull().default(1),
+    builds: integer().notNull().default(0),
+    notes: text().notNull().default(''),
+    openedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    closedAt: timestamp({ withTimezone: true }),
+  },
+  (t) => [
+    index('outpost_campaign_idx').on(t.campaignId),
+    uniqueIndex('outpost_one_open_idx')
+      .on(t.campaignId)
+      .where(sql`${t.closedAt} is null`),
+  ],
+);
+
+export const sectionApplications = pgTable(
+  'section_applications',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    campaignId: uuid()
+      .notNull()
+      .references(() => campaigns.id, { onDelete: 'cascade' }),
+    sectionRef: text().notNull(),
+    effects: jsonb().$type<Effect[]>().notNull(),
+    auditGroupId: uuid(),
+    appliedBy: uuid().references(() => users.id, { onDelete: 'set null' }),
+    at: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('section_apps_campaign_idx').on(t.campaignId, t.at)],
 );
 
 // ---------------------------------------------------------------- characters

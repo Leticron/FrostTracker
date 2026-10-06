@@ -15,6 +15,13 @@
       "when": 1791232536091,
       "tag": "0001_characters",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791234593163,
+      "tag": "0002_campaign_play",
+      "breakpoints": true
     }
   ]
 }
