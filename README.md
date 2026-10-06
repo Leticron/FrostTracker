@@ -80,7 +80,9 @@ Without an image the map page draws a grid from the scenario coordinates. Marker
 
 ## Deployment
 
-`docker-compose.yml` runs the app and PostgreSQL behind an existing Traefik v3 (labels for host, `websecure` entrypoint and cert resolver come from `.env`, and no ports are published). Copy `.env.example` to `.env`, fill it in, then `docker compose up -d --build`. Migrations run automatically at start. Full Unraid instructions, backups and restore follow in `DEPLOYMENT.md` (Phase 7). It lives in the repo root because `docs/` is reserved for private, uncommitted material.
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for Unraid (Docker Compose Manager, or a plain Docker template), Traefik assumptions, first start, updates, backups and restore.
+
+In short: CI publishes the image to `ghcr.io/leticron/frosttracker` after every merge to `main` and for `v*` tags. `docker-compose.yml` runs the app, PostgreSQL and a daily backup job behind an existing Traefik v3 (no published ports); copy `.env.example` to `.env`, fill it in, and `docker compose up -d`. Migrations run automatically at start. To build from source instead, add `-f docker-compose.build.yml`.
 
 ## License
 

@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ADMIN } from './global-setup.ts';
+import { openTab } from './nav.ts';
 
 /**
  * Smoke test across the skeleton: sign in, create a campaign, invite a player who registers
@@ -24,7 +25,7 @@ test('host creates a campaign and a player joins via invite link', async ({
   await page.getByRole('button', { name: 'Create' }).click();
   await expect(page.getByRole('heading', { name: campaignName })).toBeVisible();
 
-  await page.getByRole('link', { name: 'Members' }).click();
+  await openTab(page, 'Members');
   await page.getByRole('button', { name: 'Create invite link' }).click();
   const link = (await page.getByTestId('invite-link').textContent())!.trim();
   expect(link).toMatch(/\/join\//);
@@ -40,14 +41,19 @@ test('host creates a campaign and a player joins via invite link', async ({
   await player.getByRole('button', { name: 'Create account' }).click();
   await expect(player.getByRole('heading', { name: campaignName })).toBeVisible();
 
-  await player.getByRole('link', { name: 'Members' }).click();
+  await openTab(player, 'Members');
   const me = player.getByRole('listitem').filter({ hasText: `@${playerName}` });
   await expect(me.getByText('Player', { exact: true })).toBeVisible();
   // Players don't get host controls.
   await expect(player.getByRole('button', { name: 'Create invite link' })).toHaveCount(0);
 
   // Touch targets stay usable on the phone layout.
-  const box = await player.getByRole('link', { name: 'Members' }).boundingBox();
-  expect(box!.height).toBeGreaterThanOrEqual(44);
+  for (const target of [
+    player.getByRole('link', { name: 'Party' }),
+    player.getByRole('link', { name: 'Overview' }),
+  ]) {
+    const box = await target.boundingBox();
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+  }
   await playerContext.close();
 });

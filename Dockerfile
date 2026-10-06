@@ -28,6 +28,9 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
 # ---- runtime: no pnpm, no build tools, non-root ----------------------------------------
 # The server is TypeScript run directly by Node's built-in type stripping (no build step).
 FROM node:24.21.0-alpine AS runtime
+LABEL org.opencontainers.image.source="https://github.com/Leticron/FrostTracker" \
+      org.opencontainers.image.description="Self-hosted Frosthaven campaign tracker (code only, no game content)" \
+      org.opencontainers.image.licenses="MIT"
 ENV NODE_ENV=production \
     PORT=3000 \
     WEB_DIST_DIR=/app/apps/web/dist \
@@ -45,7 +48,9 @@ COPY packages/shared ./packages/shared
 COPY packages/rules/package.json ./packages/rules/
 COPY packages/rules/src ./packages/rules/src
 COPY --from=build /app/apps/web/dist ./apps/web/dist
-RUN mkdir -p /data/assets /data/seed
+# npm, npx and corepack aren't needed at runtime.
+RUN rm -rf /usr/local/lib/node_modules /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
+    && mkdir -p /data/assets /data/seed
 USER node
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \

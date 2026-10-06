@@ -1,12 +1,27 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, Outlet, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getThemeChoice, setThemeChoice, type ThemeChoice } from '../theme.ts';
 import { trpc } from '../trpc.ts';
 import { useMe } from '../useMe.ts';
 
+function subscribeOnline(cb: () => void) {
+  window.addEventListener('online', cb);
+  window.addEventListener('offline', cb);
+  return () => {
+    window.removeEventListener('online', cb);
+    window.removeEventListener('offline', cb);
+  };
+}
+
+/** The PWA keeps only the app shell offline; data needs the server (decision P2-5). */
+function useOnline() {
+  return useSyncExternalStore(subscribeOnline, () => navigator.onLine);
+}
+
 export function AppShell() {
+  const online = useOnline();
   const { t } = useTranslation();
   const me = useMe();
   const qc = useQueryClient();
@@ -75,6 +90,14 @@ export function AppShell() {
           <div className="hidden items-center sm:flex">{accountLinks}</div>
         </div>
       </header>
+      {!online && (
+        <p
+          role="status"
+          className="sticky top-14 z-20 bg-amber-100 px-4 py-2 text-center text-sm text-amber-900 dark:bg-amber-950 dark:text-amber-100"
+        >
+          {t('nav.offline')}
+        </p>
+      )}
       <Outlet />
     </div>
   );

@@ -7,8 +7,11 @@ import type { Context } from './context.ts';
 
 const t = initTRPC.context<Context>().create({
   errorFormatter({ shape, error }) {
+    // Unexpected errors (e.g. from the database) are logged, not shown to clients in production.
+    const hide = error.code === 'INTERNAL_SERVER_ERROR' && process.env.NODE_ENV === 'production';
     return {
       ...shape,
+      message: hide ? 'Internal server error' : shape.message,
       data: {
         ...shape.data,
         zodIssues: error.cause instanceof ZodError ? error.cause.issues : undefined,

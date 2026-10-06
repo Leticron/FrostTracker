@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ADMIN } from './global-setup.ts';
+import { openTab } from './nav.ts';
 
 test('host places markers on the mounted map and players reach the scenario from it', async ({
   page,
@@ -12,7 +13,7 @@ test('host places markers on the mounted map and players reach the scenario from
   await page.getByLabel('Campaign name').fill(`Map ${info.project.name}-${Date.now()}`);
   await page.getByRole('button', { name: 'Create' }).click();
 
-  await page.getByRole('link', { name: 'Map' }).click();
+  await openTab(page, 'Map');
   const map = page.getByTestId('campaign-map');
   await expect(map).toBeVisible();
   await page.getByRole('button', { name: 'Place markers' }).click();

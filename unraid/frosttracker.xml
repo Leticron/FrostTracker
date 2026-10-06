@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+  Unraid Docker template for FrostTracker (alternative to the Compose stack, see DEPLOYMENT.md).
+  Needs a PostgreSQL 18 container and Traefik v3 on the same Docker network.
+  Install: copy this file to /boot/config/plugins/dockerMan/templates-user/my-frosttracker.xml,
+  then Docker > Add Container > Template: frosttracker.
+-->
+<Container version="2">
+  <Name>frosttracker</Name>
+  <Repository>ghcr.io/leticron/frosttracker:latest</Repository>
+  <Registry>https://github.com/Leticron/FrostTracker/pkgs/container/frosttracker</Registry>
+  <Network>traefik</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Leticron/FrostTracker/issues</Support>
+  <Project>https://github.com/Leticron/FrostTracker</Project>
+  <Overview>Self-hosted campaign and character tracker for a Frosthaven group. Mobile-first PWA. Contains no game content: mount your own game data seed and map images. Needs PostgreSQL 18 and an existing Traefik v3 (no ports are published).</Overview>
+  <Category>Tools: Productivity:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Leticron/FrostTracker/main/apps/web/public/icon-512.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Requires>PostgreSQL 18 container (e.g. postgres:18.6-alpine) and Traefik v3, both on the Docker network selected above.</Requires>
+  <Config Name="Database URL" Target="DATABASE_URL" Default="postgres://frosthaven:PASSWORD@frosttracker-db:5432/frosthaven" Mode="" Description="postgres://USER:PASSWORD@CONTAINER-NAME:5432/DATABASE of your PostgreSQL container" Type="Variable" Display="always" Required="true" Mask="true">postgres://frosthaven:PASSWORD@frosttracker-db:5432/frosthaven</Config>
+  <Config Name="Public URL" Target="PUBLIC_URL" Default="https://frosthaven.example.com" Mode="" Description="The HTTPS address you open in the browser. Must match the Traefik host rule below." Type="Variable" Display="always" Required="true" Mask="false">https://frosthaven.example.com</Config>
+  <Config Name="Trusted proxies" Target="TRUSTED_PROXIES" Default="10.0.0.0/8,172.16.0.0/12,192.168.0.0/16" Mode="" Description="IPs/CIDRs whose X-Forwarded-* headers are trusted. Narrow to the Traefik network subnet if you like." Type="Variable" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>
+  <Config Name="Admin username" Target="ADMIN_USERNAME" Default="admin" Mode="" Description="Creates the first site admin on first start (ignored once an admin exists)." Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Admin password" Target="ADMIN_PASSWORD" Default="" Mode="" Description="First admin's password (min. 10 characters). Clear it after the first start." Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="Open registration" Target="ALLOW_REGISTRATION" Default="false" Mode="" Description="false = accounts only via invite links (recommended)." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Log level" Target="LOG_LEVEL" Default="info" Mode="" Description="fatal, error, warn, info, debug" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="Assets (your map images)" Target="/data/assets" Default="/mnt/user/appdata/frosthaven-tracker/assets" Mode="ro" Description="map/world.jpg and optionally map/town.jpg" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/frosthaven-tracker/assets</Config>
+  <Config Name="Seed (your game data)" Target="/data/seed" Default="/mnt/user/appdata/frosthaven-tracker/seed" Mode="ro" Description="Game data seed directory, imported automatically on first start." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/frosthaven-tracker/seed</Config>
+  <Config Name="Traefik enable" Target="traefik.enable" Default="true" Mode="" Description="" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Traefik network" Target="traefik.docker.network" Default="traefik" Mode="" Description="Docker network Traefik uses to reach the app" Type="Label" Display="advanced" Required="true" Mask="false">traefik</Config>
+  <Config Name="Traefik rule" Target="traefik.http.routers.frosthaven-tracker.rule" Default="Host(`frosthaven.example.com`)" Mode="" Description="Your host name, same as in the public URL" Type="Label" Display="always" Required="true" Mask="false">Host(`frosthaven.example.com`)</Config>
+  <Config Name="Traefik entrypoint" Target="traefik.http.routers.frosthaven-tracker.entrypoints" Default="websecure" Mode="" Description="Your HTTPS entrypoint" Type="Label" Display="advanced" Required="true" Mask="false">websecure</Config>
+  <Config Name="Traefik cert resolver" Target="traefik.http.routers.frosthaven-tracker.tls.certresolver" Default="letsencrypt" Mode="" Description="Name of your certificate resolver" Type="Label" Display="always" Required="true" Mask="false">letsencrypt</Config>
+  <Config Name="Traefik port" Target="traefik.http.services.frosthaven-tracker.loadbalancer.server.port" Default="3000" Mode="" Description="" Type="Label" Display="advanced" Required="true" Mask="false">3000</Config>
+</Container>
