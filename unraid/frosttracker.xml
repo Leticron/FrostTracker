@@ -15,7 +15,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Leticron/FrostTracker/issues</Support>
   <Project>https://github.com/Leticron/FrostTracker</Project>
-  <Overview>Self-hosted campaign and character tracker for a Frosthaven group. Mobile-first PWA. Contains no game content: mount your own game data seed and map images. Needs PostgreSQL 18 and an existing Traefik v3 (no ports are published).</Overview>
+  <Overview>Self-hosted campaign and character tracker for a Frosthaven group. Mobile-first PWA. Contains no game content: mount your own game data seed and map images. Needs PostgreSQL 18 and an existing Traefik v3. Publishes one plain-HTTP port; sign in through Traefik's HTTPS address.</Overview>
   <Category>Tools: Productivity:</Category>
   <WebUI/>
   <TemplateURL/>
@@ -24,6 +24,7 @@
   <PostArgs/>
   <CPUset/>
   <Requires>PostgreSQL 18 container (e.g. postgres:18.6-alpine) and Traefik v3, both on the Docker network selected above.</Requires>
+  <Config Name="Host port" Target="3000" Default="3000" Mode="tcp" Description="Port published on the server. Choose one that is free (check with: ss -tln)." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
   <Config Name="Database URL" Target="DATABASE_URL" Default="postgres://frosthaven:PASSWORD@frosttracker-db:5432/frosthaven" Mode="" Description="postgres://USER:PASSWORD@CONTAINER-NAME:5432/DATABASE of your PostgreSQL container" Type="Variable" Display="always" Required="true" Mask="true">postgres://frosthaven:PASSWORD@frosttracker-db:5432/frosthaven</Config>
   <Config Name="Public URL" Target="PUBLIC_URL" Default="https://frosthaven.example.com" Mode="" Description="The HTTPS address you open in the browser. Must match the Traefik host rule below." Type="Variable" Display="always" Required="true" Mask="false">https://frosthaven.example.com</Config>
   <Config Name="Trusted proxies" Target="TRUSTED_PROXIES" Default="10.0.0.0/8,172.16.0.0/12,192.168.0.0/16" Mode="" Description="IPs/CIDRs whose X-Forwarded-* headers are trusted. Narrow to the Traefik network subnet if you like." Type="Variable" Display="advanced" Required="false" Mask="false">10.0.0.0/8,172.16.0.0/12,192.168.0.0/16</Config>

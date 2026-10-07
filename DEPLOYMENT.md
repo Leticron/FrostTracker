@@ -18,7 +18,9 @@ Check these against your setup. The values in brackets are the defaults; you can
 
 Find the network name with `docker network ls`. If Traefik uses a different network, set `TRAEFIK_NETWORK` accordingly.
 
-FrostTracker publishes **no ports** on the host. Only Traefik can reach it, through the shared Docker network.
+Traefik reaches FrostTracker through the shared Docker network. The app also publishes one port on the host, `APP_PORT` (default `3000`), on `APP_BIND` (default `0.0.0.0`, all interfaces). Pick a port that nothing else on the server uses; list the ports in use with `ss -tln` in the Unraid terminal. Set `APP_BIND=127.0.0.1` to make the port reachable from the server only.
+
+The published port speaks plain HTTP. Browsers still have to use the HTTPS address through Traefik: signing in via `http://<server>:<port>` fails, because the session cookie is HTTPS-only and requests must come from `APP_HOST`. The port is for things like a Traefik that runs with host networking or on another machine, monitoring, or `curl http://<server>:<port>/healthz`.
 
 ## 2. Folders
 
@@ -53,6 +55,7 @@ The image is published to the GitHub Container Registry by CI after every merge 
    ADMIN_USERNAME=admin
    ADMIN_PASSWORD=<at least 10 characters>
    TZ=Europe/Berlin
+   APP_PORT=3000   # a port that is free on the server
    ```
 
    Generate a password with `openssl rand -base64 24` in the Unraid terminal. Pin `APP_VERSION` to a release tag (e.g. `1.0.0`) if you want updates only when you choose (see [Updating](#6-updating)).
@@ -119,7 +122,8 @@ Install the stack as above with the **same** `POSTGRES_*` values, but leave `ADM
 
 | Symptom                                                  | Cause and fix                                                                                                                                                                                                                                                   |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Traefik returns 404                                      | Traefik doesn't see the container: check `traefik.enable`, that the app is on `TRAEFIK_NETWORK`, and that Traefik watches Docker. `docker compose logs app` should show the server listening on port 3000                                                       |
+| Traefik returns 404                                      | Traefik doesn't see the container: check `traefik.enable`, that the app is on `TRAEFIK_NETWORK`, and that Traefik watches Docker. `docker compose logs app` should show the server listening on `APP_PORT`                                                      |
+| `port is already allocated` / `address already in use`   | Another container or service uses `APP_PORT`. Find it with `ss -tlnp \| grep :<port>` or `docker ps`, then set a free `APP_PORT` in the ENV file and Compose Up again                                                                                           |
 | 502 / Bad Gateway                                        | The app isn't healthy yet or crashed: `docker compose ps`, `docker compose logs app`                                                                                                                                                                            |
 | Sign-in fails with "Forbidden" (403)                     | `APP_HOST` doesn't match the address in the browser. Requests from other origins are rejected (CSRF protection)                                                                                                                                                 |
 | Sign-in seems to work but you stay on the login page     | The site was opened via plain HTTP. The session cookie is HTTPS-only; enable the HTTP→HTTPS redirect in Traefik                                                                                                                                                 |
@@ -147,7 +151,7 @@ If you prefer Unraid's normal Docker UI over Compose Manager, use the template i
 3. **Docker** → **Add Container** → Template **frosttracker**. Set the database URL (`postgres://frosthaven:<password>@frosttracker-db:5432/frosthaven`), the public URL, the Traefik host rule and cert resolver, and the admin password. Apply.
 4. Continue with [First start](#5-first-start).
 
-Differences from the Compose stack: both containers share the Traefik network (the database isn't on a private network), and there is no backup service. Schedule a backup with the **User Scripts** plugin, e.g. daily:
+Differences from the Compose stack: both containers share the Traefik network (the database isn't on a private network), the app always listens on port 3000 inside the container (change the published **Host port** if 3000 is taken), and there is no backup service. Schedule a backup with the **User Scripts** plugin, e.g. daily:
 
 ```sh
 #!/bin/bash
@@ -173,6 +177,6 @@ docker exec -i frosttracker-db pg_restore -U frosthaven -d frosthaven --no-owner
 ## Security notes
 
 - Accounts: passwords are hashed with Argon2id; sessions are random tokens in `__Host-` HTTP-only, secure, SameSite cookies; login is rate-limited; every API call checks campaign membership and role.
-- `TRUSTED_PROXIES` defaults to the private address ranges because the app is only reachable through Docker networks. Any container on the Traefik network could therefore set `X-Forwarded-For`. Narrow it to Traefik's address (or subnet) if you share that network with untrusted containers.
+- `TRUSTED_PROXIES` defaults to the private address ranges. Because `APP_PORT` is published on the host, devices on your LAN (and any container on the Traefik network) can reach the app directly and set `X-Forwarded-For`, which would let them get around the per-IP login rate limit. Set `TRUSTED_PROXIES` to your Traefik network's subnet (`docker network inspect traefik -f '{{range .IPAM.Config}}{{.Subnet}}{{end}}'`), or bind the port to `127.0.0.1` with `APP_BIND`.
 - Single sign-on (OIDC, e.g. Authelia/Authentik) isn't built in yet. You can still put a Traefik forward-auth middleware in front of the whole site; users then sign in twice.
 - The `assets/` folder is served to signed-in users only, and only image files.
