@@ -1,0 +1,201 @@
+{
+  "calendar": {
+    "weeksPerSeason": 10,
+    "seasons": [
+      "summer",
+      "winter"
+    ]
+  },
+  "resources": [
+    {
+      "key": "timber",
+      "name": "Timber",
+      "kind": "material"
+    },
+    {
+      "key": "ore",
+      "name": "Ore",
+      "kind": "material"
+    },
+    {
+      "key": "leather",
+      "name": "Leather",
+      "kind": "material"
+    },
+    {
+      "key": "emberleaf",
+      "name": "Emberleaf",
+      "kind": "herb"
+    },
+    {
+      "key": "frostcap",
+      "name": "Frostcap",
+      "kind": "herb"
+    },
+    {
+      "key": "duskroot",
+      "name": "Duskroot",
+      "kind": "herb"
+    },
+    {
+      "key": "saltmoss",
+      "name": "Saltmoss",
+      "kind": "herb"
+    },
+    {
+      "key": "thornbud",
+      "name": "Thornbud",
+      "kind": "herb"
+    },
+    {
+      "key": "glowcap",
+      "name": "Glowcap",
+      "kind": "herb"
+    }
+  ],
+  "levels": {
+    "xpThresholds": [
+      0,
+      45,
+      95,
+      150,
+      210,
+      275,
+      345,
+      420,
+      500
+    ]
+  },
+  "checkmarks": {
+    "perPerkMark": 3,
+    "max": 18
+  },
+  "startingGold": {
+    "perProsperityLevel": 10,
+    "base": 20
+  },
+  "prosperity": {
+    "thresholds": [
+      6,
+      15,
+      26,
+      39,
+      54,
+      71,
+      90,
+      111
+    ]
+  },
+  "retirement": {
+    "prosperityGain": 2
+  },
+  "scenarioLevel": {
+    "goldConversion": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      6
+    ],
+    "bonusXp": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18
+    ]
+  },
+  "inspiration": {
+    "base": 4
+  },
+  "morale": {
+    "min": 0,
+    "max": 20,
+    "defenseModifiers": [
+      {
+        "from": 0,
+        "to": 2,
+        "modifier": -10
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "modifier": -5
+      },
+      {
+        "from": 15,
+        "to": 17,
+        "modifier": 5
+      },
+      {
+        "from": 18,
+        "to": 20,
+        "modifier": 10
+      }
+    ],
+    "minSection": "155.1",
+    "maxSection": "155.2"
+  },
+  "calendarPreprinted": [
+    {
+      "week": 3,
+      "sections": [
+        "160.1",
+        "161.3"
+      ]
+    },
+    {
+      "week": 11,
+      "sections": [
+        "150.1"
+      ]
+    },
+    {
+      "week": 21,
+      "sections": [
+        "150.2"
+      ]
+    },
+    {
+      "week": 31,
+      "sections": [
+        "150.3"
+      ]
+    },
+    {
+      "week": 41,
+      "sections": [
+        "150.4"
+      ]
+    },
+    {
+      "week": 51,
+      "sections": [
+        "150.5"
+      ]
+    },
+    {
+      "week": 61,
+      "sections": [
+        "150.6"
+      ]
+    },
+    {
+      "week": 71,
+      "sections": [
+        "150.7"
+      ]
+    }
+  ],
+  "calendarSheetWeeks": 80,
+  "outpost": {
+    "secondBuildMoraleCost": 2,
+    "repairMoraleCost": 1
+  }
+}

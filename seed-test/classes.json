@@ -1,0 +1,1333 @@
+[
+  {
+    "key": "test-warden",
+    "name": "Test Warden",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Remove two -1 cards (test perk 1)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 2)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Add two +1 cards (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 8)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 9)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 11)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 12)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 13)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Hidden feat",
+      "Test mastery: Ridge challenge"
+    ],
+    "maxHpByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "handSize": 12
+  },
+  {
+    "key": "test-tinkerer",
+    "name": "Test Tinkerer",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 1)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add two +1 cards (test perk 2)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 5)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 8)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 9)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 11)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 12)",
+        "boxes": 2,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Restless feat",
+      "Test mastery: Den challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 10
+  },
+  {
+    "key": "test-skirmisher",
+    "name": "Test Skirmisher",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Add two +1 cards (test perk 1)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 2)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 3)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 6)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 7)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Smoldering feat",
+      "Test mastery: Cairn challenge"
+    ],
+    "maxHpByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "handSize": 11
+  },
+  {
+    "key": "test-mystic",
+    "name": "Test Mystic",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Add one +2 FROST card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 2)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 4)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 5)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 9)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 11)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Hidden feat",
+      "Test mastery: Archive challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 12
+  },
+  {
+    "key": "test-brute",
+    "name": "Test Brute",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 1)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 2)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 3)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 4)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 5)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 6)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 8)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Remove two -1 cards (test perk 9)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 10)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 13)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Silent feat",
+      "Test mastery: Lantern challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 9
+  },
+  {
+    "key": "test-herbalist",
+    "name": "Test Herbalist",
+    "starting": true,
+    "perks": [
+      {
+        "text": "Ignore scenario effects (test perk 1)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 4)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 5)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 7)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 9)",
+        "boxes": 2,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Pale feat",
+      "Test mastery: Lantern challenge"
+    ],
+    "maxHpByLevel": null,
+    "handSize": null
+  },
+  {
+    "key": "test-duelist",
+    "name": "Test Duelist",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 4)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 5)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 7)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 11)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 13)",
+        "boxes": 2,
+        "linked": true
+      }
+    ],
+    "masteries": [
+      "Test mastery: Shattered feat",
+      "Test mastery: Archive challenge"
+    ],
+    "maxHpByLevel": [
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18
+    ],
+    "handSize": 12
+  },
+  {
+    "key": "test-stormcaller",
+    "name": "Test Stormcaller",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Add one +1 WOUND card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 3)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 4)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Remove one -2 card (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 7)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Add two +1 cards (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 9)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 11)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 13)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Endless feat",
+      "Test mastery: Shoal challenge"
+    ],
+    "maxHpByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "handSize": 14
+  },
+  {
+    "key": "test-shadow",
+    "name": "Test Shadow",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 1)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 3)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 5)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 6)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 7)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 8)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Bitter feat",
+      "Test mastery: Causeway challenge"
+    ],
+    "maxHpByLevel": [
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18
+    ],
+    "handSize": 9
+  },
+  {
+    "key": "test-engineer",
+    "name": "Test Engineer",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 2)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Remove one -2 card (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 6)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 8)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 10)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 12)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 13)",
+        "boxes": 3,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Pale feat",
+      "Test mastery: Mill challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 13
+  },
+  {
+    "key": "test-beastmaster",
+    "name": "Test Beastmaster",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 1)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 2)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 6)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 7)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Ignore scenario effects (test perk 8)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Crimson feat",
+      "Test mastery: Chapel challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 8
+  },
+  {
+    "key": "test-chronicler",
+    "name": "Test Chronicler",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Remove one -2 card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 3)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 4)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 5)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 6)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Ignore scenario effects (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 8)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 9)",
+        "boxes": 3,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Smoldering feat",
+      "Test mastery: Foundry challenge"
+    ],
+    "maxHpByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "handSize": 12
+  },
+  {
+    "key": "test-lancer",
+    "name": "Test Lancer",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Remove two -1 cards (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 2)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add two +1 cards (test perk 3)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 9)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 13)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Frozen feat",
+      "Test mastery: Harbor challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 11
+  },
+  {
+    "key": "test-hexer",
+    "name": "Test Hexer",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 4)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 6)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 7)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 8)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 9)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 10)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Remove one -2 card (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Ashen feat",
+      "Test mastery: Cairn challenge"
+    ],
+    "maxHpByLevel": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22
+    ],
+    "handSize": 11
+  },
+  {
+    "key": "test-tidecaller",
+    "name": "Test Tidecaller",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Add two +1 cards (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 2)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 3)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 4)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 7)",
+        "boxes": 3,
+        "linked": true
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 8)",
+        "boxes": 2,
+        "linked": true
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 9)",
+        "boxes": 3,
+        "linked": true
+      }
+    ],
+    "masteries": [
+      "Test mastery: Hidden feat",
+      "Test mastery: Cairn challenge"
+    ],
+    "maxHpByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ],
+    "handSize": 10
+  },
+  {
+    "key": "test-smith",
+    "name": "Test Smith",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Add one +2 FROST card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 2)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 3)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 4)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 5)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 6)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 7)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 8)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 9)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 10)",
+        "boxes": 3,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Drowned feat",
+      "Test mastery: Cairn challenge"
+    ],
+    "maxHpByLevel": [
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18
+    ],
+    "handSize": 13
+  },
+  {
+    "key": "test-wanderer",
+    "name": "Test Wanderer",
+    "starting": false,
+    "perks": [
+      {
+        "text": "Replace one +0 card with one +1 HEAL 1 card (test perk 1)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Ignore scenario effects (test perk 2)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Add three rolling PUSH 1 cards (test perk 3)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +1 WOUND card (test perk 4)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace two +1 cards with two +2 cards (test perk 5)",
+        "boxes": 3,
+        "linked": false
+      },
+      {
+        "text": "Once each scenario, during your turn, gain SHIELD 1 (test perk 6)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add one rolling +1 INVISIBLE card (test perk 7)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Remove one -2 card (test perk 8)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Remove two -1 cards (test perk 9)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Replace one -1 card with one +1 card (test perk 10)",
+        "boxes": 1,
+        "linked": false
+      },
+      {
+        "text": "Add two +1 cards (test perk 11)",
+        "boxes": 2,
+        "linked": false
+      },
+      {
+        "text": "Add one +2 FROST card (test perk 12)",
+        "boxes": 1,
+        "linked": false
+      }
+    ],
+    "masteries": [
+      "Test mastery: Twisted feat",
+      "Test mastery: Bastion challenge"
+    ],
+    "maxHpByLevel": null,
+    "handSize": null
+  }
+]

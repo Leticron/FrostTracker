@@ -1,0 +1,1079 @@
+[
+  {
+    "number": 5,
+    "name": "Test Barracks",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 1
+          }
+        },
+        "maxSoldiers": 4,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 1,
+            "ore": 1
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "maxSoldiers": 6,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 2,
+            "leather": 5
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": null,
+        "maxSoldiers": 8,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "name": "Test Workshop",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 4
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "name": "Test Market",
+    "starting": true,
+    "levels": [
+      {
+        "level": 0
+      },
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "timber": 2,
+            "ore": 6
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "leather": 4,
+            "timber": 3
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 4,
+        "cost": {
+          "prosperity": 4,
+          "resources": {
+            "timber": 5,
+            "leather": 1
+          }
+        },
+        "repairCost": 4,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 4
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "name": "Test Infirmary",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 3,
+            "ore": 3,
+            "timber": 1
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "timber": 6,
+            "leather": 2
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "name": "Test Alchemy Hall",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": null,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 1,
+            "leather": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 1,
+            "ore": 4,
+            "timber": 2
+          }
+        },
+        "repairCost": null,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "name": "Test Mine",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": 1,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "timber": 5,
+            "leather": 3
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 3,
+            "timber": 4,
+            "leather": 2
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "name": "Test Logging Camp",
+    "starting": true,
+    "levels": [
+      {
+        "level": 1,
+        "cost": null,
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2,
+            "timber": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      }
+    ]
+  },
+  {
+    "number": 40,
+    "name": "Test Tannery",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "leather": 1,
+            "timber": 2,
+            "ore": 3
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "ore": 6
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "name": "Test Garden",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "timber": 5
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 6,
+            "timber": 2
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "timber": 1,
+            "ore": 2,
+            "leather": 1
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 2,
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 50,
+    "name": "Test Library",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "timber": 3,
+            "leather": 4
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 1,
+            "timber": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 3,
+            "ore": 2
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 55,
+    "name": "Test Jeweler",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "ore": 4
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 11
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 60,
+    "name": "Test Docks",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "ore": 1,
+            "leather": 3,
+            "timber": 1
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 2,
+            "leather": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "ore": 4
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "timber": 1,
+            "leather": 2,
+            "ore": 2
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 65,
+    "name": "Test Watchtower",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "leather": 1,
+            "ore": 4
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "timber": 3
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 5,
+            "timber": 3
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 2,
+            "leather": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 70,
+    "name": "Test Walls",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "ore": 3,
+            "timber": 3
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "timber": 6,
+            "ore": 1
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 3,
+            "timber": 2
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 4,
+        "cost": {
+          "prosperity": 4,
+          "resources": {
+            "leather": 1,
+            "timber": 3
+          }
+        },
+        "repairCost": 4,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 2,
+            "ore": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 75,
+    "name": "Test Inn",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "leather": 3,
+            "timber": 2
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3,
+            "timber": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "ore": 3,
+            "leather": 2
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "leather": 3,
+            "ore": 1
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 3,
+            "timber": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 80,
+    "name": "Test Temple",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 3,
+            "leather": 2
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 3
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 2,
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 7,
+            "timber": 1
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 85,
+    "name": "Test Stables",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "timber": 5
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "timber": 3,
+            "leather": 3
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "ore": 5,
+            "timber": 5
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 4,
+        "cost": {
+          "prosperity": 4,
+          "resources": {
+            "leather": 1,
+            "ore": 2
+          }
+        },
+        "repairCost": 4,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 5
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 90,
+    "name": "Test Trading Post",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "timber": 3,
+            "leather": 3
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 3,
+            "timber": 2,
+            "ore": 2
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3,
+            "leather": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 95,
+    "name": "Test Carpenter",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "ore": 1,
+            "timber": 2
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "leather": 2,
+            "ore": 4
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  },
+  {
+    "number": 100,
+    "name": "Test Town Hall",
+    "starting": false,
+    "levels": [
+      {
+        "level": 1,
+        "cost": {
+          "prosperity": 1,
+          "resources": {
+            "leather": 1,
+            "timber": 4
+          }
+        },
+        "repairCost": 1,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "timber": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": null
+      },
+      {
+        "level": 2,
+        "cost": {
+          "prosperity": 2,
+          "resources": {
+            "timber": 3,
+            "ore": 4
+          }
+        },
+        "repairCost": 2,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "ore": 3
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 3,
+        "cost": {
+          "prosperity": 3,
+          "resources": {
+            "timber": 5,
+            "leather": 3,
+            "ore": 2
+          }
+        },
+        "repairCost": 3,
+        "rebuildCost": {
+          "prosperity": null,
+          "resources": {
+            "leather": 1
+          }
+        },
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      },
+      {
+        "level": 4,
+        "cost": {
+          "prosperity": 4,
+          "resources": {
+            "ore": 1,
+            "leather": 4
+          }
+        },
+        "repairCost": 4,
+        "rebuildCost": null,
+        "maxSoldiers": null,
+        "prosperityGain": 1
+      }
+    ]
+  }
+]
