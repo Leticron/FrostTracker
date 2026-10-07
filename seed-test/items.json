@@ -1,0 +1,2002 @@
+[
+  {
+    "number": 1,
+    "name": "Test Broken Helm 1",
+    "type": "head",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 2,
+    "name": "Test Smoldering Coat 2",
+    "type": "body",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 3,
+    "name": "Test Shattered Boots 3",
+    "type": "legs",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 4,
+    "name": "Test Verdant Blade 4",
+    "type": "onehand",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 5,
+    "name": "Test Shattered Glaive 5",
+    "type": "twohand",
+    "goldCost": 35,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 6,
+    "name": "Test Shattered Charm 6",
+    "type": "small",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 7,
+    "name": "Test Hollow Helm 7",
+    "type": "head",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 8,
+    "name": "Test Restless Coat 8",
+    "type": "body",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 9,
+    "name": "Test Tangled Boots 9",
+    "type": "legs",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 10,
+    "name": "Test Endless Blade 10",
+    "type": "onehand",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 11,
+    "name": "Test Hidden Glaive 11",
+    "type": "twohand",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 12,
+    "name": "Test Frozen Charm 12",
+    "type": "small",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 13,
+    "name": "Test Howling Helm 13",
+    "type": "head",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 14,
+    "name": "Test Bleak Coat 14",
+    "type": "body",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 15,
+    "name": "Test Pale Boots 15",
+    "type": "legs",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 16,
+    "name": "Test Forgotten Blade 16",
+    "type": "onehand",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 17,
+    "name": "Test Hollow Glaive 17",
+    "type": "twohand",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 18,
+    "name": "Test Verdant Charm 18",
+    "type": "small",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 19,
+    "name": "Test Frozen Helm 19",
+    "type": "head",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 20,
+    "name": "Test Pale Coat 20",
+    "type": "body",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 21,
+    "name": "Test Pale Boots 21",
+    "type": "legs",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 22,
+    "name": "Test Rusted Blade 22",
+    "type": "onehand",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 23,
+    "name": "Test Sunken Glaive 23",
+    "type": "twohand",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 24,
+    "name": "Test Forgotten Charm 24",
+    "type": "small",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 25,
+    "name": "Test Drowned Helm 25",
+    "type": "head",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 26,
+    "name": "Test Rusted Coat 26",
+    "type": "body",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 27,
+    "name": "Test Hollow Boots 27",
+    "type": "legs",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 28,
+    "name": "Test Restless Blade 28",
+    "type": "onehand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 29,
+    "name": "Test Bleak Glaive 29",
+    "type": "twohand",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 30,
+    "name": "Test Silent Charm 30",
+    "type": "small",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 31,
+    "name": "Test Restless Helm 31",
+    "type": "head",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 32,
+    "name": "Test Crimson Coat 32",
+    "type": "body",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 33,
+    "name": "Test Restless Boots 33",
+    "type": "legs",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 34,
+    "name": "Test Shattered Blade 34",
+    "type": "onehand",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 35,
+    "name": "Test Sunken Glaive 35",
+    "type": "twohand",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 36,
+    "name": "Test Hollow Charm 36",
+    "type": "small",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 37,
+    "name": "Test Forgotten Helm 37",
+    "type": "head",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 38,
+    "name": "Test Verdant Coat 38",
+    "type": "body",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 39,
+    "name": "Test Broken Boots 39",
+    "type": "legs",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 40,
+    "name": "Test Hidden Blade 40",
+    "type": "onehand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 41,
+    "name": "Test Gilded Glaive 41",
+    "type": "twohand",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 42,
+    "name": "Test Gilded Charm 42",
+    "type": "small",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 43,
+    "name": "Test Hollow Helm 43",
+    "type": "head",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 44,
+    "name": "Test Frozen Coat 44",
+    "type": "body",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 45,
+    "name": "Test Howling Boots 45",
+    "type": "legs",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 46,
+    "name": "Test Restless Blade 46",
+    "type": "onehand",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 47,
+    "name": "Test Tangled Glaive 47",
+    "type": "twohand",
+    "goldCost": 35,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 48,
+    "name": "Test Drowned Charm 48",
+    "type": "small",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 49,
+    "name": "Test Silent Helm 49",
+    "type": "head",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 50,
+    "name": "Test Drowned Blade 50",
+    "type": null,
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 51,
+    "name": "Test Hidden Boots 51",
+    "type": "legs",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 52,
+    "name": "Test Restless Blade 52",
+    "type": "onehand",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 53,
+    "name": "Test Twisted Glaive 53",
+    "type": "twohand",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 54,
+    "name": "Test Rusted Charm 54",
+    "type": "small",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 55,
+    "name": "Test Hidden Helm 55",
+    "type": "head",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 56,
+    "name": "Test Broken Coat 56",
+    "type": "body",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 57,
+    "name": "Test Tangled Boots 57",
+    "type": "legs",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 58,
+    "name": "Test Smoldering Blade 58",
+    "type": "onehand",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 59,
+    "name": "Test Tangled Glaive 59",
+    "type": "twohand",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 60,
+    "name": "Test Rusted Charm 60",
+    "type": "small",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 61,
+    "name": "Test Frozen Helm 61",
+    "type": "head",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 62,
+    "name": "Test Verdant Coat 62",
+    "type": "body",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 63,
+    "name": "Test Verdant Boots 63",
+    "type": "legs",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 64,
+    "name": "Test Bitter Blade 64",
+    "type": "onehand",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 65,
+    "name": "Test Silent Glaive 65",
+    "type": "twohand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 66,
+    "name": "Test Smoldering Charm 66",
+    "type": "small",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 67,
+    "name": "Test Twisted Helm 67",
+    "type": "head",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 68,
+    "name": "Test Bitter Coat 68",
+    "type": "body",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 69,
+    "name": "Test Smoldering Boots 69",
+    "type": "legs",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 70,
+    "name": "Test Sunken Blade 70",
+    "type": "onehand",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 71,
+    "name": "Test Howling Glaive 71",
+    "type": "twohand",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 72,
+    "name": "Test Rusted Charm 72",
+    "type": "small",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 73,
+    "name": "Test Drowned Helm 73",
+    "type": "head",
+    "goldCost": 35,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 74,
+    "name": "Test Glimmering Coat 74",
+    "type": "body",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 75,
+    "name": "Test Sunken Boots 75",
+    "type": "legs",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 76,
+    "name": "Test Drowned Blade 76",
+    "type": "onehand",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 77,
+    "name": "Test Rusted Glaive 77",
+    "type": "twohand",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 78,
+    "name": "Test Crimson Charm 78",
+    "type": "small",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 79,
+    "name": "Test Sunken Helm 79",
+    "type": "head",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 80,
+    "name": "Test Smoldering Coat 80",
+    "type": "body",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 81,
+    "name": "Test Endless Boots 81",
+    "type": "legs",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 82,
+    "name": "Test Gilded Blade 82",
+    "type": "onehand",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 83,
+    "name": "Test Bitter Glaive 83",
+    "type": "twohand",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 84,
+    "name": "Test Hidden Charm 84",
+    "type": "small",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 85,
+    "name": "Test Endless Helm 85",
+    "type": "head",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 86,
+    "name": "Test Sunken Coat 86",
+    "type": "body",
+    "goldCost": 35,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 87,
+    "name": "Test Restless Boots 87",
+    "type": "legs",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 88,
+    "name": "Test Sunken Blade 88",
+    "type": "onehand",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 89,
+    "name": "Test Verdant Glaive 89",
+    "type": "twohand",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 90,
+    "name": "Test Endless Charm 90",
+    "type": "small",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 91,
+    "name": "Test Tangled Helm 91",
+    "type": "head",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 92,
+    "name": "Test Hollow Coat 92",
+    "type": "body",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 93,
+    "name": "Test Hidden Boots 93",
+    "type": "legs",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 94,
+    "name": "Test Howling Blade 94",
+    "type": "onehand",
+    "goldCost": 25,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 95,
+    "name": "Test Bitter Glaive 95",
+    "type": "twohand",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 96,
+    "name": "Test Tangled Charm 96",
+    "type": "small",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 97,
+    "name": "Test Rusted Helm 97",
+    "type": "head",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 98,
+    "name": "Test Crimson Coat 98",
+    "type": "body",
+    "goldCost": 15,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 99,
+    "name": "Test Ashen Boots 99",
+    "type": "legs",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 100,
+    "name": "Test Twisted Blade 100",
+    "type": null,
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 101,
+    "name": "Test Broken Glaive 101",
+    "type": "twohand",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 102,
+    "name": "Test Frozen Charm 102",
+    "type": "small",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 103,
+    "name": "Test Verdant Helm 103",
+    "type": "head",
+    "goldCost": 40,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 104,
+    "name": "Test Frozen Coat 104",
+    "type": "body",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 105,
+    "name": "Test Forgotten Boots 105",
+    "type": "legs",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 106,
+    "name": "Test Gilded Blade 106",
+    "type": "onehand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 107,
+    "name": "Test Hollow Glaive 107",
+    "type": "twohand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 108,
+    "name": "Test Ashen Charm 108",
+    "type": "small",
+    "goldCost": 50,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 109,
+    "name": "Test Crimson Helm 109",
+    "type": "head",
+    "goldCost": 70,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 110,
+    "name": "Test Gilded Coat 110",
+    "type": "body",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 111,
+    "name": "Test Rusted Boots 111",
+    "type": "legs",
+    "goldCost": 60,
+    "craftCostCount": null,
+    "quantity": 4
+  },
+  {
+    "number": 112,
+    "name": "Test Glimmering Blade 112",
+    "type": "onehand",
+    "goldCost": 80,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 113,
+    "name": "Test Shattered Glaive 113",
+    "type": "twohand",
+    "goldCost": 75,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 114,
+    "name": "Test Smoldering Charm 114",
+    "type": "small",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 115,
+    "name": "Test Sunken Helm 115",
+    "type": "head",
+    "goldCost": 45,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 116,
+    "name": "Test Bleak Coat 116",
+    "type": "body",
+    "goldCost": 65,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 117,
+    "name": "Test Endless Boots 117",
+    "type": "legs",
+    "goldCost": 20,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 118,
+    "name": "Test Smoldering Blade 118",
+    "type": "onehand",
+    "goldCost": 10,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 119,
+    "name": "Test Twisted Glaive 119",
+    "type": "twohand",
+    "goldCost": 55,
+    "craftCostCount": null,
+    "quantity": 2
+  },
+  {
+    "number": 120,
+    "name": "Test Howling Charm 120",
+    "type": "small",
+    "goldCost": 30,
+    "craftCostCount": null,
+    "quantity": 1
+  },
+  {
+    "number": 121,
+    "name": "Test Smoldering Helm 121",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 122,
+    "name": "Test Howling Coat 122",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 123,
+    "name": "Test Bitter Boots 123",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 124,
+    "name": "Test Pale Blade 124",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 125,
+    "name": "Test Pale Glaive 125",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 126,
+    "name": "Test Forgotten Charm 126",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 127,
+    "name": "Test Sunken Helm 127",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 128,
+    "name": "Test Tangled Coat 128",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 129,
+    "name": "Test Gilded Boots 129",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 130,
+    "name": "Test Gilded Blade 130",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 131,
+    "name": "Test Verdant Glaive 131",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 132,
+    "name": "Test Broken Charm 132",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 133,
+    "name": "Test Glimmering Helm 133",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 134,
+    "name": "Test Drowned Coat 134",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  },
+  {
+    "number": 135,
+    "name": "Test Shattered Boots 135",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 136,
+    "name": "Test Shattered Blade 136",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 4
+  },
+  {
+    "number": 137,
+    "name": "Test Twisted Glaive 137",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 4
+  },
+  {
+    "number": 138,
+    "name": "Test Silent Charm 138",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 139,
+    "name": "Test Twisted Helm 139",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 140,
+    "name": "Test Tangled Coat 140",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 141,
+    "name": "Test Silent Boots 141",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 142,
+    "name": "Test Ashen Blade 142",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 2
+  },
+  {
+    "number": 143,
+    "name": "Test Endless Glaive 143",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 144,
+    "name": "Test Broken Charm 144",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 145,
+    "name": "Test Bitter Helm 145",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 146,
+    "name": "Test Sunken Coat 146",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 2
+  },
+  {
+    "number": 147,
+    "name": "Test Sunken Boots 147",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  },
+  {
+    "number": 148,
+    "name": "Test Verdant Blade 148",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 149,
+    "name": "Test Howling Glaive 149",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 150,
+    "name": "Test Hollow Blade 150",
+    "type": null,
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 151,
+    "name": "Test Bleak Helm 151",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 4
+  },
+  {
+    "number": 152,
+    "name": "Test Bitter Coat 152",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 153,
+    "name": "Test Hidden Boots 153",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 154,
+    "name": "Test Ashen Blade 154",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 155,
+    "name": "Test Silent Glaive 155",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 156,
+    "name": "Test Shattered Charm 156",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 157,
+    "name": "Test Verdant Helm 157",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 4
+  },
+  {
+    "number": 158,
+    "name": "Test Tangled Coat 158",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 4
+  },
+  {
+    "number": 159,
+    "name": "Test Twisted Boots 159",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 160,
+    "name": "Test Pale Blade 160",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 161,
+    "name": "Test Crimson Glaive 161",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 162,
+    "name": "Test Pale Charm 162",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 163,
+    "name": "Test Broken Helm 163",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 164,
+    "name": "Test Tangled Coat 164",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 165,
+    "name": "Test Broken Boots 165",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 166,
+    "name": "Test Restless Blade 166",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 167,
+    "name": "Test Verdant Glaive 167",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 168,
+    "name": "Test Silent Charm 168",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 169,
+    "name": "Test Twisted Helm 169",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 170,
+    "name": "Test Shattered Coat 170",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 4
+  },
+  {
+    "number": 171,
+    "name": "Test Silent Boots 171",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 172,
+    "name": "Test Tangled Blade 172",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 173,
+    "name": "Test Glimmering Glaive 173",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 174,
+    "name": "Test Endless Charm 174",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 175,
+    "name": "Test Broken Helm 175",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 176,
+    "name": "Test Shattered Coat 176",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 177,
+    "name": "Test Tangled Boots 177",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 178,
+    "name": "Test Gilded Blade 178",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 179,
+    "name": "Test Smoldering Glaive 179",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 180,
+    "name": "Test Rusted Charm 180",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 181,
+    "name": "Test Hollow Helm 181",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 182,
+    "name": "Test Drowned Coat 182",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 183,
+    "name": "Test Rusted Boots 183",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 184,
+    "name": "Test Pale Blade 184",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 185,
+    "name": "Test Verdant Glaive 185",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 2
+  },
+  {
+    "number": 186,
+    "name": "Test Glimmering Charm 186",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 187,
+    "name": "Test Howling Helm 187",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 188,
+    "name": "Test Silent Coat 188",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 189,
+    "name": "Test Restless Boots 189",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 190,
+    "name": "Test Verdant Blade 190",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 4
+  },
+  {
+    "number": 191,
+    "name": "Test Forgotten Glaive 191",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 192,
+    "name": "Test Hollow Charm 192",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 193,
+    "name": "Test Hidden Helm 193",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 194,
+    "name": "Test Verdant Coat 194",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 195,
+    "name": "Test Drowned Boots 195",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 4
+  },
+  {
+    "number": 196,
+    "name": "Test Bleak Blade 196",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 197,
+    "name": "Test Glimmering Glaive 197",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 4
+  },
+  {
+    "number": 198,
+    "name": "Test Glimmering Charm 198",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 199,
+    "name": "Test Restless Helm 199",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 200,
+    "name": "Test Hollow Blade 200",
+    "type": null,
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  },
+  {
+    "number": 201,
+    "name": "Test Glimmering Boots 201",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 202,
+    "name": "Test Smoldering Blade 202",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 203,
+    "name": "Test Broken Glaive 203",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 204,
+    "name": "Test Silent Charm 204",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 205,
+    "name": "Test Bleak Helm 205",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 1
+  },
+  {
+    "number": 206,
+    "name": "Test Rusted Coat 206",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 4
+  },
+  {
+    "number": 207,
+    "name": "Test Smoldering Boots 207",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 4
+  },
+  {
+    "number": 208,
+    "name": "Test Silent Blade 208",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 209,
+    "name": "Test Bitter Glaive 209",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 210,
+    "name": "Test Pale Charm 210",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 211,
+    "name": "Test Hollow Helm 211",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 212,
+    "name": "Test Howling Coat 212",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 1
+  },
+  {
+    "number": 213,
+    "name": "Test Broken Boots 213",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 4
+  },
+  {
+    "number": 214,
+    "name": "Test Restless Blade 214",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 215,
+    "name": "Test Pale Glaive 215",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 4
+  },
+  {
+    "number": 216,
+    "name": "Test Forgotten Charm 216",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 217,
+    "name": "Test Pale Helm 217",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 218,
+    "name": "Test Howling Coat 218",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  },
+  {
+    "number": 219,
+    "name": "Test Pale Boots 219",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 220,
+    "name": "Test Forgotten Blade 220",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 221,
+    "name": "Test Gilded Glaive 221",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 2
+  },
+  {
+    "number": 222,
+    "name": "Test Hollow Charm 222",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 223,
+    "name": "Test Pale Helm 223",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 3,
+    "quantity": 1
+  },
+  {
+    "number": 224,
+    "name": "Test Crimson Coat 224",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 225,
+    "name": "Test Silent Boots 225",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 1
+  },
+  {
+    "number": 226,
+    "name": "Test Hollow Blade 226",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": 5,
+    "quantity": 2
+  },
+  {
+    "number": 227,
+    "name": "Test Endless Glaive 227",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 228,
+    "name": "Test Silent Charm 228",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": 1,
+    "quantity": 2
+  },
+  {
+    "number": 229,
+    "name": "Test Forgotten Helm 229",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": 4,
+    "quantity": 1
+  },
+  {
+    "number": 230,
+    "name": "Test Drowned Coat 230",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": 2,
+    "quantity": 2
+  },
+  {
+    "number": 231,
+    "name": "Test Endless Boots 231",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 232,
+    "name": "Test Broken Blade 232",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 233,
+    "name": "Test Bleak Glaive 233",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 234,
+    "name": "Test Glimmering Charm 234",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 235,
+    "name": "Test Bleak Helm 235",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 236,
+    "name": "Test Hidden Coat 236",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 237,
+    "name": "Test Bleak Boots 237",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 238,
+    "name": "Test Ashen Blade 238",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 239,
+    "name": "Test Sunken Glaive 239",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 240,
+    "name": "Test Rusted Charm 240",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 241,
+    "name": "Test Tangled Helm 241",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 242,
+    "name": "Test Howling Coat 242",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 243,
+    "name": "Test Endless Boots 243",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 244,
+    "name": "Test Frozen Blade 244",
+    "type": "onehand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 245,
+    "name": "Test Bleak Glaive 245",
+    "type": "twohand",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 246,
+    "name": "Test Sunken Charm 246",
+    "type": "small",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 247,
+    "name": "Test Silent Helm 247",
+    "type": "head",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 248,
+    "name": "Test Ashen Coat 248",
+    "type": "body",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 249,
+    "name": "Test Gilded Boots 249",
+    "type": "legs",
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  },
+  {
+    "number": 250,
+    "name": "Test Bleak Blade 250",
+    "type": null,
+    "goldCost": null,
+    "craftCostCount": null,
+    "quantity": null
+  }
+]

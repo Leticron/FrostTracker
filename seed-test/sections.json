@@ -1,0 +1,9420 @@
+[
+  {
+    "ref": "10.1",
+    "title": "Hollow Lantern conclusion",
+    "scenario": 0,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 2
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 10
+          }
+        ]
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      },
+      {
+        "type": "readSection",
+        "ref": "290.2"
+      }
+    ]
+  },
+  {
+    "ref": "11.1",
+    "title": "Ashen Den conclusion",
+    "scenario": 1,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 3
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 10
+      }
+    ],
+    "rewardsText": "Remove 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "12.1",
+    "title": "Silent Harbor conclusion",
+    "scenario": 2,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 4,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 6
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Lighthouse"
+      }
+    ]
+  },
+  {
+    "ref": "13.1",
+    "title": "Drowned Warren conclusion",
+    "scenario": 3,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 5
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 11
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 14,
+        "link": "linked"
+      }
+    ]
+  },
+  {
+    "ref": "14.1",
+    "title": "Gilded Hollow conclusion",
+    "scenario": 4,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-duelist"
+      },
+      {
+        "type": "readSection",
+        "ref": "240.3"
+      }
+    ],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "14.2",
+    "title": "Gilded Hollow alternative conclusion",
+    "scenario": 4,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "15.1",
+    "title": "Broken Reach conclusion",
+    "scenario": 5,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 13
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "16.1",
+    "title": "Pale Kiln conclusion",
+    "scenario": 6,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 7
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 8,
+        "condition": "If Broken Reach is complete"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 28
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-01",
+          "TSR-02",
+          "TSR-03"
+        ]
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 40
+      }
+    ]
+  },
+  {
+    "ref": "17.1",
+    "title": "Sunken Shoal conclusion",
+    "scenario": 7,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 15
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Gain 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "17.2",
+    "title": "Sunken Shoal alternative conclusion",
+    "scenario": 7,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "18.1",
+    "title": "Howling Vault conclusion",
+    "scenario": 8,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 9
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Lighthouse"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      }
+    ],
+    "rewardsText": "Mark 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "18.2",
+    "title": "Howling Vault alternative conclusion",
+    "scenario": 8,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Remove 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "19.1",
+    "title": "Frozen Barrow conclusion",
+    "scenario": 9,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 16
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 18,
+        "condition": "If Glimmering Observatory is complete"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 129
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 19,
+        "condition": "If Gilded Harbor is complete"
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Ferry"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -2
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-04",
+          "TSR-05",
+          "TSR-06"
+        ]
+      }
+    ],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "20.1",
+    "title": "Crimson Cairn conclusion",
+    "scenario": 10,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 40,
+        "condition": "If Ashen Den is complete"
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "162.2",
+        "weeksAhead": 1
+      }
+    ]
+  },
+  {
+    "ref": "21.1",
+    "title": "Forgotten Orchard conclusion",
+    "scenario": 11,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 12
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Lose 5 dummy shards (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "22.1",
+    "title": "Shattered Causeway conclusion",
+    "scenario": 12,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Remove 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "23.1",
+    "title": "Rusted Fen conclusion",
+    "scenario": 13,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 17
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 43
+      }
+    ]
+  },
+  {
+    "ref": "24.1",
+    "title": "Twisted Chapel conclusion",
+    "scenario": 14,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 21
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 43,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 47
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 50
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Gain 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "25.1",
+    "title": "Verdant Spire conclusion",
+    "scenario": 15,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 24
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Ferry"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-stormcaller"
+      }
+    ]
+  },
+  {
+    "ref": "26.1",
+    "title": "Bleak Bastion conclusion",
+    "scenario": 16,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 19
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Charter"
+      }
+    ]
+  },
+  {
+    "ref": "27.1",
+    "title": "Glimmering Observatory conclusion",
+    "scenario": 17,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 27
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "readSection",
+        "ref": "224.1"
+      }
+    ]
+  },
+  {
+    "ref": "28.1",
+    "title": "Restless Ridge conclusion",
+    "scenario": 18,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 68
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 64
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "29.1",
+    "title": "Tangled Crossing conclusion",
+    "scenario": 19,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 20
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 23
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 26
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "177.2",
+        "weeksAhead": 1
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 45
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Lose 5 example points (fictional test text)."
+      }
+    ],
+    "rewardsText": "Gain 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "30.1",
+    "title": "Bitter Cistern conclusion",
+    "scenario": 20,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 22,
+            "link": "forced"
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 64
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "31.1",
+    "title": "Endless Archive conclusion",
+    "scenario": 21,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "boat",
+        "events": [
+          "TB-07",
+          "TB-08",
+          "TB-09"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "32.1",
+    "title": "Smoldering Foundry conclusion",
+    "scenario": 22,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 25
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 34,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 102
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 114
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Note 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "33.1",
+    "title": "Hidden Grove conclusion",
+    "scenario": 23,
+    "effects": [
+      {
+        "type": "lockOutScenario",
+        "scenario": 82
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "174.3",
+        "weeksAhead": 6
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Remove 4 dummy shards (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "34.1",
+    "title": "Hollow Quarry 2 conclusion",
+    "scenario": 24,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 30
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 48
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "35.1",
+    "title": "Ashen Mill 2 conclusion",
+    "scenario": 25,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 31
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 124
+          }
+        ]
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Charter"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "36.1",
+    "title": "Silent Lantern 2 conclusion",
+    "scenario": 26,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 28
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 29
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 36
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 38
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-shadow"
+      },
+      {
+        "type": "readSection",
+        "ref": "222.3"
+      }
+    ],
+    "rewardsText": "Gain 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "37.1",
+    "title": "Drowned Den 2 conclusion",
+    "scenario": 27,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "172.2",
+        "weeksAhead": 5
+      }
+    ],
+    "rewardsText": "Lose 4 example points (fictional test text)."
+  },
+  {
+    "ref": "38.1",
+    "title": "Gilded Harbor 2 conclusion",
+    "scenario": 28,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "39.1",
+    "title": "Broken Warren 2 conclusion",
+    "scenario": 29,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 32
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 33,
+        "condition": "If Silent Harbor is complete"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 41
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 81
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Alliance"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "167.1",
+        "weeksAhead": 1
+      }
+    ],
+    "rewardsText": "Remove 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "40.1",
+    "title": "Pale Hollow 2 conclusion",
+    "scenario": 30,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 35
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 98
+          }
+        ]
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "41.1",
+    "title": "Sunken Reach 2 conclusion",
+    "scenario": 31,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 39
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Compass"
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "177.2",
+        "weeksAhead": 4
+      }
+    ]
+  },
+  {
+    "ref": "42.1",
+    "title": "Howling Kiln 2 conclusion",
+    "scenario": 32,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": 50
+      }
+    ]
+  },
+  {
+    "ref": "43.1",
+    "title": "Frozen Shoal 2 conclusion",
+    "scenario": 33,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 40
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Relic"
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "44.1",
+    "title": "Crimson Vault 2 conclusion",
+    "scenario": 34,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 37,
+        "condition": "If Crimson Cairn is complete"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "163.3",
+        "weeksAhead": 4
+      }
+    ],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "45.1",
+    "title": "Forgotten Barrow 2 conclusion",
+    "scenario": 35,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 42,
+            "link": "linked"
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 46,
+            "link": "linked"
+          }
+        ]
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Bridge"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "46.1",
+    "title": "Shattered Cairn 2 conclusion",
+    "scenario": 36,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Seal"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "47.1",
+    "title": "Rusted Orchard 2 conclusion",
+    "scenario": 37,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Truce"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-engineer"
+      }
+    ],
+    "rewardsText": "Remove 5 example points (fictional test text)."
+  },
+  {
+    "ref": "48.1",
+    "title": "Twisted Causeway 2 conclusion",
+    "scenario": 38,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 44
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 48,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 54
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "boat",
+        "events": [
+          "TB-10",
+          "TB-11",
+          "TB-12"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "49.1",
+    "title": "Verdant Fen 2 conclusion",
+    "scenario": 39,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 45
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 102
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Mark 4 example points (fictional test text)."
+      }
+    ],
+    "rewardsText": "Remove 4 example points (fictional test text)."
+  },
+  {
+    "ref": "50.1",
+    "title": "Bleak Chapel 2 conclusion",
+    "scenario": 40,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 43
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "166.1",
+        "weeksAhead": 3
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Mark 2 dummy shards (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "51.1",
+    "title": "Glimmering Spire 2 conclusion",
+    "scenario": 41,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 47
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Lens"
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "51.2",
+    "title": "Glimmering Spire 2 alternative conclusion",
+    "scenario": 41,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Add 3 example points (fictional test text)."
+  },
+  {
+    "ref": "52.1",
+    "title": "Restless Bastion 2 conclusion",
+    "scenario": 42,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 52,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 125
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "164.2",
+        "weeksAhead": 2
+      }
+    ],
+    "rewardsText": "Add 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "53.1",
+    "title": "Tangled Observatory 2 conclusion",
+    "scenario": 43,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 50
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Crown"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "54.1",
+    "title": "Bitter Ridge 2 conclusion",
+    "scenario": 44,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 51
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 53
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 114
+      },
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Ledger"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      }
+    ],
+    "rewardsText": "Gain 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "55.1",
+    "title": "Endless Crossing 2 conclusion",
+    "scenario": 45,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 55
+      }
+    ],
+    "rewardsText": "Add 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "56.1",
+    "title": "Smoldering Cistern 2 conclusion",
+    "scenario": 46,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 49,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 56
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 130
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "57.1",
+    "title": "Hidden Archive 2 conclusion",
+    "scenario": 47,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 55
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Remove 5 example points (fictional test text)."
+  },
+  {
+    "ref": "58.1",
+    "title": "Hollow Foundry 3 conclusion",
+    "scenario": 48,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 54
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-beastmaster"
+      }
+    ],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "59.1",
+    "title": "Ashen Grove 3 conclusion",
+    "scenario": 49,
+    "effects": []
+  },
+  {
+    "ref": "60.1",
+    "title": "Silent Quarry 3 conclusion",
+    "scenario": 50,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 57,
+        "link": "linked"
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 63
+      }
+    ],
+    "rewardsText": "Mark 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "61.1",
+    "title": "Drowned Mill 3 conclusion",
+    "scenario": 51,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 63
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Gain 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "61.2",
+    "title": "Drowned Mill 3 alternative conclusion",
+    "scenario": 51,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "62.1",
+    "title": "Gilded Lantern 3 conclusion",
+    "scenario": 52,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 58
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 64
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "ref": "62.2",
+    "title": "Gilded Lantern 3 alternative conclusion",
+    "scenario": 52,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "63.1",
+    "title": "Broken Den 3 conclusion",
+    "scenario": 53,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 60
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 62
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-13"
+        ]
+      }
+    ],
+    "rewardsText": "Note 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "64.1",
+    "title": "Pale Harbor 3 conclusion",
+    "scenario": 54,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Lose 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "65.1",
+    "title": "Sunken Warren 3 conclusion",
+    "scenario": 55,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 3
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-14",
+          "TSO-15",
+          "TSO-16"
+        ]
+      },
+      {
+        "type": "readSection",
+        "ref": "241.1"
+      }
+    ]
+  },
+  {
+    "ref": "66.1",
+    "title": "Howling Hollow 3 conclusion",
+    "scenario": 56,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 67
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "66.2",
+    "title": "Howling Hollow 3 alternative conclusion",
+    "scenario": 56,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Note 4 example points (fictional test text)."
+  },
+  {
+    "ref": "67.1",
+    "title": "Frozen Reach 3 conclusion",
+    "scenario": 57,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 59
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 61
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 66
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "68.1",
+    "title": "Crimson Kiln 3 conclusion",
+    "scenario": 58,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 68
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 60
+      },
+      {
+        "type": "readSection",
+        "ref": "345.1"
+      }
+    ],
+    "rewardsText": "Add 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "68.2",
+    "title": "Crimson Kiln 3 alternative conclusion",
+    "scenario": 58,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "69.1",
+    "title": "Forgotten Shoal 3 conclusion",
+    "scenario": 59,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 71
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-chronicler"
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Note 2 placeholder marks (fictional test text)."
+      }
+    ],
+    "rewardsText": "Lose 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "70.1",
+    "title": "Shattered Vault 3 conclusion",
+    "scenario": 60,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 65,
+        "link": "linked"
+      }
+    ]
+  },
+  {
+    "ref": "71.1",
+    "title": "Rusted Barrow 3 conclusion",
+    "scenario": 61,
+    "effects": []
+  },
+  {
+    "ref": "72.1",
+    "title": "Twisted Cairn 3 conclusion",
+    "scenario": 62,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-17"
+        ]
+      }
+    ],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "73.1",
+    "title": "Verdant Orchard 3 conclusion",
+    "scenario": 63,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 75
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "74.1",
+    "title": "Bleak Causeway 3 conclusion",
+    "scenario": 64,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Mark 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "74.2",
+    "title": "Bleak Causeway 3 alternative conclusion",
+    "scenario": 64,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "75.1",
+    "title": "Glimmering Fen 3 conclusion",
+    "scenario": 65,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 72
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 73
+          }
+        ]
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 74
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "75.2",
+    "title": "Glimmering Fen 3 alternative conclusion",
+    "scenario": 65,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "76.1",
+    "title": "Restless Chapel 3 conclusion",
+    "scenario": 66,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "77.1",
+    "title": "Tangled Spire 3 conclusion",
+    "scenario": 67,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 69
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 77
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "78.1",
+    "title": "Bitter Bastion 3 conclusion",
+    "scenario": 68,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 70
+      }
+    ]
+  },
+  {
+    "ref": "79.1",
+    "title": "Endless Observatory 3 conclusion",
+    "scenario": 69,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 80,
+        "link": "forced"
+      },
+      {
+        "type": "readSection",
+        "ref": "206.1"
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Gain 1 example points (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "80.1",
+    "title": "Smoldering Ridge 3 conclusion",
+    "scenario": 70,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 78
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "163.2",
+        "weeksAhead": 1
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-lancer"
+      }
+    ],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "81.1",
+    "title": "Hidden Crossing 3 conclusion",
+    "scenario": 71,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": 65
+      }
+    ]
+  },
+  {
+    "ref": "82.1",
+    "title": "Hollow Cistern 4 conclusion",
+    "scenario": 72,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Note 5 placeholder marks (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "83.1",
+    "title": "Ashen Archive 4 conclusion",
+    "scenario": 73,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 89,
+        "condition": "If Bleak Bastion is complete"
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 131
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "179.1",
+        "weeksAhead": 5
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Mark 5 placeholder marks (fictional test text)."
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "84.1",
+    "title": "Silent Foundry 4 conclusion",
+    "scenario": 74,
+    "effects": [],
+    "rewardsText": "Mark 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "85.1",
+    "title": "Drowned Grove 4 conclusion",
+    "scenario": 75,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 76
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 81
+          }
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-18",
+          "TSO-19",
+          "TSO-20"
+        ]
+      },
+      {
+        "type": "readSection",
+        "ref": "326.3"
+      }
+    ]
+  },
+  {
+    "ref": "86.1",
+    "title": "Gilded Quarry 4 conclusion",
+    "scenario": 76,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 86
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Remove 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "87.1",
+    "title": "Broken Mill 4 conclusion",
+    "scenario": 77,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 82,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 89,
+        "link": "forced"
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "readSection",
+        "ref": "349.1"
+      }
+    ]
+  },
+  {
+    "ref": "87.2",
+    "title": "Broken Mill 4 alternative conclusion",
+    "scenario": 77,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "88.1",
+    "title": "Pale Lantern 4 conclusion",
+    "scenario": 78,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 79
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 87
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "166.3",
+        "weeksAhead": 6
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-21",
+          "TWR-22"
+        ]
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Mark 1 placeholder marks (fictional test text)."
+      }
+    ]
+  },
+  {
+    "ref": "89.1",
+    "title": "Sunken Den 4 conclusion",
+    "scenario": 79,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 85
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "171.2",
+        "weeksAhead": 6
+      }
+    ]
+  },
+  {
+    "ref": "90.1",
+    "title": "Howling Harbor 4 conclusion",
+    "scenario": 80,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 83,
+        "link": "linked"
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "91.1",
+    "title": "Frozen Warren 4 conclusion",
+    "scenario": 81,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 84
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 91
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-hexer"
+      }
+    ],
+    "rewardsText": "Lose 1 example points (fictional test text)."
+  },
+  {
+    "ref": "92.1",
+    "title": "Crimson Hollow 4 conclusion",
+    "scenario": 82,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "93.1",
+    "title": "Forgotten Reach 4 conclusion",
+    "scenario": 83,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 93
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "93.2",
+    "title": "Forgotten Reach 4 alternative conclusion",
+    "scenario": 83,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "94.1",
+    "title": "Shattered Kiln 4 conclusion",
+    "scenario": 84,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 90
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 70
+      }
+    ],
+    "rewardsText": "Mark 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "94.2",
+    "title": "Shattered Kiln 4 alternative conclusion",
+    "scenario": 84,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Add 4 example points (fictional test text)."
+  },
+  {
+    "ref": "95.1",
+    "title": "Rusted Shoal 4 conclusion",
+    "scenario": 85,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 88,
+        "condition": "If Restless Ridge is complete"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-23"
+        ]
+      },
+      {
+        "type": "readSection",
+        "ref": "293.3"
+      }
+    ],
+    "rewardsText": "Remove 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "96.1",
+    "title": "Twisted Vault 4 conclusion",
+    "scenario": 86,
+    "effects": [
+      {
+        "type": "loseCampaignSticker",
+        "name": "Test Ferry"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "97.1",
+    "title": "Verdant Barrow 4 conclusion",
+    "scenario": 87,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "98.1",
+    "title": "Bleak Cairn 4 conclusion",
+    "scenario": 88,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 92
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-24"
+        ]
+      },
+      {
+        "type": "readSection",
+        "ref": "210.2"
+      }
+    ],
+    "rewardsText": "Remove 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "99.1",
+    "title": "Glimmering Orchard 4 conclusion",
+    "scenario": 89,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-25",
+          "TWO-26"
+        ]
+      }
+    ],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "100.1",
+    "title": "Restless Causeway 4 conclusion",
+    "scenario": 90,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 112
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-27",
+          "TSR-28"
+        ]
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Gain 4 dummy shards (fictional test text)."
+      }
+    ],
+    "rewardsText": "Mark 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "101.1",
+    "title": "Tangled Fen 4 conclusion",
+    "scenario": 91,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 95
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 112
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "102.1",
+    "title": "Bitter Chapel 4 conclusion",
+    "scenario": 92,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 97
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "176.3",
+        "weeksAhead": 2
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-tidecaller"
+      }
+    ]
+  },
+  {
+    "ref": "103.1",
+    "title": "Endless Spire 4 conclusion",
+    "scenario": 93,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 94
+      },
+      {
+        "type": "readSection",
+        "ref": "218.2"
+      }
+    ],
+    "rewardsText": "Lose 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "104.1",
+    "title": "Smoldering Bastion 4 conclusion",
+    "scenario": 94,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 96
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 104
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 123
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "readSection",
+        "ref": "221.3"
+      }
+    ],
+    "rewardsText": "Gain 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "105.1",
+    "title": "Hidden Observatory 4 conclusion",
+    "scenario": 95,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 100,
+        "link": "forced"
+      }
+    ],
+    "rewardsText": "Add 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "106.1",
+    "title": "Hollow Ridge 5 conclusion",
+    "scenario": 96,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 99
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "107.1",
+    "title": "Ashen Crossing 5 conclusion",
+    "scenario": 97,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 98
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 101
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-29",
+          "TSR-30"
+        ]
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 75
+      }
+    ],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "108.1",
+    "title": "Silent Cistern 5 conclusion",
+    "scenario": 98,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "readSection",
+        "ref": "226.3"
+      }
+    ]
+  },
+  {
+    "ref": "109.1",
+    "title": "Drowned Archive 5 conclusion",
+    "scenario": 99,
+    "effects": [
+      {
+        "type": "loseCampaignSticker",
+        "name": "Test Alliance"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 3
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-31"
+        ]
+      }
+    ],
+    "rewardsText": "Lose 3 example points (fictional test text)."
+  },
+  {
+    "ref": "110.1",
+    "title": "Gilded Foundry 5 conclusion",
+    "scenario": 100,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "unlockScenario",
+            "scenario": 103
+          },
+          {
+            "type": "unlockScenario",
+            "scenario": 111
+          }
+        ]
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Remove 4 example points (fictional test text)."
+      }
+    ],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "110.2",
+    "title": "Gilded Foundry 5 alternative conclusion",
+    "scenario": 100,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "111.1",
+    "title": "Broken Grove 5 conclusion",
+    "scenario": 101,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 102,
+        "link": "linked"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "112.1",
+    "title": "Pale Quarry 5 conclusion",
+    "scenario": 102,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 105
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 109,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 110
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 112
+      }
+    ],
+    "rewardsText": "Add 5 example points (fictional test text)."
+  },
+  {
+    "ref": "113.1",
+    "title": "Sunken Mill 5 conclusion",
+    "scenario": 103,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 106,
+        "link": "forced"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 108
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-smith"
+      }
+    ],
+    "rewardsText": "Lose 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "114.1",
+    "title": "Howling Lantern 5 conclusion",
+    "scenario": 104,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 107,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 114
+      },
+      {
+        "type": "readSection",
+        "ref": "365.1"
+      }
+    ],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "114.2",
+    "title": "Howling Lantern 5 alternative conclusion",
+    "scenario": 104,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "115.1",
+    "title": "Frozen Den 5 conclusion",
+    "scenario": 105,
+    "effects": []
+  },
+  {
+    "ref": "116.1",
+    "title": "Crimson Harbor 5 conclusion",
+    "scenario": 106,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 117
+      }
+    ]
+  },
+  {
+    "ref": "117.1",
+    "title": "Forgotten Warren 5 conclusion",
+    "scenario": 107,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "169.3",
+        "weeksAhead": 6
+      }
+    ],
+    "rewardsText": "Mark 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "118.1",
+    "title": "Shattered Hollow 5 conclusion",
+    "scenario": 108,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 113
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 115
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 122
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "119.1",
+    "title": "Rusted Reach 5 conclusion",
+    "scenario": 109,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "179.3",
+        "weeksAhead": 0
+      }
+    ]
+  },
+  {
+    "ref": "120.1",
+    "title": "Twisted Kiln 5 conclusion",
+    "scenario": 110,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": 80
+      }
+    ],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "121.1",
+    "title": "Verdant Shoal 5 conclusion",
+    "scenario": 111,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 121
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "122.1",
+    "title": "Bleak Vault 5 conclusion",
+    "scenario": 112,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 116
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ]
+  },
+  {
+    "ref": "123.1",
+    "title": "Glimmering Barrow 5 conclusion",
+    "scenario": 113,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 120
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "123.2",
+    "title": "Glimmering Barrow 5 alternative conclusion",
+    "scenario": 113,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "124.1",
+    "title": "Restless Cairn 5 conclusion",
+    "scenario": 114,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 122,
+        "condition": "If Ashen Mill is complete"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "unlockClass",
+        "classKey": "test-wanderer"
+      }
+    ],
+    "rewardsText": "Lose 2 example points (fictional test text)."
+  },
+  {
+    "ref": "125.1",
+    "title": "Tangled Orchard 5 conclusion",
+    "scenario": 115,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 118
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Remove 2 dummy shards (fictional test text)."
+      }
+    ],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "126.1",
+    "title": "Bitter Causeway 5 conclusion",
+    "scenario": 116,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 119
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "127.1",
+    "title": "Endless Fen 5 conclusion",
+    "scenario": 117,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 123
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "manual",
+        "note": "Test step: Lose 2 placeholder marks (fictional test text)."
+      }
+    ],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "127.2",
+    "title": "Endless Fen 5 alternative conclusion",
+    "scenario": 117,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "128.1",
+    "title": "Smoldering Chapel 5 conclusion",
+    "scenario": 118,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Gain 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "129.1",
+    "title": "Hidden Spire 5 conclusion",
+    "scenario": 119,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 128
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "130.1",
+    "title": "Hollow Bastion 6 conclusion",
+    "scenario": 120,
+    "effects": [
+      {
+        "type": "lockOutScenario",
+        "scenario": 124
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "131.1",
+    "title": "Ashen Observatory 6 conclusion",
+    "scenario": 121,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 126
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 127
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 132
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Remove 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "132.1",
+    "title": "Silent Ridge 6 conclusion",
+    "scenario": 122,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 125,
+        "link": "linked"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 130
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      }
+    ],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "133.1",
+    "title": "Drowned Crossing 6 conclusion",
+    "scenario": 123,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 124
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 129,
+        "link": "linked"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 85
+      }
+    ],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "133.2",
+    "title": "Drowned Crossing 6 alternative conclusion",
+    "scenario": 123,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Lose 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "134.1",
+    "title": "Gilded Cistern 6 conclusion",
+    "scenario": 124,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 134,
+        "condition": "If Rusted Fen is complete"
+      },
+      {
+        "type": "unlockScenario",
+        "scenario": 135
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "179.2",
+        "weeksAhead": 0
+      }
+    ]
+  },
+  {
+    "ref": "135.1",
+    "title": "Broken Archive 6 conclusion",
+    "scenario": 125,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 133
+      }
+    ],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "136.1",
+    "title": "Pale Foundry 6 conclusion",
+    "scenario": 126,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "137.1",
+    "title": "Sunken Grove 6 conclusion",
+    "scenario": 127,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-32"
+        ]
+      }
+    ],
+    "rewardsText": "Mark 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "137.2",
+    "title": "Sunken Grove 6 alternative conclusion",
+    "scenario": 127,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Lose 1 example points (fictional test text)."
+  },
+  {
+    "ref": "138.1",
+    "title": "Howling Quarry 6 conclusion",
+    "scenario": 128,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 131,
+        "link": "linked"
+      },
+      {
+        "type": "lockOutScenario",
+        "scenario": 129
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "139.1",
+    "title": "Frozen Mill 6 conclusion",
+    "scenario": 129,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "174.1",
+        "weeksAhead": 6
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "boat",
+        "events": [
+          "TB-33",
+          "TB-34"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "139.2",
+    "title": "Frozen Mill 6 alternative conclusion",
+    "scenario": 129,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ],
+    "rewardsText": "Add 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "140.1",
+    "title": "Crimson Lantern 6 conclusion",
+    "scenario": 130,
+    "effects": []
+  },
+  {
+    "ref": "141.1",
+    "title": "Forgotten Den 6 conclusion",
+    "scenario": 131,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "ref": "142.1",
+    "title": "Shattered Harbor 6 conclusion",
+    "scenario": 132,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 136
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "addCalendarSection",
+        "section": "179.2",
+        "weeksAhead": 1
+      }
+    ]
+  },
+  {
+    "ref": "143.1",
+    "title": "Rusted Warren 6 conclusion",
+    "scenario": 133,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 137,
+        "link": "linked"
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      },
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-35",
+          "TWO-36",
+          "TWO-37"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "144.1",
+    "title": "Twisted Hollow 6 conclusion",
+    "scenario": 134,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "145.1",
+    "title": "Verdant Reach 6 conclusion",
+    "scenario": 135,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Remove 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "145.2",
+    "title": "Verdant Reach 6 alternative conclusion",
+    "scenario": 135,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test alternative ending"
+      }
+    ]
+  },
+  {
+    "ref": "146.1",
+    "title": "Bleak Kiln 6 conclusion",
+    "scenario": 136,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      },
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "unlockBuilding",
+        "number": 90
+      }
+    ]
+  },
+  {
+    "ref": "147.1",
+    "title": "Glimmering Shoal 6 conclusion",
+    "scenario": 137,
+    "effects": []
+  },
+  {
+    "ref": "150.1",
+    "title": "Test season change 1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-S1"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-01"
+        ]
+      }
+    ],
+    "rewardsText": "Note 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "150.2",
+    "title": "Test season change 2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-S2"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "winter road",
+        "events": [
+          "TWR-01"
+        ]
+      }
+    ],
+    "rewardsText": "Note 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "150.3",
+    "title": "Test season change 3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-S3"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-01"
+        ]
+      }
+    ],
+    "rewardsText": "Note 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "150.4",
+    "title": "Test season change 4",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-S4"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "winter road",
+        "events": [
+          "TWR-01"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "150.5",
+    "title": "Test season change 5",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-S5"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-01"
+        ]
+      }
+    ],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "150.6",
+    "title": "Test season change 6",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer outpost",
+        "events": [
+          "TSO-S6"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "winter road",
+        "events": [
+          "TWR-01"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "150.7",
+    "title": "Test season change 7",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter outpost",
+        "events": [
+          "TWO-S7"
+        ]
+      },
+      {
+        "type": "eventDeck",
+        "op": "remove",
+        "deck": "summer road",
+        "events": [
+          "TSR-01"
+        ]
+      }
+    ],
+    "rewardsText": "Note 5 example points (fictional test text)."
+  },
+  {
+    "ref": "155.1",
+    "title": "Test morale collapse",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "setMorale",
+        "value": 4
+      },
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": -1
+      },
+      {
+        "type": "manual",
+        "note": "Test: one building is wrecked"
+      }
+    ],
+    "rewardsText": "Note 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "155.2",
+    "title": "Test morale peak",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "setMorale",
+        "value": null
+      },
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "160.1",
+    "title": "Test calendar event 1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "160.2",
+    "title": "Test calendar event 2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 31
+      }
+    ]
+  },
+  {
+    "ref": "160.3",
+    "title": "Test calendar event 3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "boat",
+        "events": [
+          "TB-38"
+        ]
+      }
+    ],
+    "rewardsText": "Remove 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "161.1",
+    "title": "Test calendar event 4",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "161.2",
+    "title": "Test calendar event 5",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "163.3",
+        "weeksAhead": 2
+      }
+    ],
+    "rewardsText": "Remove 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "161.3",
+    "title": "Test calendar event 6",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ]
+  },
+  {
+    "ref": "162.1",
+    "title": "Test calendar event 7",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "162.2",
+    "title": "Test calendar event 8",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 77
+      }
+    ]
+  },
+  {
+    "ref": "162.3",
+    "title": "Test calendar event 9",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-39"
+        ]
+      }
+    ],
+    "rewardsText": "Gain 2 example points (fictional test text)."
+  },
+  {
+    "ref": "163.1",
+    "title": "Test calendar event 10",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Note 4 example points (fictional test text)."
+  },
+  {
+    "ref": "163.2",
+    "title": "Test calendar event 11",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "165.3",
+        "weeksAhead": 1
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "163.3",
+    "title": "Test calendar event 12",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Mark 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "164.1",
+    "title": "Test calendar event 13",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "164.2",
+    "title": "Test calendar event 14",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 78,
+        "link": "linked"
+      }
+    ]
+  },
+  {
+    "ref": "164.3",
+    "title": "Test calendar event 15",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-40"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "165.1",
+    "title": "Test calendar event 16",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Note 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "165.2",
+    "title": "Test calendar event 17",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "167.3",
+        "weeksAhead": 4
+      }
+    ],
+    "rewardsText": "Remove 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "165.3",
+    "title": "Test calendar event 18",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "166.1",
+    "title": "Test calendar event 19",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ]
+  },
+  {
+    "ref": "166.2",
+    "title": "Test calendar event 20",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 71
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "166.3",
+    "title": "Test calendar event 21",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-41"
+        ]
+      }
+    ],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "167.1",
+    "title": "Test calendar event 22",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "167.2",
+    "title": "Test calendar event 23",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "169.3",
+        "weeksAhead": 4
+      }
+    ]
+  },
+  {
+    "ref": "167.3",
+    "title": "Test calendar event 24",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Gain 4 example points (fictional test text)."
+  },
+  {
+    "ref": "168.1",
+    "title": "Test calendar event 25",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Remove 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "168.2",
+    "title": "Test calendar event 26",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 122,
+        "link": "forced"
+      }
+    ],
+    "rewardsText": "Mark 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "168.3",
+    "title": "Test calendar event 27",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-42"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "169.1",
+    "title": "Test calendar event 28",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Gain 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "169.2",
+    "title": "Test calendar event 29",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "171.3",
+        "weeksAhead": 3
+      }
+    ],
+    "rewardsText": "Mark 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "169.3",
+    "title": "Test calendar event 30",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ]
+  },
+  {
+    "ref": "170.1",
+    "title": "Test calendar event 31",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "170.2",
+    "title": "Test calendar event 32",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 102,
+        "link": "linked"
+      }
+    ]
+  },
+  {
+    "ref": "170.3",
+    "title": "Test calendar event 33",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-43"
+        ]
+      }
+    ],
+    "rewardsText": "Remove 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "171.1",
+    "title": "Test calendar event 34",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "171.2",
+    "title": "Test calendar event 35",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "173.3",
+        "weeksAhead": 3
+      }
+    ]
+  },
+  {
+    "ref": "171.3",
+    "title": "Test calendar event 36",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Add 3 example points (fictional test text)."
+  },
+  {
+    "ref": "172.1",
+    "title": "Test calendar event 37",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "172.2",
+    "title": "Test calendar event 38",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 130
+      }
+    ],
+    "rewardsText": "Lose 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "172.3",
+    "title": "Test calendar event 39",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "boat",
+        "events": [
+          "TB-44"
+        ]
+      }
+    ],
+    "rewardsText": "Add 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "173.1",
+    "title": "Test calendar event 40",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "173.2",
+    "title": "Test calendar event 41",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "175.3",
+        "weeksAhead": 4
+      }
+    ],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "173.3",
+    "title": "Test calendar event 42",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ]
+  },
+  {
+    "ref": "174.1",
+    "title": "Test calendar event 43",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ],
+    "rewardsText": "Lose 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "174.2",
+    "title": "Test calendar event 44",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 109
+      }
+    ]
+  },
+  {
+    "ref": "174.3",
+    "title": "Test calendar event 45",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-45"
+        ]
+      }
+    ],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "175.1",
+    "title": "Test calendar event 46",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ]
+  },
+  {
+    "ref": "175.2",
+    "title": "Test calendar event 47",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "177.3",
+        "weeksAhead": 2
+      }
+    ],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "175.3",
+    "title": "Test calendar event 48",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ]
+  },
+  {
+    "ref": "176.1",
+    "title": "Test calendar event 49",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "176.2",
+    "title": "Test calendar event 50",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 60
+      }
+    ],
+    "rewardsText": "Mark 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "176.3",
+    "title": "Test calendar event 51",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "summer road",
+        "events": [
+          "TSR-46"
+        ]
+      }
+    ],
+    "rewardsText": "Lose 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "177.1",
+    "title": "Test calendar event 52",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "177.2",
+    "title": "Test calendar event 53",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "179.3",
+        "weeksAhead": 2
+      }
+    ],
+    "rewardsText": "Mark 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "177.3",
+    "title": "Test calendar event 54",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Note 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "178.1",
+    "title": "Test calendar event 55",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": -1
+      }
+    ]
+  },
+  {
+    "ref": "178.2",
+    "title": "Test calendar event 56",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockScenario",
+        "scenario": 48
+      }
+    ],
+    "rewardsText": "Gain 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "178.3",
+    "title": "Test calendar event 57",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "eventDeck",
+        "op": "add",
+        "deck": "winter road",
+        "events": [
+          "TWR-47"
+        ]
+      }
+    ],
+    "rewardsText": "Mark 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "179.1",
+    "title": "Test calendar event 58",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "soldiers",
+        "amount": -1
+      },
+      {
+        "type": "adjust",
+        "target": "defense",
+        "amount": -2
+      }
+    ],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "179.2",
+    "title": "Test calendar event 59",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "addCalendarSection",
+        "section": "161.3",
+        "weeksAhead": 1
+      }
+    ],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "179.3",
+    "title": "Test calendar event 60",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "manual",
+        "note": "Test calendar step: check the outpost"
+      }
+    ],
+    "rewardsText": "Mark 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "200.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 0"
+      }
+    ],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "200.2",
+    "title": "Test story 200.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "200.3",
+    "title": "Test story 200.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "201.1",
+    "title": "Test story 201.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "201.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "201.3",
+    "title": "Test story 201.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "202.1",
+    "title": "Test story 202.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "202.2",
+    "title": "Test story 202.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Gain 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "202.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "203.1",
+    "title": "Test story 203.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": 95
+      }
+    ]
+  },
+  {
+    "ref": "203.2",
+    "title": "Test story 203.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "203.3",
+    "title": "Test story 203.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "204.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "204.2",
+    "title": "Test story 204.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "204.3"
+      }
+    ],
+    "rewardsText": "Lose 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "204.3",
+    "title": "Test story 204.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "205.1",
+    "title": "Test story 205.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 example points (fictional test text)."
+  },
+  {
+    "ref": "205.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "205.3",
+    "title": "Test story 205.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "206.1",
+    "title": "Test story 206.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 18"
+      }
+    ]
+  },
+  {
+    "ref": "206.2",
+    "title": "Test story 206.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "206.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "207.1",
+    "title": "Test story 207.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "207.2",
+    "title": "Test story 207.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Add 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "207.3",
+    "title": "Test story 207.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "208.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "208.2",
+    "title": "Test story 208.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "208.3",
+    "title": "Test story 208.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": 100
+      }
+    ],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "209.1",
+    "title": "Test story 209.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 27"
+      }
+    ]
+  },
+  {
+    "ref": "209.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "209.3",
+    "title": "Test story 209.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "210.1",
+    "title": "Test story 210.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "210.2",
+    "title": "Test story 210.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "210.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "211.1",
+    "title": "Test story 211.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "211.2",
+    "title": "Test story 211.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 2 example points (fictional test text)."
+  },
+  {
+    "ref": "211.3",
+    "title": "Test story 211.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "212.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 36"
+      }
+    ]
+  },
+  {
+    "ref": "212.2",
+    "title": "Test story 212.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 example points (fictional test text)."
+  },
+  {
+    "ref": "212.3",
+    "title": "Test story 212.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "213.1",
+    "title": "Test story 213.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "213.2"
+      }
+    ]
+  },
+  {
+    "ref": "213.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockClass",
+        "classKey": null
+      }
+    ],
+    "rewardsText": "Remove 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "213.3",
+    "title": "Test story 213.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "unlockBuilding",
+        "number": null
+      }
+    ],
+    "rewardsText": "Remove 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "214.1",
+    "title": "Test story 214.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 2 example points (fictional test text)."
+  },
+  {
+    "ref": "214.2",
+    "title": "Test story 214.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "214.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Lose 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "215.1",
+    "title": "Test story 215.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 45"
+      }
+    ],
+    "rewardsText": "Gain 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "215.2",
+    "title": "Test story 215.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "215.3",
+    "title": "Test story 215.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "216.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "216.2",
+    "title": "Test story 216.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "216.3",
+    "title": "Test story 216.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "217.1",
+    "title": "Test story 217.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "217.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "217.3"
+      }
+    ]
+  },
+  {
+    "ref": "217.3",
+    "title": "Test story 217.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "218.1",
+    "title": "Test story 218.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 54"
+      }
+    ]
+  },
+  {
+    "ref": "218.2",
+    "title": "Test story 218.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "218.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 3 example points (fictional test text)."
+  },
+  {
+    "ref": "219.1",
+    "title": "Test story 219.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "219.2",
+    "title": "Test story 219.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "219.3",
+    "title": "Test story 219.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "220.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "220.2",
+    "title": "Test story 220.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "220.3",
+    "title": "Test story 220.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "221.1",
+    "title": "Test story 221.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 63"
+      }
+    ],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "221.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "221.3",
+    "title": "Test story 221.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "222.1"
+      }
+    ]
+  },
+  {
+    "ref": "222.1",
+    "title": "Test story 222.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "222.2",
+    "title": "Test story 222.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "222.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "223.1",
+    "title": "Test story 223.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "223.2",
+    "title": "Test story 223.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Lose 5 example points (fictional test text)."
+  },
+  {
+    "ref": "223.3",
+    "title": "Test story 223.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "224.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 72"
+      }
+    ]
+  },
+  {
+    "ref": "224.2",
+    "title": "Test story 224.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "224.3",
+    "title": "Test story 224.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "225.1",
+    "title": "Test story 225.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "225.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "225.3",
+    "title": "Test story 225.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "226.1",
+    "title": "Test story 226.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "226.2"
+      }
+    ],
+    "rewardsText": "Lose 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "226.2",
+    "title": "Test story 226.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "226.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "227.1",
+    "title": "Test story 227.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 81"
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "227.2",
+    "title": "Test story 227.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "227.3",
+    "title": "Test story 227.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "228.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Gain 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "228.2",
+    "title": "Test story 228.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "228.3",
+    "title": "Test story 228.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "229.1",
+    "title": "Test story 229.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 example points (fictional test text)."
+  },
+  {
+    "ref": "229.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "229.3",
+    "title": "Test story 229.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "230.1",
+    "title": "Test story 230.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 90"
+      }
+    ],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "230.2",
+    "title": "Test story 230.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "230.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "231.1",
+    "title": "Test story 231.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "231.2",
+    "title": "Test story 231.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "231.3",
+    "title": "Test story 231.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "232.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "232.2",
+    "title": "Test story 232.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "232.3",
+    "title": "Test story 232.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Gain 4 example points (fictional test text)."
+  },
+  {
+    "ref": "233.1",
+    "title": "Test story 233.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 99"
+      }
+    ],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "233.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 example points (fictional test text)."
+  },
+  {
+    "ref": "233.3",
+    "title": "Test story 233.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "234.1",
+    "title": "Test story 234.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 example points (fictional test text)."
+  },
+  {
+    "ref": "234.2",
+    "title": "Test story 234.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "234.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "235.1"
+      }
+    ]
+  },
+  {
+    "ref": "235.1",
+    "title": "Test story 235.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "235.2",
+    "title": "Test story 235.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "235.3",
+    "title": "Test story 235.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "236.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 108"
+      }
+    ],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "236.2",
+    "title": "Test story 236.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "236.3",
+    "title": "Test story 236.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Gain 2 example points (fictional test text)."
+  },
+  {
+    "ref": "237.1",
+    "title": "Test story 237.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "237.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Gain 2 example points (fictional test text)."
+  },
+  {
+    "ref": "237.3",
+    "title": "Test story 237.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "238.1",
+    "title": "Test story 238.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "238.2",
+    "title": "Test story 238.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 example points (fictional test text)."
+  },
+  {
+    "ref": "238.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "239.1",
+    "title": "Test story 239.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 117"
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "239.2",
+    "title": "Test story 239.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "239.3",
+    "title": "Test story 239.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "240.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "240.2",
+    "title": "Test story 240.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "240.3",
+    "title": "Test story 240.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "241.1",
+    "title": "Test story 241.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "241.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "241.3",
+    "title": "Test story 241.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "242.1",
+    "title": "Test story 242.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 126"
+      }
+    ],
+    "rewardsText": "Mark 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "242.2",
+    "title": "Test story 242.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "242.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "243.1",
+    "title": "Test story 243.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "243.2",
+    "title": "Test story 243.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "243.3"
+      }
+    ]
+  },
+  {
+    "ref": "243.3",
+    "title": "Test story 243.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "244.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "244.2",
+    "title": "Test story 244.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "244.3",
+    "title": "Test story 244.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "245.1",
+    "title": "Test story 245.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 135"
+      }
+    ]
+  },
+  {
+    "ref": "245.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 example points (fictional test text)."
+  },
+  {
+    "ref": "245.3",
+    "title": "Test story 245.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "246.1",
+    "title": "Test story 246.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 example points (fictional test text)."
+  },
+  {
+    "ref": "246.2",
+    "title": "Test story 246.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "246.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "247.1",
+    "title": "Test story 247.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 example points (fictional test text)."
+  },
+  {
+    "ref": "247.2",
+    "title": "Test story 247.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 4 example points (fictional test text)."
+  },
+  {
+    "ref": "247.3",
+    "title": "Test story 247.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "248.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 144"
+      }
+    ]
+  },
+  {
+    "ref": "248.2",
+    "title": "Test story 248.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "248.3",
+    "title": "Test story 248.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "249.1",
+    "title": "Test story 249.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "249.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "249.3",
+    "title": "Test story 249.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "250.1",
+    "title": "Test story 250.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "250.2",
+    "title": "Test story 250.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "250.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "251.1",
+    "title": "Test story 251.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 153"
+      }
+    ]
+  },
+  {
+    "ref": "251.2",
+    "title": "Test story 251.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "251.3",
+    "title": "Test story 251.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "252.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "252.2"
+      }
+    ]
+  },
+  {
+    "ref": "252.2",
+    "title": "Test story 252.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "252.3",
+    "title": "Test story 252.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "253.1",
+    "title": "Test story 253.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "253.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 1 example points (fictional test text)."
+  },
+  {
+    "ref": "253.3",
+    "title": "Test story 253.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "254.1",
+    "title": "Test story 254.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 162"
+      }
+    ],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "254.2",
+    "title": "Test story 254.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "254.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "255.1",
+    "title": "Test story 255.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "255.2",
+    "title": "Test story 255.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "255.3",
+    "title": "Test story 255.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "256.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "256.2",
+    "title": "Test story 256.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "256.3"
+      }
+    ]
+  },
+  {
+    "ref": "256.3",
+    "title": "Test story 256.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "257.1",
+    "title": "Test story 257.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 171"
+      }
+    ],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "257.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "257.3",
+    "title": "Test story 257.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "258.1",
+    "title": "Test story 258.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "258.2",
+    "title": "Test story 258.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "258.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Mark 2 example points (fictional test text)."
+  },
+  {
+    "ref": "259.1",
+    "title": "Test story 259.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "259.2",
+    "title": "Test story 259.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "259.3",
+    "title": "Test story 259.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "260.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 180"
+      }
+    ],
+    "rewardsText": "Remove 5 example points (fictional test text)."
+  },
+  {
+    "ref": "260.2",
+    "title": "Test story 260.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "260.3",
+    "title": "Test story 260.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 5 example points (fictional test text)."
+  },
+  {
+    "ref": "261.1",
+    "title": "Test story 261.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "261.2",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "261.3",
+    "title": "Test story 261.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "262.1",
+    "title": "Test story 262.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "262.2",
+    "title": "Test story 262.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "262.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "263.1",
+    "title": "Test story 263.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 189"
+      }
+    ]
+  },
+  {
+    "ref": "263.2",
+    "title": "Test story 263.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "263.3",
+    "title": "Test story 263.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 example points (fictional test text)."
+  },
+  {
+    "ref": "264.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "264.2",
+    "title": "Test story 264.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "264.3",
+    "title": "Test story 264.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "265.1",
+    "title": "Test story 265.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "265.2"
+      }
+    ]
+  },
+  {
+    "ref": "265.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "265.3",
+    "title": "Test story 265.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "266.1",
+    "title": "Test story 266.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 198"
+      }
+    ],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "266.2",
+    "title": "Test story 266.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "266.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "267.1",
+    "title": "Test story 267.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "267.2",
+    "title": "Test story 267.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 2 example points (fictional test text)."
+  },
+  {
+    "ref": "267.3",
+    "title": "Test story 267.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 3 example points (fictional test text)."
+  },
+  {
+    "ref": "268.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "268.2",
+    "title": "Test story 268.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "268.3",
+    "title": "Test story 268.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "269.1",
+    "title": "Test story 269.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 207"
+      }
+    ],
+    "rewardsText": "Gain 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "269.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "269.3"
+      }
+    ]
+  },
+  {
+    "ref": "269.3",
+    "title": "Test story 269.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Gain 3 example points (fictional test text)."
+  },
+  {
+    "ref": "270.1",
+    "title": "Test story 270.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "270.2",
+    "title": "Test story 270.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "270.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "271.1",
+    "title": "Test story 271.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "271.2",
+    "title": "Test story 271.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "271.3",
+    "title": "Test story 271.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "272.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 216"
+      }
+    ],
+    "rewardsText": "Note 4 example points (fictional test text)."
+  },
+  {
+    "ref": "272.2",
+    "title": "Test story 272.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "272.3",
+    "title": "Test story 272.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "273.1",
+    "title": "Test story 273.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "273.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "273.3",
+    "title": "Test story 273.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "274.1"
+      }
+    ]
+  },
+  {
+    "ref": "274.1",
+    "title": "Test story 274.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "274.2",
+    "title": "Test story 274.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "274.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Note 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "275.1",
+    "title": "Test story 275.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 225"
+      }
+    ],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "275.2",
+    "title": "Test story 275.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "275.3",
+    "title": "Test story 275.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "276.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "276.2",
+    "title": "Test story 276.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "276.3",
+    "title": "Test story 276.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "277.1",
+    "title": "Test story 277.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Lose 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "277.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 example points (fictional test text)."
+  },
+  {
+    "ref": "277.3",
+    "title": "Test story 277.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "278.1",
+    "title": "Test story 278.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 234"
+      }
+    ],
+    "rewardsText": "Lose 4 example points (fictional test text)."
+  },
+  {
+    "ref": "278.2",
+    "title": "Test story 278.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "278.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "279.1",
+    "title": "Test story 279.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 example points (fictional test text)."
+  },
+  {
+    "ref": "279.2",
+    "title": "Test story 279.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "279.3",
+    "title": "Test story 279.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "280.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "280.2",
+    "title": "Test story 280.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "280.3",
+    "title": "Test story 280.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "281.1",
+    "title": "Test story 281.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 243"
+      }
+    ]
+  },
+  {
+    "ref": "281.2",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "281.3",
+    "title": "Test story 281.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Remove 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "282.1",
+    "title": "Test story 282.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "282.2",
+    "title": "Test story 282.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "282.3"
+      }
+    ],
+    "rewardsText": "Mark 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "282.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "283.1",
+    "title": "Test story 283.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "283.2",
+    "title": "Test story 283.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "283.3",
+    "title": "Test story 283.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "284.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 252"
+      }
+    ],
+    "rewardsText": "Add 4 example points (fictional test text)."
+  },
+  {
+    "ref": "284.2",
+    "title": "Test story 284.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "284.3",
+    "title": "Test story 284.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "285.1",
+    "title": "Test story 285.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "285.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 example points (fictional test text)."
+  },
+  {
+    "ref": "285.3",
+    "title": "Test story 285.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "286.1",
+    "title": "Test story 286.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "286.2",
+    "title": "Test story 286.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "286.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "287.1"
+      }
+    ]
+  },
+  {
+    "ref": "287.1",
+    "title": "Test story 287.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 261"
+      }
+    ],
+    "rewardsText": "Note 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "287.2",
+    "title": "Test story 287.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 4 example points (fictional test text)."
+  },
+  {
+    "ref": "287.3",
+    "title": "Test story 287.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "288.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "288.2",
+    "title": "Test story 288.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "288.3",
+    "title": "Test story 288.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "289.1",
+    "title": "Test story 289.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 example points (fictional test text)."
+  },
+  {
+    "ref": "289.2",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "289.3",
+    "title": "Test story 289.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 example points (fictional test text)."
+  },
+  {
+    "ref": "290.1",
+    "title": "Test story 290.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 270"
+      }
+    ]
+  },
+  {
+    "ref": "290.2",
+    "title": "Test story 290.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "290.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "291.1",
+    "title": "Test story 291.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Mark 1 example points (fictional test text)."
+  },
+  {
+    "ref": "291.2",
+    "title": "Test story 291.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 example points (fictional test text)."
+  },
+  {
+    "ref": "291.3",
+    "title": "Test story 291.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Lose 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "292.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "292.2",
+    "title": "Test story 292.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "292.3",
+    "title": "Test story 292.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "293.1",
+    "title": "Test story 293.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 279"
+      }
+    ],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "293.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 5 example points (fictional test text)."
+  },
+  {
+    "ref": "293.3",
+    "title": "Test story 293.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "294.1",
+    "title": "Test story 294.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "294.2",
+    "title": "Test story 294.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "294.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "295.1",
+    "title": "Test story 295.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "295.2",
+    "title": "Test story 295.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "295.3",
+    "title": "Test story 295.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "296.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 288"
+      }
+    ]
+  },
+  {
+    "ref": "296.2",
+    "title": "Test story 296.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 example points (fictional test text)."
+  },
+  {
+    "ref": "296.3",
+    "title": "Test story 296.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "297.1",
+    "title": "Test story 297.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "297.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "297.3",
+    "title": "Test story 297.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 1 example points (fictional test text)."
+  },
+  {
+    "ref": "298.1",
+    "title": "Test story 298.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 2 example points (fictional test text)."
+  },
+  {
+    "ref": "298.2",
+    "title": "Test story 298.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "298.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "299.1",
+    "title": "Test story 299.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 297"
+      }
+    ],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "299.2",
+    "title": "Test story 299.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "299.3",
+    "title": "Test story 299.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "300.1"
+      }
+    ]
+  },
+  {
+    "ref": "300.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "300.2",
+    "title": "Test story 300.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "300.3",
+    "title": "Test story 300.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "301.1",
+    "title": "Test story 301.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 example points (fictional test text)."
+  },
+  {
+    "ref": "301.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "301.3",
+    "title": "Test story 301.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "302.1",
+    "title": "Test story 302.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 306"
+      }
+    ],
+    "rewardsText": "Note 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "302.2",
+    "title": "Test story 302.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "302.3",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "303.1",
+    "title": "Test story 303.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "303.2",
+    "title": "Test story 303.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "303.3",
+    "title": "Test story 303.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "304.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "304.2"
+      }
+    ],
+    "rewardsText": "Add 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "304.2",
+    "title": "Test story 304.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "304.3",
+    "title": "Test story 304.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "305.1",
+    "title": "Test story 305.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 315"
+      }
+    ],
+    "rewardsText": "Add 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "305.2",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "305.3",
+    "title": "Test story 305.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "306.1",
+    "title": "Test story 306.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "306.2",
+    "title": "Test story 306.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "306.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 1 example points (fictional test text)."
+  },
+  {
+    "ref": "307.1",
+    "title": "Test story 307.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "307.2",
+    "title": "Test story 307.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Remove 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "307.3",
+    "title": "Test story 307.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "308.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 324"
+      }
+    ],
+    "rewardsText": "Lose 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "308.2",
+    "title": "Test story 308.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "308.3"
+      }
+    ]
+  },
+  {
+    "ref": "308.3",
+    "title": "Test story 308.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 example points (fictional test text)."
+  },
+  {
+    "ref": "309.1",
+    "title": "Test story 309.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "309.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "309.3",
+    "title": "Test story 309.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "310.1",
+    "title": "Test story 310.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Remove 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "310.2",
+    "title": "Test story 310.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "310.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "311.1",
+    "title": "Test story 311.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 333"
+      }
+    ]
+  },
+  {
+    "ref": "311.2",
+    "title": "Test story 311.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "311.3",
+    "title": "Test story 311.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "312.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Mark 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "312.2",
+    "title": "Test story 312.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "312.3",
+    "title": "Test story 312.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "313.1"
+      }
+    ],
+    "rewardsText": "Remove 4 example points (fictional test text)."
+  },
+  {
+    "ref": "313.1",
+    "title": "Test story 313.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "313.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "313.3",
+    "title": "Test story 313.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "314.1",
+    "title": "Test story 314.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 342"
+      }
+    ],
+    "rewardsText": "Remove 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "314.2",
+    "title": "Test story 314.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "314.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "315.1",
+    "title": "Test story 315.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "315.2",
+    "title": "Test story 315.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "315.3",
+    "title": "Test story 315.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "316.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 2 example points (fictional test text)."
+  },
+  {
+    "ref": "316.2",
+    "title": "Test story 316.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "316.3",
+    "title": "Test story 316.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "317.1",
+    "title": "Test story 317.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 351"
+      }
+    ]
+  },
+  {
+    "ref": "317.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Note 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "317.3",
+    "title": "Test story 317.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "318.1",
+    "title": "Test story 318.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "318.2",
+    "title": "Test story 318.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "318.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "319.1",
+    "title": "Test story 319.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 1 example points (fictional test text)."
+  },
+  {
+    "ref": "319.2",
+    "title": "Test story 319.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "319.3",
+    "title": "Test story 319.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "320.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 360"
+      }
+    ],
+    "rewardsText": "Mark 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "320.2",
+    "title": "Test story 320.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "320.3",
+    "title": "Test story 320.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "321.1",
+    "title": "Test story 321.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "321.2",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Lose 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "321.3",
+    "title": "Test story 321.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "322.1",
+    "title": "Test story 322.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "322.2",
+    "title": "Test story 322.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "322.3",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "323.1",
+    "title": "Test story 323.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 369"
+      }
+    ]
+  },
+  {
+    "ref": "323.2",
+    "title": "Test story 323.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "323.3",
+    "title": "Test story 323.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "324.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "324.2",
+    "title": "Test story 324.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "324.3",
+    "title": "Test story 324.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Add 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "325.1",
+    "title": "Test story 325.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "325.2",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "325.3",
+    "title": "Test story 325.3",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "326.1"
+      }
+    ],
+    "rewardsText": "Note 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "326.1",
+    "title": "Test story 326.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 378"
+      }
+    ]
+  },
+  {
+    "ref": "326.2",
+    "title": "Test story 326.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "326.3",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "327.1",
+    "title": "Test story 327.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "327.2",
+    "title": "Test story 327.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "327.3",
+    "title": "Test story 327.3",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "328.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 example points (fictional test text)."
+  },
+  {
+    "ref": "328.2",
+    "title": "Test story 328.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Remove 4 example points (fictional test text)."
+  },
+  {
+    "ref": "328.3",
+    "title": "Test story 328.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 example points (fictional test text)."
+  },
+  {
+    "ref": "329.1",
+    "title": "Test story 329.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 387"
+      }
+    ],
+    "rewardsText": "Note 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "329.2",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "329.3",
+    "title": "Test story 329.3",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "330.1",
+    "title": "Test story 330.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "330.2"
+      }
+    ],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "330.2",
+    "title": "Test story 330.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "331.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "331.2",
+    "title": "Test story 331.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "332.1",
+    "title": "Test story 332.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "332.2",
+    "title": "Test story 332.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 example points (fictional test text)."
+  },
+  {
+    "ref": "333.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 396"
+      }
+    ],
+    "rewardsText": "Mark 1 example points (fictional test text)."
+  },
+  {
+    "ref": "333.2",
+    "title": "Test story 333.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "334.1",
+    "title": "Test story 334.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "334.2",
+    "title": "Test story 334.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "335.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 example points (fictional test text)."
+  },
+  {
+    "ref": "335.2",
+    "title": "Test story 335.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "336.1",
+    "title": "Test story 336.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "336.2",
+    "title": "Test story 336.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "337.1"
+      }
+    ]
+  },
+  {
+    "ref": "337.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "337.2",
+    "title": "Test story 337.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 405"
+      }
+    ]
+  },
+  {
+    "ref": "338.1",
+    "title": "Test story 338.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "338.2",
+    "title": "Test story 338.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Note 2 example points (fictional test text)."
+  },
+  {
+    "ref": "339.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "339.2",
+    "title": "Test story 339.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "340.1",
+    "title": "Test story 340.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "340.2",
+    "title": "Test story 340.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 4 example points (fictional test text)."
+  },
+  {
+    "ref": "341.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "341.2",
+    "title": "Test story 341.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "342.1",
+    "title": "Test story 342.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 414"
+      }
+    ]
+  },
+  {
+    "ref": "342.2",
+    "title": "Test story 342.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "343.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "343.2"
+      }
+    ],
+    "rewardsText": "Add 4 example points (fictional test text)."
+  },
+  {
+    "ref": "343.2",
+    "title": "Test story 343.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "344.1",
+    "title": "Test story 344.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "344.2",
+    "title": "Test story 344.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 1 example points (fictional test text)."
+  },
+  {
+    "ref": "345.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "345.2",
+    "title": "Test story 345.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "346.1",
+    "title": "Test story 346.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "346.2",
+    "title": "Test story 346.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 423"
+      }
+    ]
+  },
+  {
+    "ref": "347.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "347.2",
+    "title": "Test story 347.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "348.1",
+    "title": "Test story 348.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "348.2",
+    "title": "Test story 348.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "349.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "349.2",
+    "title": "Test story 349.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "350.1",
+    "title": "Test story 350.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "350.2",
+    "title": "Test story 350.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "351.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 432"
+      }
+    ],
+    "rewardsText": "Remove 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "351.2",
+    "title": "Test story 351.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "352.1",
+    "title": "Test story 352.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "352.2",
+    "title": "Test story 352.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "353.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "353.2",
+    "title": "Test story 353.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "354.1",
+    "title": "Test story 354.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 example points (fictional test text)."
+  },
+  {
+    "ref": "354.2",
+    "title": "Test story 354.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "355.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "355.2",
+    "title": "Test story 355.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 441"
+      }
+    ]
+  },
+  {
+    "ref": "356.1",
+    "title": "Test story 356.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "356.2"
+      }
+    ],
+    "rewardsText": "Gain 5 example points (fictional test text)."
+  },
+  {
+    "ref": "356.2",
+    "title": "Test story 356.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "357.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "357.2",
+    "title": "Test story 357.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "358.1",
+    "title": "Test story 358.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "358.2",
+    "title": "Test story 358.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "359.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "359.2",
+    "title": "Test story 359.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "360.1",
+    "title": "Test story 360.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 450"
+      }
+    ],
+    "rewardsText": "Add 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "360.2",
+    "title": "Test story 360.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Lose 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "361.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "361.2",
+    "title": "Test story 361.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "362.1",
+    "title": "Test story 362.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "362.2",
+    "title": "Test story 362.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Lose 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "363.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "363.2",
+    "title": "Test story 363.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "364.1",
+    "title": "Test story 364.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 4 example points (fictional test text)."
+  },
+  {
+    "ref": "364.2",
+    "title": "Test story 364.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 459"
+      }
+    ]
+  },
+  {
+    "ref": "365.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "365.2",
+    "title": "Test story 365.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "366.1",
+    "title": "Test story 366.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "inspiration",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "366.2",
+    "title": "Test story 366.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 example points (fictional test text)."
+  },
+  {
+    "ref": "367.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "367.2",
+    "title": "Test story 367.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 5 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "368.1",
+    "title": "Test story 368.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 example points (fictional test text)."
+  },
+  {
+    "ref": "368.2",
+    "title": "Test story 368.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "369.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 468"
+      }
+    ],
+    "rewardsText": "Mark 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "369.2",
+    "title": "Test story 369.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Note 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "370.1",
+    "title": "Test story 370.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "370.2",
+    "title": "Test story 370.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 example points (fictional test text)."
+  },
+  {
+    "ref": "371.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "371.2",
+    "title": "Test story 371.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Note 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "372.1",
+    "title": "Test story 372.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "372.2",
+    "title": "Test story 372.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "373.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "ref": "373.2",
+    "title": "Test story 373.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 477"
+      }
+    ],
+    "rewardsText": "Note 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "374.1",
+    "title": "Test story 374.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "374.2",
+    "title": "Test story 374.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "375.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "375.2",
+    "title": "Test story 375.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "376.1"
+      }
+    ]
+  },
+  {
+    "ref": "376.1",
+    "title": "Test story 376.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "376.2",
+    "title": "Test story 376.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "ref": "377.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Mark 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "377.2",
+    "title": "Test story 377.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 3 test tokens (fictional test text)."
+  },
+  {
+    "ref": "378.1",
+    "title": "Test story 378.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 486"
+      }
+    ],
+    "rewardsText": "Gain 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "378.2",
+    "title": "Test story 378.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "379.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "379.2",
+    "title": "Test story 379.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "380.1",
+    "title": "Test story 380.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Mark 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "380.2",
+    "title": "Test story 380.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "381.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 example points (fictional test text)."
+  },
+  {
+    "ref": "381.2",
+    "title": "Test story 381.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "382.1",
+    "title": "Test story 382.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "382.2"
+      }
+    ]
+  },
+  {
+    "ref": "382.2",
+    "title": "Test story 382.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 495"
+      }
+    ],
+    "rewardsText": "Remove 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "383.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "383.2",
+    "title": "Test story 383.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 1
+      }
+    ],
+    "rewardsText": "Add 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "384.1",
+    "title": "Test story 384.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 4 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "384.2",
+    "title": "Test story 384.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 3 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "385.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "385.2",
+    "title": "Test story 385.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "386.1",
+    "title": "Test story 386.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 2 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "386.2",
+    "title": "Test story 386.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 1 test tokens (fictional test text)."
+  },
+  {
+    "ref": "387.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 504"
+      }
+    ]
+  },
+  {
+    "ref": "387.2",
+    "title": "Test story 387.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 3 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "388.1",
+    "title": "Test story 388.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "388.2",
+    "title": "Test story 388.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "389.1"
+      }
+    ],
+    "rewardsText": "Gain 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "389.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "389.2",
+    "title": "Test story 389.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Note 4 example points (fictional test text)."
+  },
+  {
+    "ref": "390.1",
+    "title": "Test story 390.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "390.2",
+    "title": "Test story 390.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Add 4 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "391.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Add 1 example points (fictional test text)."
+  },
+  {
+    "ref": "391.2",
+    "title": "Test story 391.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 513"
+      }
+    ],
+    "rewardsText": "Note 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "392.1",
+    "title": "Test story 392.1",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "392.2",
+    "title": "Test story 392.2",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "393.1",
+    "title": "",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 3 example points (fictional test text)."
+  },
+  {
+    "ref": "393.2",
+    "title": "Test story 393.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "394.1",
+    "title": "Test story 394.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "prosperity",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Lose 1 example points (fictional test text)."
+  },
+  {
+    "ref": "394.2",
+    "title": "Test story 394.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 5 example points (fictional test text)."
+  },
+  {
+    "ref": "395.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "readSection",
+        "ref": "395.2"
+      }
+    ]
+  },
+  {
+    "ref": "395.2",
+    "title": "Test story 395.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Gain 2 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "396.1",
+    "title": "Test story 396.1",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "gainCampaignSticker",
+        "name": "Test Story Mark 522"
+      }
+    ]
+  },
+  {
+    "ref": "396.2",
+    "title": "Test story 396.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Mark 1 dummy shards (fictional test text)."
+  },
+  {
+    "ref": "397.1",
+    "title": "",
+    "scenario": null,
+    "effects": []
+  },
+  {
+    "ref": "397.2",
+    "title": "Test story 397.2",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "adjust",
+        "target": "morale",
+        "amount": 2
+      }
+    ],
+    "rewardsText": "Note 5 test tokens (fictional test text)."
+  },
+  {
+    "ref": "398.1",
+    "title": "Test story 398.1",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Lose 2 test tokens (fictional test text)."
+  },
+  {
+    "ref": "398.2",
+    "title": "Test story 398.2",
+    "scenario": null,
+    "effects": [],
+    "rewardsText": "Remove 4 test tokens (fictional test text)."
+  },
+  {
+    "ref": "399.1",
+    "title": "",
+    "scenario": null,
+    "effects": [
+      {
+        "type": "chooseOne",
+        "options": [
+          {
+            "type": "adjust",
+            "target": "morale",
+            "amount": 1
+          },
+          {
+            "type": "adjust",
+            "target": "prosperity",
+            "amount": 1
+          },
+          {
+            "type": "manual",
+            "note": "Test: gain a random item"
+          }
+        ]
+      }
+    ],
+    "rewardsText": "Remove 1 placeholder marks (fictional test text)."
+  },
+  {
+    "ref": "399.2",
+    "title": "Test story 399.2",
+    "scenario": null,
+    "effects": []
+  }
+]

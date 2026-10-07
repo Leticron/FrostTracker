@@ -1,0 +1,2253 @@
+[
+  {
+    "number": 0,
+    "name": "Hollow Lantern",
+    "coord": "A4",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": true,
+    "conclusionSections": [
+      "10.1"
+    ]
+  },
+  {
+    "number": 1,
+    "name": "Ashen Den",
+    "coord": "B14",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": true,
+    "conclusionSections": [
+      "11.1"
+    ],
+    "marker": {
+      "x": 0.103,
+      "y": 0.869,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 2,
+    "name": "Silent Harbor",
+    "coord": "C10",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "12.1"
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Drowned Warren",
+    "coord": "D1",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "13.1"
+    ],
+    "marker": {
+      "x": 0.758,
+      "y": 0.466,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 4,
+    "name": "Gilded Hollow",
+    "coord": "E16",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "14.1",
+      "14.2"
+    ],
+    "marker": {
+      "x": 0.161,
+      "y": 0.118,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 5,
+    "name": "Broken Reach",
+    "coord": "F23",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "15.1"
+    ],
+    "marker": {
+      "x": 0.196,
+      "y": 0.283,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 6,
+    "name": "Pale Kiln",
+    "coord": "G17",
+    "region": "Test Lowlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "16.1"
+    ],
+    "marker": {
+      "x": 0.415,
+      "y": 0.504,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 7,
+    "name": "Sunken Shoal",
+    "coord": "H17",
+    "region": null,
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "17.1",
+      "17.2"
+    ],
+    "marker": {
+      "x": 0.814,
+      "y": 0.185,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 8,
+    "name": "Howling Vault",
+    "coord": "I23",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "18.1",
+      "18.2"
+    ],
+    "marker": {
+      "x": 0.767,
+      "y": 0.433,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 9,
+    "name": "Frozen Barrow",
+    "coord": "J23",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "19.1"
+    ],
+    "marker": {
+      "x": 0.098,
+      "y": 0.579,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 10,
+    "name": "Crimson Cairn",
+    "coord": "K18",
+    "region": "Test Lowlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "20.1"
+    ],
+    "marker": {
+      "x": 0.794,
+      "y": 0.528,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 11,
+    "name": "Forgotten Orchard",
+    "coord": "L12",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "21.1"
+    ],
+    "marker": {
+      "x": 0.752,
+      "y": 0.709,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 12,
+    "name": "Shattered Causeway",
+    "coord": "M2",
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "22.1"
+    ],
+    "marker": {
+      "x": 0.39,
+      "y": 0.9,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Lighthouse",
+        "minCount": 2
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "name": "Rusted Fen",
+    "coord": "N2",
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "23.1"
+    ]
+  },
+  {
+    "number": 14,
+    "name": "Twisted Chapel",
+    "coord": null,
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "24.1"
+    ],
+    "marker": {
+      "x": 0.347,
+      "y": 0.753,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 15,
+    "name": "Verdant Spire",
+    "coord": "P2",
+    "region": "Test Lowlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "25.1"
+    ],
+    "marker": {
+      "x": 0.67,
+      "y": 0.75,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 16,
+    "name": "Bleak Bastion",
+    "coord": "Q12",
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "26.1"
+    ],
+    "marker": {
+      "x": 0.108,
+      "y": 0.687,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 17,
+    "name": "Glimmering Observatory",
+    "coord": "R7",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "27.1"
+    ]
+  },
+  {
+    "number": 18,
+    "name": "Restless Ridge",
+    "coord": "A19",
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "28.1"
+    ],
+    "marker": {
+      "x": 0.135,
+      "y": 0.042,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 19,
+    "name": "Tangled Crossing",
+    "coord": null,
+    "region": "Test Lowlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "29.1"
+    ],
+    "marker": {
+      "x": 0.68,
+      "y": 0.684,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Ferry",
+        "minCount": 2
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "name": "Bitter Cistern",
+    "coord": "C4",
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "30.1"
+    ],
+    "marker": {
+      "x": 0.459,
+      "y": 0.093,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 21,
+    "name": "Endless Archive",
+    "coord": "D4",
+    "region": "Test Lowlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "31.1"
+    ],
+    "marker": {
+      "x": 0.534,
+      "y": 0.508,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 22,
+    "name": "Smoldering Foundry",
+    "coord": "E24",
+    "region": "Test Lowlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "32.1"
+    ],
+    "marker": {
+      "x": 0.844,
+      "y": 0.414,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 23,
+    "name": "Hidden Grove",
+    "coord": "F10",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "33.1"
+    ],
+    "marker": {
+      "x": 0.69,
+      "y": 0.419,
+      "layer": "town"
+    }
+  },
+  {
+    "number": 24,
+    "name": "Hollow Quarry 2",
+    "coord": "G16",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "34.1"
+    ],
+    "marker": {
+      "x": 0.695,
+      "y": 0.669,
+      "layer": "town"
+    }
+  },
+  {
+    "number": 25,
+    "name": "Ashen Mill 2",
+    "coord": "H17",
+    "region": "Test Highlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "35.1"
+    ],
+    "marker": {
+      "x": 0.225,
+      "y": 0.904,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 26,
+    "name": "Silent Lantern 2",
+    "coord": "I23",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "36.1"
+    ],
+    "marker": {
+      "x": 0.558,
+      "y": 0.261,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 27,
+    "name": "Drowned Den 2",
+    "coord": null,
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "37.1"
+    ],
+    "marker": {
+      "x": 0.937,
+      "y": 0.164,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Charter",
+        "minCount": 2
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "name": "Gilded Harbor 2",
+    "coord": "K21",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "38.1"
+    ],
+    "marker": {
+      "x": 0.233,
+      "y": 0.348,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 29,
+    "name": "Broken Warren 2",
+    "coord": "L10",
+    "region": "Test Highlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "39.1"
+    ],
+    "marker": {
+      "x": 0.813,
+      "y": 0.792,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 30,
+    "name": "Pale Hollow 2",
+    "coord": "M18",
+    "region": "Test Highlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "40.1"
+    ],
+    "marker": {
+      "x": 0.755,
+      "y": 0.534,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 31,
+    "name": "Sunken Reach 2",
+    "coord": null,
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "41.1"
+    ],
+    "marker": {
+      "x": 0.737,
+      "y": 0.416,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 32,
+    "name": "Howling Kiln 2",
+    "coord": "O24",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "42.1"
+    ],
+    "marker": {
+      "x": 0.429,
+      "y": 0.177,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 33,
+    "name": "Frozen Shoal 2",
+    "coord": "P8",
+    "region": "Test Highlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "43.1"
+    ],
+    "marker": {
+      "x": 0.322,
+      "y": 0.43,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Alliance"
+      }
+    ]
+  },
+  {
+    "number": 34,
+    "name": "Crimson Vault 2",
+    "coord": "Q23",
+    "region": "Test Highlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "44.1"
+    ],
+    "marker": {
+      "x": 0.588,
+      "y": 0.664,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 35,
+    "name": "Forgotten Barrow 2",
+    "coord": "R21",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "45.1"
+    ],
+    "marker": {
+      "x": 0.585,
+      "y": 0.668,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 36,
+    "name": "Shattered Cairn 2",
+    "coord": "A1",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "46.1"
+    ],
+    "marker": {
+      "x": 0.888,
+      "y": 0.482,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 37,
+    "name": "Rusted Orchard 2",
+    "coord": "B6",
+    "region": "Test Highlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "47.1"
+    ],
+    "marker": {
+      "x": 0.582,
+      "y": 0.909,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 38,
+    "name": "Twisted Causeway 2",
+    "coord": "C7",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "48.1"
+    ],
+    "marker": {
+      "x": 0.32,
+      "y": 0.441,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 39,
+    "name": "Verdant Fen 2",
+    "coord": "D18",
+    "region": "Test Highlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "49.1"
+    ]
+  },
+  {
+    "number": 40,
+    "name": "Bleak Chapel 2",
+    "coord": null,
+    "region": "Test Highlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "50.1"
+    ],
+    "marker": {
+      "x": 0.482,
+      "y": 0.139,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 41,
+    "name": "Glimmering Spire 2",
+    "coord": "F4",
+    "region": "Test Highlands",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "51.1",
+      "51.2"
+    ],
+    "marker": {
+      "x": 0.799,
+      "y": 0.198,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Compass",
+        "via": "Test Ferry route"
+      }
+    ]
+  },
+  {
+    "number": 42,
+    "name": "Restless Bastion 2",
+    "coord": "G7",
+    "region": "Test Highlands",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "52.1"
+    ]
+  },
+  {
+    "number": 43,
+    "name": "Tangled Observatory 2",
+    "coord": "H5",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "53.1"
+    ],
+    "marker": {
+      "x": 0.586,
+      "y": 0.351,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 44,
+    "name": "Bitter Ridge 2",
+    "coord": "I24",
+    "region": "Test Highlands",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "54.1"
+    ],
+    "marker": {
+      "x": 0.085,
+      "y": 0.484,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 45,
+    "name": "Endless Crossing 2",
+    "coord": "J19",
+    "region": "Test Highlands",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "55.1"
+    ],
+    "marker": {
+      "x": 0.091,
+      "y": 0.225,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 46,
+    "name": "Smoldering Cistern 2",
+    "coord": "K15",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "56.1"
+    ],
+    "marker": {
+      "x": 0.832,
+      "y": 0.756,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 47,
+    "name": "Hidden Archive 2",
+    "coord": "L10",
+    "region": "Test Coast",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "57.1"
+    ],
+    "marker": {
+      "x": 0.109,
+      "y": 0.265,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 48,
+    "name": "Hollow Foundry 3",
+    "coord": "M16",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "58.1"
+    ],
+    "marker": {
+      "x": 0.217,
+      "y": 0.933,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Relic"
+      }
+    ]
+  },
+  {
+    "number": 49,
+    "name": "Ashen Grove 3",
+    "coord": "N24",
+    "region": "Test Coast",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "59.1"
+    ],
+    "marker": {
+      "x": 0.16,
+      "y": 0.492,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 50,
+    "name": "Silent Quarry 3",
+    "coord": "O10",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "60.1"
+    ],
+    "marker": {
+      "x": 0.258,
+      "y": 0.877,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 51,
+    "name": "Drowned Mill 3",
+    "coord": "P1",
+    "region": "Test Coast",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "61.1",
+      "61.2"
+    ],
+    "marker": {
+      "x": 0.282,
+      "y": 0.917,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 52,
+    "name": "Gilded Lantern 3",
+    "coord": "Q8",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "62.1",
+      "62.2"
+    ],
+    "marker": {
+      "x": 0.756,
+      "y": 0.438,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "freeText": "Test condition: at least one character has retired"
+      }
+    ]
+  },
+  {
+    "number": 53,
+    "name": "Broken Den 3",
+    "coord": "R23",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "63.1"
+    ]
+  },
+  {
+    "number": 54,
+    "name": "Pale Harbor 3",
+    "coord": "A2",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "64.1"
+    ],
+    "marker": {
+      "x": 0.753,
+      "y": 0.289,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 55,
+    "name": "Sunken Warren 3",
+    "coord": "B11",
+    "region": "Test Coast",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "65.1"
+    ],
+    "marker": {
+      "x": 0.769,
+      "y": 0.221,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 56,
+    "name": "Howling Hollow 3",
+    "coord": "C1",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "66.1",
+      "66.2"
+    ],
+    "marker": {
+      "x": 0.86,
+      "y": 0.37,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Bridge"
+      }
+    ]
+  },
+  {
+    "number": 57,
+    "name": "Frozen Reach 3",
+    "coord": "D2",
+    "region": "Test Coast",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "67.1"
+    ],
+    "marker": {
+      "x": 0.119,
+      "y": 0.518,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 58,
+    "name": "Crimson Kiln 3",
+    "coord": null,
+    "region": "Test Coast",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "68.1",
+      "68.2"
+    ],
+    "marker": {
+      "x": 0.933,
+      "y": 0.117,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 59,
+    "name": "Forgotten Shoal 3",
+    "coord": null,
+    "region": "Test Coast",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "69.1"
+    ],
+    "marker": {
+      "x": 0.275,
+      "y": 0.772,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 60,
+    "name": "Shattered Vault 3",
+    "coord": "G22",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "70.1"
+    ],
+    "marker": {
+      "x": 0.633,
+      "y": 0.428,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 61,
+    "name": "Rusted Barrow 3",
+    "coord": "H11",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "71.1"
+    ],
+    "marker": {
+      "x": 0.31,
+      "y": 0.915,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 62,
+    "name": "Twisted Cairn 3",
+    "coord": "I11",
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "72.1"
+    ],
+    "marker": {
+      "x": 0.37,
+      "y": 0.816,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 63,
+    "name": "Verdant Orchard 3",
+    "coord": "J3",
+    "region": "Test Coast",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "73.1"
+    ],
+    "marker": {
+      "x": 0.215,
+      "y": 0.1,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Seal"
+      }
+    ]
+  },
+  {
+    "number": 64,
+    "name": "Bleak Causeway 3",
+    "coord": "K16",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "74.1",
+      "74.2"
+    ],
+    "marker": {
+      "x": 0.261,
+      "y": 0.503,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 65,
+    "name": "Glimmering Fen 3",
+    "coord": null,
+    "region": "Test Coast",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "75.1",
+      "75.2"
+    ]
+  },
+  {
+    "number": 66,
+    "name": "Restless Chapel 3",
+    "coord": "M15",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "76.1"
+    ],
+    "marker": {
+      "x": 0.808,
+      "y": 0.287,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 67,
+    "name": "Tangled Spire 3",
+    "coord": "N11",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "77.1"
+    ],
+    "marker": {
+      "x": 0.73,
+      "y": 0.483,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 68,
+    "name": "Bitter Bastion 3",
+    "coord": "O15",
+    "region": "Test Coast",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "78.1"
+    ],
+    "marker": {
+      "x": 0.202,
+      "y": 0.726,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 69,
+    "name": "Endless Observatory 3",
+    "coord": "P4",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "79.1"
+    ],
+    "marker": {
+      "x": 0.406,
+      "y": 0.076,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 70,
+    "name": "Smoldering Ridge 3",
+    "coord": "Q18",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "80.1"
+    ],
+    "marker": {
+      "x": 0.8,
+      "y": 0.321,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 71,
+    "name": "Hidden Crossing 3",
+    "coord": "R1",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "81.1"
+    ],
+    "marker": {
+      "x": 0.849,
+      "y": 0.945,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Truce"
+      }
+    ]
+  },
+  {
+    "number": 72,
+    "name": "Hollow Cistern 4",
+    "coord": "A12",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "82.1"
+    ],
+    "marker": {
+      "x": 0.104,
+      "y": 0.33,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 73,
+    "name": "Ashen Archive 4",
+    "coord": "B16",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "83.1"
+    ],
+    "marker": {
+      "x": 0.671,
+      "y": 0.352,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 74,
+    "name": "Silent Foundry 4",
+    "coord": null,
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "84.1"
+    ],
+    "marker": {
+      "x": 0.95,
+      "y": 0.297,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 75,
+    "name": "Drowned Grove 4",
+    "coord": "D2",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "85.1"
+    ],
+    "marker": {
+      "x": 0.833,
+      "y": 0.23,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 76,
+    "name": "Gilded Quarry 4",
+    "coord": "E10",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "86.1"
+    ],
+    "marker": {
+      "x": 0.792,
+      "y": 0.496,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 77,
+    "name": "Broken Mill 4",
+    "coord": "F4",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "87.1",
+      "87.2"
+    ],
+    "marker": {
+      "x": 0.607,
+      "y": 0.852,
+      "layer": "town"
+    }
+  },
+  {
+    "number": 78,
+    "name": "Pale Lantern 4",
+    "coord": "G20",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "88.1"
+    ],
+    "marker": {
+      "x": 0.622,
+      "y": 0.891,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 79,
+    "name": "Sunken Den 4",
+    "coord": "H19",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "89.1"
+    ],
+    "marker": {
+      "x": 0.46,
+      "y": 0.056,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 80,
+    "name": "Howling Harbor 4",
+    "coord": "I3",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "90.1"
+    ],
+    "marker": {
+      "x": 0.555,
+      "y": 0.538,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Lens"
+      }
+    ]
+  },
+  {
+    "number": 81,
+    "name": "Frozen Warren 4",
+    "coord": "J10",
+    "region": "Test Marsh",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "91.1"
+    ],
+    "marker": {
+      "x": 0.672,
+      "y": 0.109,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 82,
+    "name": "Crimson Hollow 4",
+    "coord": "K20",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "92.1"
+    ]
+  },
+  {
+    "number": 83,
+    "name": "Forgotten Reach 4",
+    "coord": "L2",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "93.1",
+      "93.2"
+    ],
+    "marker": {
+      "x": 0.098,
+      "y": 0.875,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 84,
+    "name": "Shattered Kiln 4",
+    "coord": "M22",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "94.1",
+      "94.2"
+    ],
+    "marker": {
+      "x": 0.808,
+      "y": 0.7,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 85,
+    "name": "Rusted Shoal 4",
+    "coord": "N6",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "95.1"
+    ],
+    "marker": {
+      "x": 0.828,
+      "y": 0.065,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 86,
+    "name": "Twisted Vault 4",
+    "coord": "O6",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "96.1"
+    ],
+    "marker": {
+      "x": 0.58,
+      "y": 0.134,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 87,
+    "name": "Verdant Barrow 4",
+    "coord": "P9",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "97.1"
+    ],
+    "marker": {
+      "x": 0.96,
+      "y": 0.484,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 88,
+    "name": "Bleak Cairn 4",
+    "coord": "Q20",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "98.1"
+    ],
+    "requirements": [
+      {
+        "campaignSticker": "Test Crown"
+      }
+    ]
+  },
+  {
+    "number": 89,
+    "name": "Glimmering Orchard 4",
+    "coord": "R8",
+    "region": "Test Marsh",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "99.1"
+    ],
+    "marker": {
+      "x": 0.426,
+      "y": 0.357,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 90,
+    "name": "Restless Causeway 4",
+    "coord": "A3",
+    "region": "Test Marsh",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "100.1"
+    ],
+    "marker": {
+      "x": 0.926,
+      "y": 0.634,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 91,
+    "name": "Tangled Fen 4",
+    "coord": "B10",
+    "region": "Test Marsh",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "101.1"
+    ],
+    "marker": {
+      "x": 0.65,
+      "y": 0.658,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 92,
+    "name": "Bitter Chapel 4",
+    "coord": "C11",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "102.1"
+    ]
+  },
+  {
+    "number": 93,
+    "name": "Endless Spire 4",
+    "coord": null,
+    "region": "Test Forest",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "103.1"
+    ],
+    "marker": {
+      "x": 0.589,
+      "y": 0.066,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 94,
+    "name": "Smoldering Bastion 4",
+    "coord": "E18",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "104.1"
+    ],
+    "marker": {
+      "x": 0.153,
+      "y": 0.407,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 95,
+    "name": "Hidden Observatory 4",
+    "coord": "F2",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "105.1"
+    ],
+    "marker": {
+      "x": 0.658,
+      "y": 0.113,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Ledger"
+      }
+    ]
+  },
+  {
+    "number": 96,
+    "name": "Hollow Ridge 5",
+    "coord": "G15",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "106.1"
+    ],
+    "marker": {
+      "x": 0.706,
+      "y": 0.597,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 97,
+    "name": "Ashen Crossing 5",
+    "coord": "H12",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "107.1"
+    ],
+    "marker": {
+      "x": 0.552,
+      "y": 0.764,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 98,
+    "name": "Silent Cistern 5",
+    "coord": null,
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "108.1"
+    ],
+    "marker": {
+      "x": 0.089,
+      "y": 0.741,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 99,
+    "name": "Drowned Archive 5",
+    "coord": "J10",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "109.1"
+    ],
+    "marker": {
+      "x": 0.467,
+      "y": 0.074,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Seal"
+      },
+      {
+        "freeText": "Test condition: the party carries the test lens"
+      }
+    ]
+  },
+  {
+    "number": 100,
+    "name": "Gilded Foundry 5",
+    "coord": "K24",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "110.1",
+      "110.2"
+    ],
+    "marker": {
+      "x": 0.489,
+      "y": 0.83,
+      "layer": "town"
+    }
+  },
+  {
+    "number": 101,
+    "name": "Broken Grove 5",
+    "coord": "L8",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "111.1"
+    ],
+    "marker": {
+      "x": 0.345,
+      "y": 0.456,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 102,
+    "name": "Pale Quarry 5",
+    "coord": "M3",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "112.1"
+    ],
+    "marker": {
+      "x": 0.529,
+      "y": 0.934,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 103,
+    "name": "Sunken Mill 5",
+    "coord": "N6",
+    "region": "Test Forest",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "113.1"
+    ],
+    "marker": {
+      "x": 0.091,
+      "y": 0.476,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 104,
+    "name": "Howling Lantern 5",
+    "coord": "O10",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "114.1",
+      "114.2"
+    ],
+    "marker": {
+      "x": 0.445,
+      "y": 0.597,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Lighthouse"
+      }
+    ]
+  },
+  {
+    "number": 105,
+    "name": "Frozen Den 5",
+    "coord": "P9",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "115.1"
+    ]
+  },
+  {
+    "number": 106,
+    "name": "Crimson Harbor 5",
+    "coord": "Q6",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "116.1"
+    ]
+  },
+  {
+    "number": 107,
+    "name": "Forgotten Warren 5",
+    "coord": "R6",
+    "region": "Test Forest",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "117.1"
+    ],
+    "marker": {
+      "x": 0.785,
+      "y": 0.141,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 108,
+    "name": "Shattered Hollow 5",
+    "coord": "A20",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "118.1"
+    ],
+    "marker": {
+      "x": 0.207,
+      "y": 0.449,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 109,
+    "name": "Rusted Reach 5",
+    "coord": "B15",
+    "region": "Test Forest",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "119.1"
+    ],
+    "marker": {
+      "x": 0.496,
+      "y": 0.184,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 110,
+    "name": "Twisted Kiln 5",
+    "coord": "C23",
+    "region": "Test Forest",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "120.1"
+    ],
+    "marker": {
+      "x": 0.282,
+      "y": 0.325,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 111,
+    "name": "Verdant Shoal 5",
+    "coord": null,
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "121.1"
+    ]
+  },
+  {
+    "number": 112,
+    "name": "Bleak Vault 5",
+    "coord": "E8",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "122.1"
+    ],
+    "marker": {
+      "x": 0.543,
+      "y": 0.828,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Ferry"
+      }
+    ]
+  },
+  {
+    "number": 113,
+    "name": "Glimmering Barrow 5",
+    "coord": "F3",
+    "region": "Test Forest",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "123.1",
+      "123.2"
+    ],
+    "marker": {
+      "x": 0.649,
+      "y": 0.417,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 114,
+    "name": "Restless Cairn 5",
+    "coord": "G8",
+    "region": "Test Forest",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "124.1"
+    ],
+    "marker": {
+      "x": 0.298,
+      "y": 0.133,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 115,
+    "name": "Tangled Orchard 5",
+    "coord": "H19",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "125.1"
+    ],
+    "marker": {
+      "x": 0.538,
+      "y": 0.404,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 116,
+    "name": "Bitter Causeway 5",
+    "coord": "I19",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "126.1"
+    ],
+    "marker": {
+      "x": 0.345,
+      "y": 0.48,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 117,
+    "name": "Endless Fen 5",
+    "coord": "J1",
+    "region": "Test Wastes",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "127.1",
+      "127.2"
+    ]
+  },
+  {
+    "number": 118,
+    "name": "Smoldering Chapel 5",
+    "coord": "K16",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "128.1"
+    ],
+    "marker": {
+      "x": 0.785,
+      "y": 0.517,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 119,
+    "name": "Hidden Spire 5",
+    "coord": "L15",
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "129.1"
+    ],
+    "marker": {
+      "x": 0.253,
+      "y": 0.789,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 120,
+    "name": "Hollow Bastion 6",
+    "coord": "M1",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "130.1"
+    ],
+    "marker": {
+      "x": 0.67,
+      "y": 0.184,
+      "layer": "town"
+    }
+  },
+  {
+    "number": 121,
+    "name": "Ashen Observatory 6",
+    "coord": "N11",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "131.1"
+    ],
+    "marker": {
+      "x": 0.172,
+      "y": 0.065,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Charter"
+      }
+    ]
+  },
+  {
+    "number": 122,
+    "name": "Silent Ridge 6",
+    "coord": "O14",
+    "region": "Test Wastes",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "132.1"
+    ],
+    "marker": {
+      "x": 0.627,
+      "y": 0.612,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 123,
+    "name": "Drowned Crossing 6",
+    "coord": "P13",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "133.1",
+      "133.2"
+    ],
+    "marker": {
+      "x": 0.596,
+      "y": 0.803,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 124,
+    "name": "Gilded Cistern 6",
+    "coord": null,
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "134.1"
+    ],
+    "marker": {
+      "x": 0.349,
+      "y": 0.655,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 125,
+    "name": "Broken Archive 6",
+    "coord": "R2",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "135.1"
+    ],
+    "marker": {
+      "x": 0.166,
+      "y": 0.464,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 126,
+    "name": "Pale Foundry 6",
+    "coord": "A2",
+    "region": "Test Wastes",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "136.1"
+    ],
+    "marker": {
+      "x": 0.894,
+      "y": 0.635,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 127,
+    "name": "Sunken Grove 6",
+    "coord": "B10",
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "137.1",
+      "137.2"
+    ],
+    "marker": {
+      "x": 0.073,
+      "y": 0.406,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 128,
+    "name": "Howling Quarry 6",
+    "coord": "C5",
+    "region": "Test Wastes",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "138.1"
+    ],
+    "marker": {
+      "x": 0.698,
+      "y": 0.379,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 129,
+    "name": "Frozen Mill 6",
+    "coord": "D8",
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "139.1",
+      "139.2"
+    ],
+    "marker": {
+      "x": 0.669,
+      "y": 0.368,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 130,
+    "name": "Crimson Lantern 6",
+    "coord": "E18",
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "140.1"
+    ],
+    "marker": {
+      "x": 0.336,
+      "y": 0.379,
+      "layer": "world"
+    },
+    "requirements": [
+      {
+        "campaignSticker": "Test Alliance"
+      }
+    ]
+  },
+  {
+    "number": 131,
+    "name": "Forgotten Den 6",
+    "coord": "F19",
+    "region": "Test Wastes",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "141.1"
+    ],
+    "marker": {
+      "x": 0.861,
+      "y": 0.846,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 132,
+    "name": "Shattered Harbor 6",
+    "coord": "G3",
+    "region": "Test Wastes",
+    "complexity": 1,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "142.1"
+    ],
+    "marker": {
+      "x": 0.795,
+      "y": 0.443,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 133,
+    "name": "Rusted Warren 6",
+    "coord": "H13",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "143.1"
+    ],
+    "marker": {
+      "x": 0.594,
+      "y": 0.759,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 134,
+    "name": "Twisted Hollow 6",
+    "coord": "I17",
+    "region": "Test Wastes",
+    "complexity": null,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "144.1"
+    ],
+    "marker": {
+      "x": 0.521,
+      "y": 0.868,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 135,
+    "name": "Verdant Reach 6",
+    "coord": "J3",
+    "region": "Test Wastes",
+    "complexity": 2,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "145.1",
+      "145.2"
+    ],
+    "marker": {
+      "x": 0.455,
+      "y": 0.644,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 136,
+    "name": "Bleak Kiln 6",
+    "coord": null,
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "146.1"
+    ],
+    "marker": {
+      "x": 0.607,
+      "y": 0.392,
+      "layer": "world"
+    }
+  },
+  {
+    "number": 137,
+    "name": "Glimmering Shoal 6",
+    "coord": "L17",
+    "region": "Test Wastes",
+    "complexity": 3,
+    "initiallyUnlocked": false,
+    "conclusionSections": [
+      "147.1"
+    ],
+    "marker": {
+      "x": 0.752,
+      "y": 0.891,
+      "layer": "world"
+    }
+  }
+]

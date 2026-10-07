@@ -1,0 +1,146 @@
+[
+  {
+    "number": 501,
+    "name": "Test quest: Collect the Sunken Causeway",
+    "envelope": "C",
+    "altEnvelope": "F"
+  },
+  {
+    "number": 502,
+    "name": "Test quest: Explore the Glimmering Ridge",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 503,
+    "name": "Test quest: Protect the Gilded Chapel",
+    "envelope": "B",
+    "altEnvelope": null
+  },
+  {
+    "number": 504,
+    "name": "Test quest: Explore the Rusted Barrow",
+    "envelope": "D",
+    "altEnvelope": "F"
+  },
+  {
+    "number": 505,
+    "name": "Test quest: Defeat the Restless Observatory",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 506,
+    "name": "Test quest: Defeat the Endless Observatory",
+    "envelope": null,
+    "altEnvelope": null
+  },
+  {
+    "number": 507,
+    "name": "Test quest: Protect the Tangled Warren",
+    "envelope": "C",
+    "altEnvelope": "F"
+  },
+  {
+    "number": 508,
+    "name": "Test quest: Explore the Smoldering Foundry",
+    "envelope": "A",
+    "altEnvelope": null
+  },
+  {
+    "number": 509,
+    "name": "Test quest: Find the Bleak Shoal",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 510,
+    "name": "Test quest: Collect the Frozen Chapel",
+    "envelope": "B",
+    "altEnvelope": "G"
+  },
+  {
+    "number": 511,
+    "name": "Test quest: Find the Broken Hollow",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 512,
+    "name": "Test quest: Protect the Hollow Chapel",
+    "envelope": null,
+    "altEnvelope": null
+  },
+  {
+    "number": 513,
+    "name": "Test quest: Explore the Bleak Shoal",
+    "envelope": "B",
+    "altEnvelope": "G"
+  },
+  {
+    "number": 514,
+    "name": "Test quest: Explore the Tangled Shoal",
+    "envelope": "B",
+    "altEnvelope": null
+  },
+  {
+    "number": 515,
+    "name": "Test quest: Find the Drowned Cistern",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 516,
+    "name": "Test quest: Find the Pale Cistern",
+    "envelope": "B",
+    "altEnvelope": "F"
+  },
+  {
+    "number": 517,
+    "name": "Test quest: Collect the Restless Warren",
+    "envelope": "D",
+    "altEnvelope": null
+  },
+  {
+    "number": 518,
+    "name": "Test quest: Explore the Drowned Warren",
+    "envelope": null,
+    "altEnvelope": null
+  },
+  {
+    "number": 519,
+    "name": "Test quest: Collect the Shattered Fen",
+    "envelope": "D",
+    "altEnvelope": "G"
+  },
+  {
+    "number": 520,
+    "name": "Test quest: Defeat the Glimmering Ridge",
+    "envelope": "A",
+    "altEnvelope": null
+  },
+  {
+    "number": 521,
+    "name": "Test quest: Protect the Endless Fen",
+    "envelope": "C",
+    "altEnvelope": null
+  },
+  {
+    "number": 522,
+    "name": "Test quest: Protect the Frozen Mill",
+    "envelope": "C",
+    "altEnvelope": "F"
+  },
+  {
+    "number": 523,
+    "name": "Test quest: Protect the Ashen Crossing",
+    "envelope": "A",
+    "altEnvelope": null
+  },
+  {
+    "number": 524,
+    "name": "Test quest: Explore the Glimmering Reach",
+    "envelope": null,
+    "altEnvelope": null
+  }
+]
